@@ -1,0 +1,51 @@
+==> Выполняется queries/01_functions.sql
+You are now connected to database "supply_lab" as user "postgres".
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+ fn_refresh_yesterday_warehouse_stats 
+--------------------------------------
+(0 rows)
+
+==> Выполняется queries/02_procedures.sql
+You are now connected to database "supply_lab" as user "postgres".
+CREATE PROCEDURE
+CREATE PROCEDURE
+CREATE PROCEDURE
+CREATE PROCEDURE
+==> Выполняется queries/03_triggers.sql
+You are now connected to database "supply_lab" as user "postgres".
+CREATE VIEW
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+==> Выполняется queries/04_tests.sql
+You are now connected to database "supply_lab" as user "postgres".
+BEGIN
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+      p_cursor       
+---------------------
+ lr3_expiring_cursor
+(1 row)
+
+ delivery_id | supplier_id | supplier_name | product_id |   product_name    | warehouse_id |      warehouse_name      | batch_number |    delivered_at     | quantity | expires_on 
+-------------+-------------+---------------+------------+-------------------+--------------+--------------------------+--------------+---------------------+----------+------------
+        2525 |         416 | Supplier 0416 |        928 | Food product 0928 |          266 | Distribution center 0266 | B-00002525   | 2025-01-03 07:37:00 |     1919 | 2025-01-28
+(1 row)
+
+ROLLBACK
+==> Все модули установлены, тесты успешно пройдены

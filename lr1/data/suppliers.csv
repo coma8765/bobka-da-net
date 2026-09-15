@@ -1,0 +1,1001 @@
+name,tax_id,country,city,email,phone,rating,is_active,created_at
+Supplier 0001,7700000001,Russia,Moscow,contact1@supplier.example,+79000000001,1.80,True,2020-12-14
+Supplier 0002,7700000002,Russia,Saint Petersburg,contact2@supplier.example,+79000000002,4.40,True,2025-02-11
+Supplier 0003,7700000003,Russia,Moscow,contact3@supplier.example,+79000000003,4.08,True,2022-07-02
+Supplier 0004,7700000004,Georgia,Tbilisi,contact4@supplier.example,+79000000004,2.90,True,2020-08-20
+Supplier 0005,7700000005,Belarus,Minsk,contact5@supplier.example,+79000000005,4.63,True,2025-02-07
+Supplier 0006,7700000006,Russia,Moscow,contact6@supplier.example,+79000000006,2.44,True,2021-02-03
+Supplier 0007,7700000007,Georgia,Tbilisi,contact7@supplier.example,+79000000007,1.21,True,2021-12-30
+Supplier 0008,7700000008,Belarus,Minsk,contact8@supplier.example,+79000000008,1.11,True,2016-10-16
+Supplier 0009,7700000009,Belarus,Minsk,contact9@supplier.example,+79000000009,3.32,True,2025-08-03
+Supplier 0010,7700000010,Russia,Moscow,contact10@supplier.example,+79000000010,4.01,True,2017-08-03
+Supplier 0011,7700000011,Kazakhstan,Almaty,contact11@supplier.example,+79000000011,1.05,True,2026-01-17
+Supplier 0012,7700000012,Kazakhstan,Almaty,contact12@supplier.example,+79000000012,4.39,True,2020-10-09
+Supplier 0013,7700000013,Russia,Saint Petersburg,contact13@supplier.example,+79000000013,4.21,True,2021-09-17
+Supplier 0014,7700000014,Kazakhstan,Almaty,contact14@supplier.example,+79000000014,2.00,True,2025-02-23
+Supplier 0015,7700000015,Russia,Moscow,contact15@supplier.example,+79000000015,2.83,True,2022-12-27
+Supplier 0016,7700000016,Kazakhstan,Almaty,contact16@supplier.example,+79000000016,3.15,True,2024-08-05
+Supplier 0017,7700000017,Russia,Saint Petersburg,contact17@supplier.example,+79000000017,2.73,True,2022-08-04
+Supplier 0018,7700000018,Armenia,Yerevan,contact18@supplier.example,+79000000018,1.79,True,2023-11-14
+Supplier 0019,7700000019,Kazakhstan,Almaty,contact19@supplier.example,+79000000019,1.49,True,2023-05-03
+Supplier 0020,7700000020,Kazakhstan,Almaty,contact20@supplier.example,+79000000020,2.82,True,2019-04-18
+Supplier 0021,7700000021,Georgia,Tbilisi,contact21@supplier.example,+79000000021,3.03,True,2019-10-27
+Supplier 0022,7700000022,Armenia,Yerevan,contact22@supplier.example,+79000000022,3.48,True,2025-01-10
+Supplier 0023,7700000023,Russia,Saint Petersburg,contact23@supplier.example,+79000000023,1.54,True,2021-08-20
+Supplier 0024,7700000024,Georgia,Tbilisi,contact24@supplier.example,+79000000024,1.13,True,2020-04-18
+Supplier 0025,7700000025,Belarus,Minsk,contact25@supplier.example,+79000000025,4.07,True,2024-07-02
+Supplier 0026,7700000026,Belarus,Minsk,contact26@supplier.example,+79000000026,2.75,True,2017-04-29
+Supplier 0027,7700000027,Armenia,Yerevan,contact27@supplier.example,+79000000027,1.66,True,2026-01-06
+Supplier 0028,7700000028,Kazakhstan,Almaty,contact28@supplier.example,+79000000028,1.74,False,2024-01-11
+Supplier 0029,7700000029,Russia,Saint Petersburg,contact29@supplier.example,+79000000029,1.46,True,2022-03-02
+Supplier 0030,7700000030,Belarus,Minsk,contact30@supplier.example,+79000000030,4.37,True,2020-04-10
+Supplier 0031,7700000031,Russia,Saint Petersburg,contact31@supplier.example,+79000000031,2.18,True,2022-07-19
+Supplier 0032,7700000032,Russia,Saint Petersburg,contact32@supplier.example,+79000000032,1.49,True,2026-08-05
+Supplier 0033,7700000033,Belarus,Minsk,contact33@supplier.example,+79000000033,2.98,True,2022-06-15
+Supplier 0034,7700000034,Belarus,Minsk,contact34@supplier.example,+79000000034,4.80,True,2019-05-01
+Supplier 0035,7700000035,Armenia,Yerevan,contact35@supplier.example,+79000000035,1.81,True,2023-01-07
+Supplier 0036,7700000036,Georgia,Tbilisi,contact36@supplier.example,+79000000036,3.48,True,2020-11-10
+Supplier 0037,7700000037,Kazakhstan,Almaty,contact37@supplier.example,+79000000037,1.05,True,2017-02-06
+Supplier 0038,7700000038,Belarus,Minsk,contact38@supplier.example,+79000000038,3.28,True,2022-11-14
+Supplier 0039,7700000039,Kazakhstan,Almaty,contact39@supplier.example,+79000000039,3.70,True,2018-10-13
+Supplier 0040,7700000040,Russia,Moscow,contact40@supplier.example,+79000000040,1.99,True,2020-09-22
+Supplier 0041,7700000041,Georgia,Tbilisi,contact41@supplier.example,+79000000041,4.66,True,2023-10-02
+Supplier 0042,7700000042,Georgia,Tbilisi,contact42@supplier.example,+79000000042,4.10,False,2021-10-19
+Supplier 0043,7700000043,Russia,Moscow,contact43@supplier.example,+79000000043,4.17,True,2022-09-11
+Supplier 0044,7700000044,Armenia,Yerevan,contact44@supplier.example,+79000000044,1.53,True,2025-05-16
+Supplier 0045,7700000045,Kazakhstan,Almaty,contact45@supplier.example,+79000000045,2.96,True,2021-07-06
+Supplier 0046,7700000046,Kazakhstan,Almaty,contact46@supplier.example,+79000000046,4.15,True,2021-11-27
+Supplier 0047,7700000047,Kazakhstan,Almaty,contact47@supplier.example,+79000000047,3.38,True,2025-11-23
+Supplier 0048,7700000048,Kazakhstan,Almaty,contact48@supplier.example,+79000000048,3.52,True,2023-04-10
+Supplier 0049,7700000049,Russia,Moscow,contact49@supplier.example,+79000000049,4.93,True,2018-07-29
+Supplier 0050,7700000050,Kazakhstan,Almaty,contact50@supplier.example,+79000000050,1.56,True,2022-08-04
+Supplier 0051,7700000051,Russia,Moscow,contact51@supplier.example,+79000000051,3.87,True,2018-02-12
+Supplier 0052,7700000052,Russia,Saint Petersburg,contact52@supplier.example,+79000000052,2.70,True,2022-01-11
+Supplier 0053,7700000053,Georgia,Tbilisi,contact53@supplier.example,+79000000053,1.30,True,2024-09-02
+Supplier 0054,7700000054,Georgia,Tbilisi,contact54@supplier.example,+79000000054,4.01,True,2022-04-05
+Supplier 0055,7700000055,Armenia,Yerevan,contact55@supplier.example,+79000000055,1.12,True,2017-02-14
+Supplier 0056,7700000056,Georgia,Tbilisi,contact56@supplier.example,+79000000056,2.08,True,2025-06-13
+Supplier 0057,7700000057,Russia,Moscow,contact57@supplier.example,+79000000057,2.19,True,2023-08-18
+Supplier 0058,7700000058,Georgia,Tbilisi,contact58@supplier.example,+79000000058,2.30,True,2026-04-23
+Supplier 0059,7700000059,Belarus,Minsk,contact59@supplier.example,+79000000059,4.45,True,2024-01-31
+Supplier 0060,7700000060,Russia,Saint Petersburg,contact60@supplier.example,+79000000060,3.90,True,2018-11-14
+Supplier 0061,7700000061,Armenia,Yerevan,contact61@supplier.example,+79000000061,4.74,True,2017-10-30
+Supplier 0062,7700000062,Georgia,Tbilisi,contact62@supplier.example,+79000000062,2.56,True,2023-03-20
+Supplier 0063,7700000063,Russia,Moscow,contact63@supplier.example,+79000000063,3.11,True,2017-05-31
+Supplier 0064,7700000064,Russia,Moscow,contact64@supplier.example,+79000000064,3.30,True,2020-10-15
+Supplier 0065,7700000065,Armenia,Yerevan,contact65@supplier.example,+79000000065,4.54,True,2019-03-28
+Supplier 0066,7700000066,Belarus,Minsk,contact66@supplier.example,+79000000066,1.62,True,2024-07-03
+Supplier 0067,7700000067,Russia,Saint Petersburg,contact67@supplier.example,+79000000067,2.01,True,2020-11-19
+Supplier 0068,7700000068,Armenia,Yerevan,contact68@supplier.example,+79000000068,4.85,True,2020-05-16
+Supplier 0069,7700000069,Russia,Saint Petersburg,contact69@supplier.example,+79000000069,4.75,True,2024-10-28
+Supplier 0070,7700000070,Russia,Moscow,contact70@supplier.example,+79000000070,1.76,True,2023-04-01
+Supplier 0071,7700000071,Kazakhstan,Almaty,contact71@supplier.example,+79000000071,1.50,True,2026-03-30
+Supplier 0072,7700000072,Belarus,Minsk,contact72@supplier.example,+79000000072,1.54,True,2020-09-06
+Supplier 0073,7700000073,Kazakhstan,Almaty,contact73@supplier.example,+79000000073,1.96,True,2024-10-06
+Supplier 0074,7700000074,Belarus,Minsk,contact74@supplier.example,+79000000074,2.64,False,2020-01-30
+Supplier 0075,7700000075,Russia,Saint Petersburg,contact75@supplier.example,+79000000075,3.14,True,2023-09-29
+Supplier 0076,7700000076,Russia,Moscow,contact76@supplier.example,+79000000076,1.79,True,2016-11-07
+Supplier 0077,7700000077,Georgia,Tbilisi,contact77@supplier.example,+79000000077,2.01,True,2020-06-17
+Supplier 0078,7700000078,Russia,Saint Petersburg,contact78@supplier.example,+79000000078,1.89,True,2022-10-21
+Supplier 0079,7700000079,Russia,Saint Petersburg,contact79@supplier.example,+79000000079,4.29,True,2022-06-16
+Supplier 0080,7700000080,Armenia,Yerevan,contact80@supplier.example,+79000000080,1.05,True,2020-05-17
+Supplier 0081,7700000081,Russia,Moscow,contact81@supplier.example,+79000000081,1.65,True,2019-12-06
+Supplier 0082,7700000082,Belarus,Minsk,contact82@supplier.example,+79000000082,4.07,False,2024-05-27
+Supplier 0083,7700000083,Belarus,Minsk,contact83@supplier.example,+79000000083,4.07,True,2017-02-01
+Supplier 0084,7700000084,Russia,Saint Petersburg,contact84@supplier.example,+79000000084,2.31,True,2026-07-21
+Supplier 0085,7700000085,Kazakhstan,Almaty,contact85@supplier.example,+79000000085,4.03,True,2017-10-25
+Supplier 0086,7700000086,Kazakhstan,Almaty,contact86@supplier.example,+79000000086,4.76,True,2025-02-26
+Supplier 0087,7700000087,Russia,Moscow,contact87@supplier.example,+79000000087,1.55,True,2024-08-26
+Supplier 0088,7700000088,Armenia,Yerevan,contact88@supplier.example,+79000000088,1.09,False,2017-05-06
+Supplier 0089,7700000089,Georgia,Tbilisi,contact89@supplier.example,+79000000089,3.55,False,2024-08-13
+Supplier 0090,7700000090,Kazakhstan,Almaty,contact90@supplier.example,+79000000090,2.06,True,2018-08-07
+Supplier 0091,7700000091,Armenia,Yerevan,contact91@supplier.example,+79000000091,4.42,True,2017-06-01
+Supplier 0092,7700000092,Russia,Moscow,contact92@supplier.example,+79000000092,1.49,True,2021-06-16
+Supplier 0093,7700000093,Russia,Moscow,contact93@supplier.example,+79000000093,2.61,True,2019-11-02
+Supplier 0094,7700000094,Armenia,Yerevan,contact94@supplier.example,+79000000094,1.79,True,2020-06-01
+Supplier 0095,7700000095,Russia,Moscow,contact95@supplier.example,+79000000095,3.57,True,2017-08-26
+Supplier 0096,7700000096,Armenia,Yerevan,contact96@supplier.example,+79000000096,4.62,True,2024-12-05
+Supplier 0097,7700000097,Belarus,Minsk,contact97@supplier.example,+79000000097,3.47,True,2017-06-20
+Supplier 0098,7700000098,Belarus,Minsk,contact98@supplier.example,+79000000098,3.54,True,2026-05-05
+Supplier 0099,7700000099,Russia,Saint Petersburg,contact99@supplier.example,+79000000099,2.05,True,2020-12-17
+Supplier 0100,7700000100,Kazakhstan,Almaty,contact100@supplier.example,+79000000100,1.25,True,2017-07-03
+Supplier 0101,7700000101,Armenia,Yerevan,contact101@supplier.example,+79000000101,2.23,True,2021-07-09
+Supplier 0102,7700000102,Russia,Saint Petersburg,contact102@supplier.example,+79000000102,4.19,True,2020-05-18
+Supplier 0103,7700000103,Russia,Saint Petersburg,contact103@supplier.example,+79000000103,1.49,True,2018-07-24
+Supplier 0104,7700000104,Kazakhstan,Almaty,contact104@supplier.example,+79000000104,4.41,True,2021-03-28
+Supplier 0105,7700000105,Georgia,Tbilisi,contact105@supplier.example,+79000000105,3.22,True,2024-03-17
+Supplier 0106,7700000106,Georgia,Tbilisi,contact106@supplier.example,+79000000106,1.81,True,2017-02-21
+Supplier 0107,7700000107,Belarus,Minsk,contact107@supplier.example,+79000000107,4.73,False,2019-06-30
+Supplier 0108,7700000108,Armenia,Yerevan,contact108@supplier.example,+79000000108,2.81,True,2020-07-29
+Supplier 0109,7700000109,Kazakhstan,Almaty,contact109@supplier.example,+79000000109,2.60,True,2017-02-10
+Supplier 0110,7700000110,Armenia,Yerevan,contact110@supplier.example,+79000000110,3.01,True,2018-11-10
+Supplier 0111,7700000111,Russia,Moscow,contact111@supplier.example,+79000000111,1.73,True,2019-05-05
+Supplier 0112,7700000112,Georgia,Tbilisi,contact112@supplier.example,+79000000112,3.10,True,2016-12-12
+Supplier 0113,7700000113,Kazakhstan,Almaty,contact113@supplier.example,+79000000113,2.35,True,2023-06-03
+Supplier 0114,7700000114,Russia,Moscow,contact114@supplier.example,+79000000114,3.41,True,2021-02-01
+Supplier 0115,7700000115,Russia,Saint Petersburg,contact115@supplier.example,+79000000115,4.04,True,2019-01-09
+Supplier 0116,7700000116,Russia,Moscow,contact116@supplier.example,+79000000116,4.35,True,2019-12-13
+Supplier 0117,7700000117,Belarus,Minsk,contact117@supplier.example,+79000000117,2.69,True,2025-03-24
+Supplier 0118,7700000118,Belarus,Minsk,contact118@supplier.example,+79000000118,2.32,True,2023-10-09
+Supplier 0119,7700000119,Russia,Saint Petersburg,contact119@supplier.example,+79000000119,1.17,True,2023-06-26
+Supplier 0120,7700000120,Kazakhstan,Almaty,contact120@supplier.example,+79000000120,3.13,False,2021-01-21
+Supplier 0121,7700000121,Armenia,Yerevan,contact121@supplier.example,+79000000121,3.87,True,2018-05-27
+Supplier 0122,7700000122,Georgia,Tbilisi,contact122@supplier.example,+79000000122,2.46,True,2021-07-01
+Supplier 0123,7700000123,Russia,Moscow,contact123@supplier.example,+79000000123,4.56,True,2017-04-20
+Supplier 0124,7700000124,Kazakhstan,Almaty,contact124@supplier.example,+79000000124,4.57,True,2022-12-08
+Supplier 0125,7700000125,Georgia,Tbilisi,contact125@supplier.example,+79000000125,3.89,True,2019-02-23
+Supplier 0126,7700000126,Belarus,Minsk,contact126@supplier.example,+79000000126,2.36,True,2022-12-27
+Supplier 0127,7700000127,Russia,Moscow,contact127@supplier.example,+79000000127,4.07,True,2024-07-26
+Supplier 0128,7700000128,Belarus,Minsk,contact128@supplier.example,+79000000128,1.60,True,2023-11-21
+Supplier 0129,7700000129,Kazakhstan,Almaty,contact129@supplier.example,+79000000129,1.35,True,2016-09-19
+Supplier 0130,7700000130,Russia,Moscow,contact130@supplier.example,+79000000130,3.81,False,2025-03-20
+Supplier 0131,7700000131,Russia,Moscow,contact131@supplier.example,+79000000131,4.92,True,2020-11-18
+Supplier 0132,7700000132,Russia,Saint Petersburg,contact132@supplier.example,+79000000132,3.37,True,2019-12-18
+Supplier 0133,7700000133,Russia,Saint Petersburg,contact133@supplier.example,+79000000133,1.02,True,2021-03-31
+Supplier 0134,7700000134,Georgia,Tbilisi,contact134@supplier.example,+79000000134,4.08,True,2024-09-04
+Supplier 0135,7700000135,Georgia,Tbilisi,contact135@supplier.example,+79000000135,1.66,True,2025-05-10
+Supplier 0136,7700000136,Russia,Moscow,contact136@supplier.example,+79000000136,3.51,True,2024-12-12
+Supplier 0137,7700000137,Russia,Saint Petersburg,contact137@supplier.example,+79000000137,1.15,True,2026-03-11
+Supplier 0138,7700000138,Belarus,Minsk,contact138@supplier.example,+79000000138,2.29,True,2024-08-23
+Supplier 0139,7700000139,Georgia,Tbilisi,contact139@supplier.example,+79000000139,1.74,True,2024-11-13
+Supplier 0140,7700000140,Kazakhstan,Almaty,contact140@supplier.example,+79000000140,1.19,True,2021-10-14
+Supplier 0141,7700000141,Belarus,Minsk,contact141@supplier.example,+79000000141,1.67,True,2020-02-11
+Supplier 0142,7700000142,Russia,Saint Petersburg,contact142@supplier.example,+79000000142,3.60,True,2017-06-03
+Supplier 0143,7700000143,Armenia,Yerevan,contact143@supplier.example,+79000000143,1.34,True,2026-01-23
+Supplier 0144,7700000144,Russia,Moscow,contact144@supplier.example,+79000000144,4.20,True,2021-02-09
+Supplier 0145,7700000145,Russia,Saint Petersburg,contact145@supplier.example,+79000000145,2.49,True,2023-04-14
+Supplier 0146,7700000146,Russia,Moscow,contact146@supplier.example,+79000000146,4.33,True,2017-02-21
+Supplier 0147,7700000147,Kazakhstan,Almaty,contact147@supplier.example,+79000000147,3.05,True,2021-01-12
+Supplier 0148,7700000148,Belarus,Minsk,contact148@supplier.example,+79000000148,3.96,True,2021-05-18
+Supplier 0149,7700000149,Kazakhstan,Almaty,contact149@supplier.example,+79000000149,1.17,True,2023-04-21
+Supplier 0150,7700000150,Kazakhstan,Almaty,contact150@supplier.example,+79000000150,3.04,True,2018-01-03
+Supplier 0151,7700000151,Armenia,Yerevan,contact151@supplier.example,+79000000151,4.47,True,2019-09-05
+Supplier 0152,7700000152,Armenia,Yerevan,contact152@supplier.example,+79000000152,1.58,True,2026-07-22
+Supplier 0153,7700000153,Georgia,Tbilisi,contact153@supplier.example,+79000000153,1.34,True,2023-11-18
+Supplier 0154,7700000154,Russia,Saint Petersburg,contact154@supplier.example,+79000000154,1.89,True,2017-03-13
+Supplier 0155,7700000155,Belarus,Minsk,contact155@supplier.example,+79000000155,2.97,True,2022-07-08
+Supplier 0156,7700000156,Kazakhstan,Almaty,contact156@supplier.example,+79000000156,4.00,True,2026-02-10
+Supplier 0157,7700000157,Belarus,Minsk,contact157@supplier.example,+79000000157,3.26,True,2026-07-31
+Supplier 0158,7700000158,Georgia,Tbilisi,contact158@supplier.example,+79000000158,3.43,True,2022-01-20
+Supplier 0159,7700000159,Belarus,Minsk,contact159@supplier.example,+79000000159,3.03,True,2020-03-08
+Supplier 0160,7700000160,Kazakhstan,Almaty,contact160@supplier.example,+79000000160,3.03,True,2018-07-10
+Supplier 0161,7700000161,Kazakhstan,Almaty,contact161@supplier.example,+79000000161,4.54,True,2022-01-04
+Supplier 0162,7700000162,Belarus,Minsk,contact162@supplier.example,+79000000162,4.04,True,2017-04-20
+Supplier 0163,7700000163,Belarus,Minsk,contact163@supplier.example,+79000000163,4.54,True,2020-03-21
+Supplier 0164,7700000164,Armenia,Yerevan,contact164@supplier.example,+79000000164,4.25,True,2019-05-15
+Supplier 0165,7700000165,Armenia,Yerevan,contact165@supplier.example,+79000000165,1.78,True,2022-10-11
+Supplier 0166,7700000166,Armenia,Yerevan,contact166@supplier.example,+79000000166,2.77,True,2019-12-07
+Supplier 0167,7700000167,Georgia,Tbilisi,contact167@supplier.example,+79000000167,2.53,True,2022-09-26
+Supplier 0168,7700000168,Armenia,Yerevan,contact168@supplier.example,+79000000168,4.51,True,2020-04-17
+Supplier 0169,7700000169,Kazakhstan,Almaty,contact169@supplier.example,+79000000169,4.73,True,2021-12-24
+Supplier 0170,7700000170,Russia,Moscow,contact170@supplier.example,+79000000170,1.85,True,2021-07-14
+Supplier 0171,7700000171,Armenia,Yerevan,contact171@supplier.example,+79000000171,1.32,True,2025-08-04
+Supplier 0172,7700000172,Belarus,Minsk,contact172@supplier.example,+79000000172,2.75,True,2021-11-28
+Supplier 0173,7700000173,Armenia,Yerevan,contact173@supplier.example,+79000000173,4.63,True,2024-05-27
+Supplier 0174,7700000174,Kazakhstan,Almaty,contact174@supplier.example,+79000000174,3.53,True,2019-06-04
+Supplier 0175,7700000175,Russia,Moscow,contact175@supplier.example,+79000000175,4.69,True,2021-04-22
+Supplier 0176,7700000176,Kazakhstan,Almaty,contact176@supplier.example,+79000000176,1.84,True,2019-06-04
+Supplier 0177,7700000177,Kazakhstan,Almaty,contact177@supplier.example,+79000000177,4.20,True,2025-11-20
+Supplier 0178,7700000178,Russia,Saint Petersburg,contact178@supplier.example,+79000000178,4.53,True,2020-08-29
+Supplier 0179,7700000179,Belarus,Minsk,contact179@supplier.example,+79000000179,3.36,True,2017-06-18
+Supplier 0180,7700000180,Kazakhstan,Almaty,contact180@supplier.example,+79000000180,4.96,True,2017-02-28
+Supplier 0181,7700000181,Belarus,Minsk,contact181@supplier.example,+79000000181,1.39,True,2024-08-01
+Supplier 0182,7700000182,Russia,Saint Petersburg,contact182@supplier.example,+79000000182,4.23,True,2022-06-27
+Supplier 0183,7700000183,Russia,Saint Petersburg,contact183@supplier.example,+79000000183,3.01,True,2021-12-19
+Supplier 0184,7700000184,Russia,Saint Petersburg,contact184@supplier.example,+79000000184,4.64,True,2024-05-01
+Supplier 0185,7700000185,Russia,Moscow,contact185@supplier.example,+79000000185,2.16,True,2023-03-01
+Supplier 0186,7700000186,Russia,Moscow,contact186@supplier.example,+79000000186,1.59,True,2019-08-21
+Supplier 0187,7700000187,Russia,Saint Petersburg,contact187@supplier.example,+79000000187,1.94,True,2023-01-26
+Supplier 0188,7700000188,Kazakhstan,Almaty,contact188@supplier.example,+79000000188,3.57,True,2018-10-31
+Supplier 0189,7700000189,Kazakhstan,Almaty,contact189@supplier.example,+79000000189,3.88,True,2020-10-08
+Supplier 0190,7700000190,Belarus,Minsk,contact190@supplier.example,+79000000190,3.42,True,2024-03-24
+Supplier 0191,7700000191,Russia,Saint Petersburg,contact191@supplier.example,+79000000191,3.89,True,2023-09-16
+Supplier 0192,7700000192,Georgia,Tbilisi,contact192@supplier.example,+79000000192,2.89,True,2017-02-18
+Supplier 0193,7700000193,Georgia,Tbilisi,contact193@supplier.example,+79000000193,1.12,True,2017-03-03
+Supplier 0194,7700000194,Armenia,Yerevan,contact194@supplier.example,+79000000194,2.02,True,2024-10-30
+Supplier 0195,7700000195,Russia,Moscow,contact195@supplier.example,+79000000195,3.82,True,2022-12-18
+Supplier 0196,7700000196,Kazakhstan,Almaty,contact196@supplier.example,+79000000196,1.75,True,2021-01-17
+Supplier 0197,7700000197,Armenia,Yerevan,contact197@supplier.example,+79000000197,1.62,True,2025-05-12
+Supplier 0198,7700000198,Russia,Moscow,contact198@supplier.example,+79000000198,3.18,True,2018-04-11
+Supplier 0199,7700000199,Georgia,Tbilisi,contact199@supplier.example,+79000000199,3.78,True,2024-02-07
+Supplier 0200,7700000200,Georgia,Tbilisi,contact200@supplier.example,+79000000200,3.04,True,2022-04-17
+Supplier 0201,7700000201,Russia,Saint Petersburg,contact201@supplier.example,+79000000201,4.62,True,2021-10-26
+Supplier 0202,7700000202,Russia,Moscow,contact202@supplier.example,+79000000202,3.88,True,2017-04-09
+Supplier 0203,7700000203,Armenia,Yerevan,contact203@supplier.example,+79000000203,2.66,True,2025-03-01
+Supplier 0204,7700000204,Belarus,Minsk,contact204@supplier.example,+79000000204,3.57,True,2017-07-18
+Supplier 0205,7700000205,Armenia,Yerevan,contact205@supplier.example,+79000000205,2.88,True,2019-11-28
+Supplier 0206,7700000206,Georgia,Tbilisi,contact206@supplier.example,+79000000206,2.96,True,2019-10-20
+Supplier 0207,7700000207,Russia,Saint Petersburg,contact207@supplier.example,+79000000207,4.92,True,2022-06-01
+Supplier 0208,7700000208,Georgia,Tbilisi,contact208@supplier.example,+79000000208,2.66,True,2021-12-18
+Supplier 0209,7700000209,Kazakhstan,Almaty,contact209@supplier.example,+79000000209,1.35,True,2017-07-19
+Supplier 0210,7700000210,Armenia,Yerevan,contact210@supplier.example,+79000000210,2.65,True,2019-12-29
+Supplier 0211,7700000211,Kazakhstan,Almaty,contact211@supplier.example,+79000000211,2.61,True,2026-05-10
+Supplier 0212,7700000212,Belarus,Minsk,contact212@supplier.example,+79000000212,4.56,True,2025-10-22
+Supplier 0213,7700000213,Russia,Saint Petersburg,contact213@supplier.example,+79000000213,4.39,True,2020-11-20
+Supplier 0214,7700000214,Georgia,Tbilisi,contact214@supplier.example,+79000000214,2.66,True,2018-11-30
+Supplier 0215,7700000215,Armenia,Yerevan,contact215@supplier.example,+79000000215,2.21,True,2022-10-08
+Supplier 0216,7700000216,Kazakhstan,Almaty,contact216@supplier.example,+79000000216,4.22,True,2017-08-31
+Supplier 0217,7700000217,Armenia,Yerevan,contact217@supplier.example,+79000000217,3.88,True,2020-07-17
+Supplier 0218,7700000218,Kazakhstan,Almaty,contact218@supplier.example,+79000000218,1.47,True,2026-07-09
+Supplier 0219,7700000219,Russia,Moscow,contact219@supplier.example,+79000000219,2.12,True,2019-11-14
+Supplier 0220,7700000220,Kazakhstan,Almaty,contact220@supplier.example,+79000000220,4.45,True,2021-11-21
+Supplier 0221,7700000221,Russia,Saint Petersburg,contact221@supplier.example,+79000000221,3.93,True,2023-06-02
+Supplier 0222,7700000222,Armenia,Yerevan,contact222@supplier.example,+79000000222,1.69,True,2024-04-19
+Supplier 0223,7700000223,Russia,Saint Petersburg,contact223@supplier.example,+79000000223,1.56,True,2024-01-20
+Supplier 0224,7700000224,Georgia,Tbilisi,contact224@supplier.example,+79000000224,1.57,True,2017-06-28
+Supplier 0225,7700000225,Russia,Saint Petersburg,contact225@supplier.example,+79000000225,4.25,True,2020-06-24
+Supplier 0226,7700000226,Belarus,Minsk,contact226@supplier.example,+79000000226,2.73,True,2023-09-30
+Supplier 0227,7700000227,Russia,Saint Petersburg,contact227@supplier.example,+79000000227,4.46,True,2019-11-30
+Supplier 0228,7700000228,Kazakhstan,Almaty,contact228@supplier.example,+79000000228,1.13,True,2016-10-15
+Supplier 0229,7700000229,Armenia,Yerevan,contact229@supplier.example,+79000000229,3.62,True,2020-08-10
+Supplier 0230,7700000230,Kazakhstan,Almaty,contact230@supplier.example,+79000000230,2.59,True,2020-10-02
+Supplier 0231,7700000231,Armenia,Yerevan,contact231@supplier.example,+79000000231,3.13,True,2017-04-08
+Supplier 0232,7700000232,Belarus,Minsk,contact232@supplier.example,+79000000232,1.65,True,2026-06-08
+Supplier 0233,7700000233,Russia,Saint Petersburg,contact233@supplier.example,+79000000233,2.89,True,2018-12-19
+Supplier 0234,7700000234,Kazakhstan,Almaty,contact234@supplier.example,+79000000234,3.39,True,2020-11-27
+Supplier 0235,7700000235,Russia,Moscow,contact235@supplier.example,+79000000235,2.42,True,2017-01-31
+Supplier 0236,7700000236,Armenia,Yerevan,contact236@supplier.example,+79000000236,4.89,True,2025-07-29
+Supplier 0237,7700000237,Russia,Saint Petersburg,contact237@supplier.example,+79000000237,2.69,True,2024-06-13
+Supplier 0238,7700000238,Armenia,Yerevan,contact238@supplier.example,+79000000238,1.23,True,2016-12-09
+Supplier 0239,7700000239,Belarus,Minsk,contact239@supplier.example,+79000000239,1.88,True,2021-11-13
+Supplier 0240,7700000240,Kazakhstan,Almaty,contact240@supplier.example,+79000000240,3.37,True,2024-09-23
+Supplier 0241,7700000241,Kazakhstan,Almaty,contact241@supplier.example,+79000000241,2.10,True,2021-03-12
+Supplier 0242,7700000242,Kazakhstan,Almaty,contact242@supplier.example,+79000000242,3.57,True,2023-07-26
+Supplier 0243,7700000243,Russia,Saint Petersburg,contact243@supplier.example,+79000000243,2.94,True,2025-10-22
+Supplier 0244,7700000244,Armenia,Yerevan,contact244@supplier.example,+79000000244,4.26,True,2023-10-31
+Supplier 0245,7700000245,Russia,Saint Petersburg,contact245@supplier.example,+79000000245,1.40,True,2020-11-02
+Supplier 0246,7700000246,Kazakhstan,Almaty,contact246@supplier.example,+79000000246,1.46,True,2024-12-24
+Supplier 0247,7700000247,Kazakhstan,Almaty,contact247@supplier.example,+79000000247,4.90,True,2023-12-29
+Supplier 0248,7700000248,Georgia,Tbilisi,contact248@supplier.example,+79000000248,2.31,True,2019-03-23
+Supplier 0249,7700000249,Russia,Moscow,contact249@supplier.example,+79000000249,3.93,True,2025-01-28
+Supplier 0250,7700000250,Kazakhstan,Almaty,contact250@supplier.example,+79000000250,4.82,True,2022-02-13
+Supplier 0251,7700000251,Georgia,Tbilisi,contact251@supplier.example,+79000000251,4.82,True,2022-08-03
+Supplier 0252,7700000252,Armenia,Yerevan,contact252@supplier.example,+79000000252,4.81,True,2018-02-28
+Supplier 0253,7700000253,Kazakhstan,Almaty,contact253@supplier.example,+79000000253,2.39,True,2023-06-28
+Supplier 0254,7700000254,Armenia,Yerevan,contact254@supplier.example,+79000000254,1.37,False,2024-11-23
+Supplier 0255,7700000255,Kazakhstan,Almaty,contact255@supplier.example,+79000000255,2.39,True,2022-05-19
+Supplier 0256,7700000256,Kazakhstan,Almaty,contact256@supplier.example,+79000000256,2.06,True,2024-12-08
+Supplier 0257,7700000257,Russia,Saint Petersburg,contact257@supplier.example,+79000000257,4.33,True,2017-07-04
+Supplier 0258,7700000258,Kazakhstan,Almaty,contact258@supplier.example,+79000000258,3.96,True,2016-09-13
+Supplier 0259,7700000259,Belarus,Minsk,contact259@supplier.example,+79000000259,2.73,True,2024-11-05
+Supplier 0260,7700000260,Georgia,Tbilisi,contact260@supplier.example,+79000000260,2.11,True,2017-06-16
+Supplier 0261,7700000261,Armenia,Yerevan,contact261@supplier.example,+79000000261,4.31,True,2020-08-25
+Supplier 0262,7700000262,Kazakhstan,Almaty,contact262@supplier.example,+79000000262,1.16,True,2021-05-18
+Supplier 0263,7700000263,Russia,Moscow,contact263@supplier.example,+79000000263,4.48,True,2024-01-03
+Supplier 0264,7700000264,Armenia,Yerevan,contact264@supplier.example,+79000000264,3.97,True,2020-12-05
+Supplier 0265,7700000265,Russia,Moscow,contact265@supplier.example,+79000000265,3.07,True,2017-09-04
+Supplier 0266,7700000266,Russia,Saint Petersburg,contact266@supplier.example,+79000000266,1.40,True,2021-06-15
+Supplier 0267,7700000267,Kazakhstan,Almaty,contact267@supplier.example,+79000000267,3.05,True,2022-04-04
+Supplier 0268,7700000268,Kazakhstan,Almaty,contact268@supplier.example,+79000000268,1.21,True,2019-10-20
+Supplier 0269,7700000269,Kazakhstan,Almaty,contact269@supplier.example,+79000000269,4.61,True,2019-03-14
+Supplier 0270,7700000270,Belarus,Minsk,contact270@supplier.example,+79000000270,4.93,True,2023-08-17
+Supplier 0271,7700000271,Belarus,Minsk,contact271@supplier.example,+79000000271,2.25,True,2017-10-29
+Supplier 0272,7700000272,Russia,Moscow,contact272@supplier.example,+79000000272,2.28,True,2019-08-22
+Supplier 0273,7700000273,Armenia,Yerevan,contact273@supplier.example,+79000000273,2.86,True,2025-09-22
+Supplier 0274,7700000274,Kazakhstan,Almaty,contact274@supplier.example,+79000000274,2.03,True,2021-07-27
+Supplier 0275,7700000275,Russia,Moscow,contact275@supplier.example,+79000000275,4.28,True,2020-03-25
+Supplier 0276,7700000276,Armenia,Yerevan,contact276@supplier.example,+79000000276,2.18,True,2022-01-06
+Supplier 0277,7700000277,Russia,Saint Petersburg,contact277@supplier.example,+79000000277,2.84,True,2018-04-27
+Supplier 0278,7700000278,Belarus,Minsk,contact278@supplier.example,+79000000278,3.55,True,2022-03-14
+Supplier 0279,7700000279,Belarus,Minsk,contact279@supplier.example,+79000000279,3.99,True,2016-09-15
+Supplier 0280,7700000280,Georgia,Tbilisi,contact280@supplier.example,+79000000280,3.72,True,2025-01-08
+Supplier 0281,7700000281,Belarus,Minsk,contact281@supplier.example,+79000000281,2.90,True,2021-03-16
+Supplier 0282,7700000282,Armenia,Yerevan,contact282@supplier.example,+79000000282,3.34,True,2025-04-14
+Supplier 0283,7700000283,Russia,Saint Petersburg,contact283@supplier.example,+79000000283,1.15,True,2022-10-08
+Supplier 0284,7700000284,Georgia,Tbilisi,contact284@supplier.example,+79000000284,1.99,True,2021-09-03
+Supplier 0285,7700000285,Kazakhstan,Almaty,contact285@supplier.example,+79000000285,3.61,True,2018-10-19
+Supplier 0286,7700000286,Armenia,Yerevan,contact286@supplier.example,+79000000286,1.20,True,2022-05-11
+Supplier 0287,7700000287,Russia,Saint Petersburg,contact287@supplier.example,+79000000287,2.95,True,2025-07-14
+Supplier 0288,7700000288,Georgia,Tbilisi,contact288@supplier.example,+79000000288,1.78,True,2017-12-01
+Supplier 0289,7700000289,Armenia,Yerevan,contact289@supplier.example,+79000000289,3.30,True,2018-05-21
+Supplier 0290,7700000290,Russia,Saint Petersburg,contact290@supplier.example,+79000000290,2.24,True,2020-12-22
+Supplier 0291,7700000291,Russia,Moscow,contact291@supplier.example,+79000000291,3.57,True,2022-08-29
+Supplier 0292,7700000292,Kazakhstan,Almaty,contact292@supplier.example,+79000000292,4.79,True,2018-03-01
+Supplier 0293,7700000293,Armenia,Yerevan,contact293@supplier.example,+79000000293,3.79,True,2025-07-10
+Supplier 0294,7700000294,Georgia,Tbilisi,contact294@supplier.example,+79000000294,4.79,True,2025-09-06
+Supplier 0295,7700000295,Armenia,Yerevan,contact295@supplier.example,+79000000295,2.62,True,2021-06-29
+Supplier 0296,7700000296,Armenia,Yerevan,contact296@supplier.example,+79000000296,4.87,True,2025-06-02
+Supplier 0297,7700000297,Kazakhstan,Almaty,contact297@supplier.example,+79000000297,3.97,True,2019-12-01
+Supplier 0298,7700000298,Georgia,Tbilisi,contact298@supplier.example,+79000000298,2.16,False,2017-03-23
+Supplier 0299,7700000299,Georgia,Tbilisi,contact299@supplier.example,+79000000299,4.75,True,2026-04-19
+Supplier 0300,7700000300,Georgia,Tbilisi,contact300@supplier.example,+79000000300,2.02,True,2024-04-20
+Supplier 0301,7700000301,Kazakhstan,Almaty,contact301@supplier.example,+79000000301,2.71,True,2026-06-13
+Supplier 0302,7700000302,Belarus,Minsk,contact302@supplier.example,+79000000302,2.88,True,2025-06-08
+Supplier 0303,7700000303,Belarus,Minsk,contact303@supplier.example,+79000000303,2.50,True,2020-09-12
+Supplier 0304,7700000304,Georgia,Tbilisi,contact304@supplier.example,+79000000304,4.49,True,2022-07-10
+Supplier 0305,7700000305,Russia,Saint Petersburg,contact305@supplier.example,+79000000305,4.27,True,2019-12-01
+Supplier 0306,7700000306,Russia,Saint Petersburg,contact306@supplier.example,+79000000306,1.07,True,2022-02-26
+Supplier 0307,7700000307,Russia,Saint Petersburg,contact307@supplier.example,+79000000307,4.67,True,2021-08-21
+Supplier 0308,7700000308,Armenia,Yerevan,contact308@supplier.example,+79000000308,4.22,True,2016-09-12
+Supplier 0309,7700000309,Russia,Saint Petersburg,contact309@supplier.example,+79000000309,4.45,True,2022-12-28
+Supplier 0310,7700000310,Russia,Moscow,contact310@supplier.example,+79000000310,1.65,True,2023-08-23
+Supplier 0311,7700000311,Georgia,Tbilisi,contact311@supplier.example,+79000000311,2.31,True,2019-08-09
+Supplier 0312,7700000312,Russia,Saint Petersburg,contact312@supplier.example,+79000000312,1.64,True,2026-01-25
+Supplier 0313,7700000313,Georgia,Tbilisi,contact313@supplier.example,+79000000313,4.18,True,2023-07-31
+Supplier 0314,7700000314,Kazakhstan,Almaty,contact314@supplier.example,+79000000314,1.75,False,2023-07-05
+Supplier 0315,7700000315,Kazakhstan,Almaty,contact315@supplier.example,+79000000315,2.80,True,2022-10-03
+Supplier 0316,7700000316,Armenia,Yerevan,contact316@supplier.example,+79000000316,3.53,True,2018-10-07
+Supplier 0317,7700000317,Kazakhstan,Almaty,contact317@supplier.example,+79000000317,3.01,True,2019-04-28
+Supplier 0318,7700000318,Georgia,Tbilisi,contact318@supplier.example,+79000000318,1.61,True,2025-06-16
+Supplier 0319,7700000319,Kazakhstan,Almaty,contact319@supplier.example,+79000000319,3.80,True,2017-03-12
+Supplier 0320,7700000320,Russia,Saint Petersburg,contact320@supplier.example,+79000000320,4.83,True,2019-08-20
+Supplier 0321,7700000321,Russia,Moscow,contact321@supplier.example,+79000000321,3.66,True,2018-05-07
+Supplier 0322,7700000322,Russia,Moscow,contact322@supplier.example,+79000000322,3.36,True,2017-02-13
+Supplier 0323,7700000323,Belarus,Minsk,contact323@supplier.example,+79000000323,1.87,True,2024-11-05
+Supplier 0324,7700000324,Armenia,Yerevan,contact324@supplier.example,+79000000324,1.16,True,2023-10-09
+Supplier 0325,7700000325,Armenia,Yerevan,contact325@supplier.example,+79000000325,3.07,True,2020-11-06
+Supplier 0326,7700000326,Belarus,Minsk,contact326@supplier.example,+79000000326,4.48,True,2026-01-24
+Supplier 0327,7700000327,Georgia,Tbilisi,contact327@supplier.example,+79000000327,3.39,True,2019-09-10
+Supplier 0328,7700000328,Georgia,Tbilisi,contact328@supplier.example,+79000000328,3.95,True,2021-07-17
+Supplier 0329,7700000329,Kazakhstan,Almaty,contact329@supplier.example,+79000000329,4.00,True,2019-06-18
+Supplier 0330,7700000330,Belarus,Minsk,contact330@supplier.example,+79000000330,3.12,True,2024-08-12
+Supplier 0331,7700000331,Armenia,Yerevan,contact331@supplier.example,+79000000331,1.81,True,2019-03-06
+Supplier 0332,7700000332,Kazakhstan,Almaty,contact332@supplier.example,+79000000332,1.66,True,2020-02-14
+Supplier 0333,7700000333,Georgia,Tbilisi,contact333@supplier.example,+79000000333,4.90,True,2023-11-12
+Supplier 0334,7700000334,Georgia,Tbilisi,contact334@supplier.example,+79000000334,1.01,True,2017-05-23
+Supplier 0335,7700000335,Belarus,Minsk,contact335@supplier.example,+79000000335,3.21,True,2017-12-15
+Supplier 0336,7700000336,Kazakhstan,Almaty,contact336@supplier.example,+79000000336,2.08,True,2025-08-21
+Supplier 0337,7700000337,Russia,Saint Petersburg,contact337@supplier.example,+79000000337,2.25,True,2017-10-15
+Supplier 0338,7700000338,Georgia,Tbilisi,contact338@supplier.example,+79000000338,3.21,True,2019-04-05
+Supplier 0339,7700000339,Kazakhstan,Almaty,contact339@supplier.example,+79000000339,4.64,True,2021-05-30
+Supplier 0340,7700000340,Georgia,Tbilisi,contact340@supplier.example,+79000000340,2.74,True,2025-04-27
+Supplier 0341,7700000341,Georgia,Tbilisi,contact341@supplier.example,+79000000341,1.17,True,2018-06-10
+Supplier 0342,7700000342,Kazakhstan,Almaty,contact342@supplier.example,+79000000342,2.46,True,2024-11-01
+Supplier 0343,7700000343,Armenia,Yerevan,contact343@supplier.example,+79000000343,1.52,True,2018-12-04
+Supplier 0344,7700000344,Belarus,Minsk,contact344@supplier.example,+79000000344,1.55,True,2025-06-19
+Supplier 0345,7700000345,Armenia,Yerevan,contact345@supplier.example,+79000000345,1.44,True,2019-03-21
+Supplier 0346,7700000346,Georgia,Tbilisi,contact346@supplier.example,+79000000346,3.24,True,2020-07-16
+Supplier 0347,7700000347,Belarus,Minsk,contact347@supplier.example,+79000000347,4.70,True,2023-01-13
+Supplier 0348,7700000348,Russia,Saint Petersburg,contact348@supplier.example,+79000000348,3.66,True,2016-12-05
+Supplier 0349,7700000349,Kazakhstan,Almaty,contact349@supplier.example,+79000000349,3.45,True,2021-02-26
+Supplier 0350,7700000350,Armenia,Yerevan,contact350@supplier.example,+79000000350,4.20,True,2020-03-21
+Supplier 0351,7700000351,Russia,Saint Petersburg,contact351@supplier.example,+79000000351,4.21,True,2023-07-28
+Supplier 0352,7700000352,Belarus,Minsk,contact352@supplier.example,+79000000352,2.99,True,2021-10-26
+Supplier 0353,7700000353,Russia,Saint Petersburg,contact353@supplier.example,+79000000353,2.65,True,2020-03-21
+Supplier 0354,7700000354,Russia,Saint Petersburg,contact354@supplier.example,+79000000354,2.11,True,2020-07-27
+Supplier 0355,7700000355,Georgia,Tbilisi,contact355@supplier.example,+79000000355,4.84,True,2022-04-18
+Supplier 0356,7700000356,Kazakhstan,Almaty,contact356@supplier.example,+79000000356,2.01,True,2024-08-09
+Supplier 0357,7700000357,Georgia,Tbilisi,contact357@supplier.example,+79000000357,3.67,True,2021-09-13
+Supplier 0358,7700000358,Belarus,Minsk,contact358@supplier.example,+79000000358,4.78,True,2024-10-10
+Supplier 0359,7700000359,Georgia,Tbilisi,contact359@supplier.example,+79000000359,2.97,True,2020-12-24
+Supplier 0360,7700000360,Russia,Saint Petersburg,contact360@supplier.example,+79000000360,1.23,True,2024-01-06
+Supplier 0361,7700000361,Armenia,Yerevan,contact361@supplier.example,+79000000361,2.03,True,2023-06-28
+Supplier 0362,7700000362,Kazakhstan,Almaty,contact362@supplier.example,+79000000362,1.70,True,2021-06-13
+Supplier 0363,7700000363,Russia,Moscow,contact363@supplier.example,+79000000363,4.27,True,2025-10-11
+Supplier 0364,7700000364,Georgia,Tbilisi,contact364@supplier.example,+79000000364,4.01,True,2017-01-29
+Supplier 0365,7700000365,Kazakhstan,Almaty,contact365@supplier.example,+79000000365,2.36,True,2017-09-02
+Supplier 0366,7700000366,Armenia,Yerevan,contact366@supplier.example,+79000000366,2.42,True,2019-05-05
+Supplier 0367,7700000367,Russia,Saint Petersburg,contact367@supplier.example,+79000000367,2.04,True,2022-05-29
+Supplier 0368,7700000368,Russia,Saint Petersburg,contact368@supplier.example,+79000000368,3.13,True,2018-04-20
+Supplier 0369,7700000369,Belarus,Minsk,contact369@supplier.example,+79000000369,1.53,True,2019-12-06
+Supplier 0370,7700000370,Russia,Moscow,contact370@supplier.example,+79000000370,4.69,True,2019-12-18
+Supplier 0371,7700000371,Georgia,Tbilisi,contact371@supplier.example,+79000000371,4.91,True,2023-05-09
+Supplier 0372,7700000372,Armenia,Yerevan,contact372@supplier.example,+79000000372,1.36,True,2020-02-18
+Supplier 0373,7700000373,Georgia,Tbilisi,contact373@supplier.example,+79000000373,2.83,True,2018-04-05
+Supplier 0374,7700000374,Russia,Saint Petersburg,contact374@supplier.example,+79000000374,1.25,True,2018-02-09
+Supplier 0375,7700000375,Russia,Moscow,contact375@supplier.example,+79000000375,1.79,True,2017-08-18
+Supplier 0376,7700000376,Kazakhstan,Almaty,contact376@supplier.example,+79000000376,2.41,True,2026-01-12
+Supplier 0377,7700000377,Russia,Moscow,contact377@supplier.example,+79000000377,2.17,True,2020-03-09
+Supplier 0378,7700000378,Belarus,Minsk,contact378@supplier.example,+79000000378,3.88,True,2025-11-14
+Supplier 0379,7700000379,Armenia,Yerevan,contact379@supplier.example,+79000000379,3.12,True,2018-11-05
+Supplier 0380,7700000380,Russia,Saint Petersburg,contact380@supplier.example,+79000000380,2.26,True,2017-06-08
+Supplier 0381,7700000381,Kazakhstan,Almaty,contact381@supplier.example,+79000000381,4.63,True,2020-10-12
+Supplier 0382,7700000382,Belarus,Minsk,contact382@supplier.example,+79000000382,1.31,True,2019-03-21
+Supplier 0383,7700000383,Belarus,Minsk,contact383@supplier.example,+79000000383,1.92,True,2020-12-03
+Supplier 0384,7700000384,Russia,Saint Petersburg,contact384@supplier.example,+79000000384,1.13,False,2020-01-15
+Supplier 0385,7700000385,Russia,Moscow,contact385@supplier.example,+79000000385,3.18,True,2019-01-04
+Supplier 0386,7700000386,Kazakhstan,Almaty,contact386@supplier.example,+79000000386,1.59,True,2022-03-04
+Supplier 0387,7700000387,Georgia,Tbilisi,contact387@supplier.example,+79000000387,3.66,True,2026-05-17
+Supplier 0388,7700000388,Russia,Moscow,contact388@supplier.example,+79000000388,4.09,True,2018-02-10
+Supplier 0389,7700000389,Belarus,Minsk,contact389@supplier.example,+79000000389,3.95,True,2026-05-23
+Supplier 0390,7700000390,Armenia,Yerevan,contact390@supplier.example,+79000000390,3.94,True,2018-01-22
+Supplier 0391,7700000391,Russia,Moscow,contact391@supplier.example,+79000000391,1.80,True,2021-01-07
+Supplier 0392,7700000392,Russia,Moscow,contact392@supplier.example,+79000000392,4.46,True,2023-01-07
+Supplier 0393,7700000393,Kazakhstan,Almaty,contact393@supplier.example,+79000000393,3.50,False,2019-03-10
+Supplier 0394,7700000394,Russia,Saint Petersburg,contact394@supplier.example,+79000000394,1.44,True,2023-07-27
+Supplier 0395,7700000395,Armenia,Yerevan,contact395@supplier.example,+79000000395,2.56,True,2019-07-21
+Supplier 0396,7700000396,Russia,Saint Petersburg,contact396@supplier.example,+79000000396,2.85,True,2026-03-25
+Supplier 0397,7700000397,Georgia,Tbilisi,contact397@supplier.example,+79000000397,4.93,True,2022-03-31
+Supplier 0398,7700000398,Armenia,Yerevan,contact398@supplier.example,+79000000398,3.44,True,2021-08-28
+Supplier 0399,7700000399,Kazakhstan,Almaty,contact399@supplier.example,+79000000399,1.77,True,2025-12-16
+Supplier 0400,7700000400,Russia,Moscow,contact400@supplier.example,+79000000400,1.38,False,2017-09-12
+Supplier 0401,7700000401,Kazakhstan,Almaty,contact401@supplier.example,+79000000401,4.55,True,2025-06-02
+Supplier 0402,7700000402,Kazakhstan,Almaty,contact402@supplier.example,+79000000402,3.54,True,2025-10-04
+Supplier 0403,7700000403,Russia,Moscow,contact403@supplier.example,+79000000403,4.05,True,2023-10-19
+Supplier 0404,7700000404,Armenia,Yerevan,contact404@supplier.example,+79000000404,3.06,True,2022-09-27
+Supplier 0405,7700000405,Armenia,Yerevan,contact405@supplier.example,+79000000405,3.31,True,2019-06-24
+Supplier 0406,7700000406,Kazakhstan,Almaty,contact406@supplier.example,+79000000406,4.00,True,2021-08-21
+Supplier 0407,7700000407,Belarus,Minsk,contact407@supplier.example,+79000000407,1.42,True,2017-09-23
+Supplier 0408,7700000408,Armenia,Yerevan,contact408@supplier.example,+79000000408,3.03,True,2022-06-07
+Supplier 0409,7700000409,Russia,Moscow,contact409@supplier.example,+79000000409,4.36,True,2025-08-20
+Supplier 0410,7700000410,Russia,Saint Petersburg,contact410@supplier.example,+79000000410,1.29,True,2023-10-06
+Supplier 0411,7700000411,Armenia,Yerevan,contact411@supplier.example,+79000000411,1.18,True,2021-01-09
+Supplier 0412,7700000412,Armenia,Yerevan,contact412@supplier.example,+79000000412,3.13,True,2018-05-14
+Supplier 0413,7700000413,Georgia,Tbilisi,contact413@supplier.example,+79000000413,3.72,False,2022-07-16
+Supplier 0414,7700000414,Belarus,Minsk,contact414@supplier.example,+79000000414,4.20,True,2018-05-12
+Supplier 0415,7700000415,Russia,Saint Petersburg,contact415@supplier.example,+79000000415,1.46,True,2017-01-20
+Supplier 0416,7700000416,Belarus,Minsk,contact416@supplier.example,+79000000416,1.72,True,2026-02-17
+Supplier 0417,7700000417,Russia,Saint Petersburg,contact417@supplier.example,+79000000417,1.05,True,2022-03-13
+Supplier 0418,7700000418,Kazakhstan,Almaty,contact418@supplier.example,+79000000418,1.59,True,2019-01-03
+Supplier 0419,7700000419,Armenia,Yerevan,contact419@supplier.example,+79000000419,4.49,True,2023-04-30
+Supplier 0420,7700000420,Russia,Moscow,contact420@supplier.example,+79000000420,2.00,True,2018-08-11
+Supplier 0421,7700000421,Kazakhstan,Almaty,contact421@supplier.example,+79000000421,1.36,True,2018-08-19
+Supplier 0422,7700000422,Russia,Moscow,contact422@supplier.example,+79000000422,1.55,True,2023-04-28
+Supplier 0423,7700000423,Belarus,Minsk,contact423@supplier.example,+79000000423,4.13,True,2026-03-06
+Supplier 0424,7700000424,Armenia,Yerevan,contact424@supplier.example,+79000000424,3.95,True,2019-03-28
+Supplier 0425,7700000425,Belarus,Minsk,contact425@supplier.example,+79000000425,2.35,True,2020-02-03
+Supplier 0426,7700000426,Belarus,Minsk,contact426@supplier.example,+79000000426,4.47,True,2018-07-01
+Supplier 0427,7700000427,Armenia,Yerevan,contact427@supplier.example,+79000000427,3.88,True,2020-09-30
+Supplier 0428,7700000428,Russia,Moscow,contact428@supplier.example,+79000000428,2.32,True,2020-08-10
+Supplier 0429,7700000429,Kazakhstan,Almaty,contact429@supplier.example,+79000000429,3.98,True,2025-12-08
+Supplier 0430,7700000430,Russia,Moscow,contact430@supplier.example,+79000000430,3.64,True,2023-06-27
+Supplier 0431,7700000431,Armenia,Yerevan,contact431@supplier.example,+79000000431,1.65,True,2023-12-11
+Supplier 0432,7700000432,Belarus,Minsk,contact432@supplier.example,+79000000432,1.48,True,2023-10-31
+Supplier 0433,7700000433,Russia,Moscow,contact433@supplier.example,+79000000433,4.95,True,2025-12-30
+Supplier 0434,7700000434,Georgia,Tbilisi,contact434@supplier.example,+79000000434,2.02,True,2025-04-30
+Supplier 0435,7700000435,Georgia,Tbilisi,contact435@supplier.example,+79000000435,2.80,True,2017-05-26
+Supplier 0436,7700000436,Armenia,Yerevan,contact436@supplier.example,+79000000436,3.16,True,2024-05-20
+Supplier 0437,7700000437,Armenia,Yerevan,contact437@supplier.example,+79000000437,2.90,True,2021-01-27
+Supplier 0438,7700000438,Georgia,Tbilisi,contact438@supplier.example,+79000000438,1.17,True,2024-11-04
+Supplier 0439,7700000439,Kazakhstan,Almaty,contact439@supplier.example,+79000000439,1.63,True,2018-11-13
+Supplier 0440,7700000440,Russia,Saint Petersburg,contact440@supplier.example,+79000000440,1.98,True,2026-01-17
+Supplier 0441,7700000441,Kazakhstan,Almaty,contact441@supplier.example,+79000000441,2.29,True,2018-06-22
+Supplier 0442,7700000442,Russia,Saint Petersburg,contact442@supplier.example,+79000000442,2.66,True,2022-04-14
+Supplier 0443,7700000443,Belarus,Minsk,contact443@supplier.example,+79000000443,3.88,True,2016-10-14
+Supplier 0444,7700000444,Georgia,Tbilisi,contact444@supplier.example,+79000000444,2.27,True,2018-05-05
+Supplier 0445,7700000445,Georgia,Tbilisi,contact445@supplier.example,+79000000445,1.96,True,2018-02-14
+Supplier 0446,7700000446,Belarus,Minsk,contact446@supplier.example,+79000000446,3.06,True,2020-10-16
+Supplier 0447,7700000447,Kazakhstan,Almaty,contact447@supplier.example,+79000000447,2.70,True,2018-12-20
+Supplier 0448,7700000448,Belarus,Minsk,contact448@supplier.example,+79000000448,1.05,True,2017-06-28
+Supplier 0449,7700000449,Belarus,Minsk,contact449@supplier.example,+79000000449,1.50,True,2025-01-21
+Supplier 0450,7700000450,Russia,Moscow,contact450@supplier.example,+79000000450,2.98,True,2017-01-03
+Supplier 0451,7700000451,Russia,Moscow,contact451@supplier.example,+79000000451,3.43,True,2022-01-22
+Supplier 0452,7700000452,Russia,Saint Petersburg,contact452@supplier.example,+79000000452,4.55,True,2021-04-12
+Supplier 0453,7700000453,Belarus,Minsk,contact453@supplier.example,+79000000453,2.69,True,2022-11-30
+Supplier 0454,7700000454,Kazakhstan,Almaty,contact454@supplier.example,+79000000454,3.90,True,2018-03-18
+Supplier 0455,7700000455,Kazakhstan,Almaty,contact455@supplier.example,+79000000455,1.45,True,2016-09-27
+Supplier 0456,7700000456,Belarus,Minsk,contact456@supplier.example,+79000000456,1.11,True,2022-02-26
+Supplier 0457,7700000457,Georgia,Tbilisi,contact457@supplier.example,+79000000457,3.36,True,2021-08-08
+Supplier 0458,7700000458,Armenia,Yerevan,contact458@supplier.example,+79000000458,2.39,True,2026-07-17
+Supplier 0459,7700000459,Georgia,Tbilisi,contact459@supplier.example,+79000000459,3.87,True,2019-01-24
+Supplier 0460,7700000460,Belarus,Minsk,contact460@supplier.example,+79000000460,4.71,True,2020-10-03
+Supplier 0461,7700000461,Belarus,Minsk,contact461@supplier.example,+79000000461,4.93,True,2022-08-05
+Supplier 0462,7700000462,Russia,Saint Petersburg,contact462@supplier.example,+79000000462,1.35,True,2018-11-30
+Supplier 0463,7700000463,Armenia,Yerevan,contact463@supplier.example,+79000000463,4.49,False,2019-10-11
+Supplier 0464,7700000464,Armenia,Yerevan,contact464@supplier.example,+79000000464,1.66,True,2018-10-21
+Supplier 0465,7700000465,Kazakhstan,Almaty,contact465@supplier.example,+79000000465,3.45,True,2018-10-09
+Supplier 0466,7700000466,Belarus,Minsk,contact466@supplier.example,+79000000466,2.62,True,2022-02-14
+Supplier 0467,7700000467,Kazakhstan,Almaty,contact467@supplier.example,+79000000467,4.30,True,2020-01-06
+Supplier 0468,7700000468,Georgia,Tbilisi,contact468@supplier.example,+79000000468,1.22,True,2016-09-21
+Supplier 0469,7700000469,Georgia,Tbilisi,contact469@supplier.example,+79000000469,4.89,True,2018-06-10
+Supplier 0470,7700000470,Kazakhstan,Almaty,contact470@supplier.example,+79000000470,3.56,True,2024-07-26
+Supplier 0471,7700000471,Russia,Moscow,contact471@supplier.example,+79000000471,1.96,True,2022-05-23
+Supplier 0472,7700000472,Georgia,Tbilisi,contact472@supplier.example,+79000000472,3.76,True,2024-02-23
+Supplier 0473,7700000473,Russia,Moscow,contact473@supplier.example,+79000000473,4.84,True,2025-10-30
+Supplier 0474,7700000474,Armenia,Yerevan,contact474@supplier.example,+79000000474,2.06,True,2020-04-16
+Supplier 0475,7700000475,Belarus,Minsk,contact475@supplier.example,+79000000475,3.20,True,2021-01-10
+Supplier 0476,7700000476,Russia,Saint Petersburg,contact476@supplier.example,+79000000476,2.71,True,2020-08-29
+Supplier 0477,7700000477,Armenia,Yerevan,contact477@supplier.example,+79000000477,4.16,True,2024-07-09
+Supplier 0478,7700000478,Georgia,Tbilisi,contact478@supplier.example,+79000000478,4.05,True,2022-04-09
+Supplier 0479,7700000479,Russia,Moscow,contact479@supplier.example,+79000000479,4.58,True,2024-10-14
+Supplier 0480,7700000480,Georgia,Tbilisi,contact480@supplier.example,+79000000480,2.39,True,2018-04-29
+Supplier 0481,7700000481,Kazakhstan,Almaty,contact481@supplier.example,+79000000481,3.64,True,2023-10-22
+Supplier 0482,7700000482,Armenia,Yerevan,contact482@supplier.example,+79000000482,4.51,True,2025-05-30
+Supplier 0483,7700000483,Russia,Saint Petersburg,contact483@supplier.example,+79000000483,3.87,True,2020-11-18
+Supplier 0484,7700000484,Kazakhstan,Almaty,contact484@supplier.example,+79000000484,2.33,True,2021-07-13
+Supplier 0485,7700000485,Russia,Moscow,contact485@supplier.example,+79000000485,1.69,True,2020-01-26
+Supplier 0486,7700000486,Russia,Moscow,contact486@supplier.example,+79000000486,2.90,True,2018-09-21
+Supplier 0487,7700000487,Armenia,Yerevan,contact487@supplier.example,+79000000487,2.53,True,2017-03-22
+Supplier 0488,7700000488,Belarus,Minsk,contact488@supplier.example,+79000000488,4.15,True,2021-09-08
+Supplier 0489,7700000489,Belarus,Minsk,contact489@supplier.example,+79000000489,2.30,True,2018-06-02
+Supplier 0490,7700000490,Belarus,Minsk,contact490@supplier.example,+79000000490,4.59,True,2018-07-17
+Supplier 0491,7700000491,Georgia,Tbilisi,contact491@supplier.example,+79000000491,1.66,True,2016-12-03
+Supplier 0492,7700000492,Russia,Saint Petersburg,contact492@supplier.example,+79000000492,2.09,True,2022-01-25
+Supplier 0493,7700000493,Armenia,Yerevan,contact493@supplier.example,+79000000493,4.72,True,2020-12-03
+Supplier 0494,7700000494,Kazakhstan,Almaty,contact494@supplier.example,+79000000494,3.65,True,2022-03-30
+Supplier 0495,7700000495,Georgia,Tbilisi,contact495@supplier.example,+79000000495,4.69,True,2021-07-21
+Supplier 0496,7700000496,Russia,Saint Petersburg,contact496@supplier.example,+79000000496,2.71,True,2016-11-29
+Supplier 0497,7700000497,Russia,Moscow,contact497@supplier.example,+79000000497,3.15,True,2024-09-17
+Supplier 0498,7700000498,Russia,Saint Petersburg,contact498@supplier.example,+79000000498,1.68,True,2017-09-24
+Supplier 0499,7700000499,Georgia,Tbilisi,contact499@supplier.example,+79000000499,1.14,True,2020-12-17
+Supplier 0500,7700000500,Russia,Saint Petersburg,contact500@supplier.example,+79000000500,2.89,True,2026-02-17
+Supplier 0501,7700000501,Georgia,Tbilisi,contact501@supplier.example,+79000000501,4.63,True,2017-02-02
+Supplier 0502,7700000502,Belarus,Minsk,contact502@supplier.example,+79000000502,1.08,True,2019-06-24
+Supplier 0503,7700000503,Armenia,Yerevan,contact503@supplier.example,+79000000503,3.40,True,2023-06-24
+Supplier 0504,7700000504,Armenia,Yerevan,contact504@supplier.example,+79000000504,4.04,True,2021-12-06
+Supplier 0505,7700000505,Russia,Moscow,contact505@supplier.example,+79000000505,2.76,True,2026-02-13
+Supplier 0506,7700000506,Belarus,Minsk,contact506@supplier.example,+79000000506,3.81,True,2024-08-05
+Supplier 0507,7700000507,Georgia,Tbilisi,contact507@supplier.example,+79000000507,1.52,True,2025-03-06
+Supplier 0508,7700000508,Belarus,Minsk,contact508@supplier.example,+79000000508,1.33,True,2017-09-30
+Supplier 0509,7700000509,Kazakhstan,Almaty,contact509@supplier.example,+79000000509,4.31,True,2020-06-17
+Supplier 0510,7700000510,Armenia,Yerevan,contact510@supplier.example,+79000000510,2.75,True,2025-05-27
+Supplier 0511,7700000511,Russia,Saint Petersburg,contact511@supplier.example,+79000000511,2.73,True,2020-04-29
+Supplier 0512,7700000512,Kazakhstan,Almaty,contact512@supplier.example,+79000000512,3.09,True,2024-12-25
+Supplier 0513,7700000513,Belarus,Minsk,contact513@supplier.example,+79000000513,4.69,True,2022-10-07
+Supplier 0514,7700000514,Belarus,Minsk,contact514@supplier.example,+79000000514,1.14,True,2024-02-02
+Supplier 0515,7700000515,Georgia,Tbilisi,contact515@supplier.example,+79000000515,1.60,True,2019-01-27
+Supplier 0516,7700000516,Armenia,Yerevan,contact516@supplier.example,+79000000516,2.14,True,2022-11-28
+Supplier 0517,7700000517,Russia,Saint Petersburg,contact517@supplier.example,+79000000517,1.31,True,2018-08-01
+Supplier 0518,7700000518,Georgia,Tbilisi,contact518@supplier.example,+79000000518,4.83,True,2016-10-25
+Supplier 0519,7700000519,Georgia,Tbilisi,contact519@supplier.example,+79000000519,3.67,True,2024-06-07
+Supplier 0520,7700000520,Georgia,Tbilisi,contact520@supplier.example,+79000000520,1.25,False,2022-03-12
+Supplier 0521,7700000521,Russia,Saint Petersburg,contact521@supplier.example,+79000000521,3.27,True,2021-06-21
+Supplier 0522,7700000522,Georgia,Tbilisi,contact522@supplier.example,+79000000522,2.58,True,2025-07-07
+Supplier 0523,7700000523,Russia,Saint Petersburg,contact523@supplier.example,+79000000523,4.35,True,2025-09-30
+Supplier 0524,7700000524,Russia,Moscow,contact524@supplier.example,+79000000524,3.22,True,2016-10-15
+Supplier 0525,7700000525,Belarus,Minsk,contact525@supplier.example,+79000000525,1.34,True,2021-04-28
+Supplier 0526,7700000526,Georgia,Tbilisi,contact526@supplier.example,+79000000526,1.43,True,2025-01-11
+Supplier 0527,7700000527,Armenia,Yerevan,contact527@supplier.example,+79000000527,1.09,True,2021-11-10
+Supplier 0528,7700000528,Georgia,Tbilisi,contact528@supplier.example,+79000000528,1.93,True,2019-07-19
+Supplier 0529,7700000529,Kazakhstan,Almaty,contact529@supplier.example,+79000000529,4.72,True,2024-03-13
+Supplier 0530,7700000530,Russia,Moscow,contact530@supplier.example,+79000000530,3.56,True,2022-11-25
+Supplier 0531,7700000531,Russia,Moscow,contact531@supplier.example,+79000000531,2.14,True,2016-12-02
+Supplier 0532,7700000532,Armenia,Yerevan,contact532@supplier.example,+79000000532,3.85,True,2017-07-30
+Supplier 0533,7700000533,Russia,Moscow,contact533@supplier.example,+79000000533,3.14,True,2017-12-10
+Supplier 0534,7700000534,Russia,Saint Petersburg,contact534@supplier.example,+79000000534,3.79,True,2026-07-03
+Supplier 0535,7700000535,Armenia,Yerevan,contact535@supplier.example,+79000000535,4.34,True,2022-11-28
+Supplier 0536,7700000536,Russia,Moscow,contact536@supplier.example,+79000000536,1.48,True,2020-03-06
+Supplier 0537,7700000537,Armenia,Yerevan,contact537@supplier.example,+79000000537,1.90,True,2024-06-07
+Supplier 0538,7700000538,Georgia,Tbilisi,contact538@supplier.example,+79000000538,2.12,True,2017-07-08
+Supplier 0539,7700000539,Russia,Moscow,contact539@supplier.example,+79000000539,2.03,True,2021-12-03
+Supplier 0540,7700000540,Russia,Moscow,contact540@supplier.example,+79000000540,2.50,True,2024-08-20
+Supplier 0541,7700000541,Russia,Saint Petersburg,contact541@supplier.example,+79000000541,2.41,True,2024-04-27
+Supplier 0542,7700000542,Russia,Saint Petersburg,contact542@supplier.example,+79000000542,1.77,True,2024-10-06
+Supplier 0543,7700000543,Russia,Saint Petersburg,contact543@supplier.example,+79000000543,3.99,True,2018-07-01
+Supplier 0544,7700000544,Kazakhstan,Almaty,contact544@supplier.example,+79000000544,1.60,True,2024-07-05
+Supplier 0545,7700000545,Georgia,Tbilisi,contact545@supplier.example,+79000000545,1.65,True,2024-07-18
+Supplier 0546,7700000546,Russia,Saint Petersburg,contact546@supplier.example,+79000000546,4.32,True,2023-04-23
+Supplier 0547,7700000547,Belarus,Minsk,contact547@supplier.example,+79000000547,1.66,True,2021-04-07
+Supplier 0548,7700000548,Belarus,Minsk,contact548@supplier.example,+79000000548,1.34,True,2024-08-20
+Supplier 0549,7700000549,Russia,Saint Petersburg,contact549@supplier.example,+79000000549,2.59,True,2018-08-15
+Supplier 0550,7700000550,Kazakhstan,Almaty,contact550@supplier.example,+79000000550,3.55,False,2022-01-18
+Supplier 0551,7700000551,Belarus,Minsk,contact551@supplier.example,+79000000551,2.95,True,2025-03-20
+Supplier 0552,7700000552,Kazakhstan,Almaty,contact552@supplier.example,+79000000552,4.17,False,2021-03-28
+Supplier 0553,7700000553,Armenia,Yerevan,contact553@supplier.example,+79000000553,2.96,True,2018-12-11
+Supplier 0554,7700000554,Russia,Saint Petersburg,contact554@supplier.example,+79000000554,4.62,True,2023-08-02
+Supplier 0555,7700000555,Russia,Saint Petersburg,contact555@supplier.example,+79000000555,4.32,True,2025-07-29
+Supplier 0556,7700000556,Armenia,Yerevan,contact556@supplier.example,+79000000556,1.67,True,2024-05-14
+Supplier 0557,7700000557,Russia,Moscow,contact557@supplier.example,+79000000557,4.09,True,2020-04-19
+Supplier 0558,7700000558,Russia,Moscow,contact558@supplier.example,+79000000558,1.96,True,2019-09-17
+Supplier 0559,7700000559,Belarus,Minsk,contact559@supplier.example,+79000000559,1.21,True,2024-06-11
+Supplier 0560,7700000560,Armenia,Yerevan,contact560@supplier.example,+79000000560,4.84,True,2023-12-18
+Supplier 0561,7700000561,Belarus,Minsk,contact561@supplier.example,+79000000561,2.72,True,2019-06-10
+Supplier 0562,7700000562,Georgia,Tbilisi,contact562@supplier.example,+79000000562,3.70,True,2022-02-18
+Supplier 0563,7700000563,Russia,Saint Petersburg,contact563@supplier.example,+79000000563,2.50,True,2024-01-27
+Supplier 0564,7700000564,Russia,Moscow,contact564@supplier.example,+79000000564,1.32,True,2020-02-15
+Supplier 0565,7700000565,Kazakhstan,Almaty,contact565@supplier.example,+79000000565,2.01,True,2022-10-07
+Supplier 0566,7700000566,Georgia,Tbilisi,contact566@supplier.example,+79000000566,1.53,True,2017-11-15
+Supplier 0567,7700000567,Belarus,Minsk,contact567@supplier.example,+79000000567,1.38,True,2023-08-20
+Supplier 0568,7700000568,Kazakhstan,Almaty,contact568@supplier.example,+79000000568,4.60,True,2023-07-17
+Supplier 0569,7700000569,Georgia,Tbilisi,contact569@supplier.example,+79000000569,2.23,True,2024-01-11
+Supplier 0570,7700000570,Kazakhstan,Almaty,contact570@supplier.example,+79000000570,3.92,True,2019-06-04
+Supplier 0571,7700000571,Russia,Saint Petersburg,contact571@supplier.example,+79000000571,4.60,True,2020-07-03
+Supplier 0572,7700000572,Kazakhstan,Almaty,contact572@supplier.example,+79000000572,2.73,True,2021-05-10
+Supplier 0573,7700000573,Armenia,Yerevan,contact573@supplier.example,+79000000573,4.12,True,2023-05-16
+Supplier 0574,7700000574,Armenia,Yerevan,contact574@supplier.example,+79000000574,1.07,True,2021-09-09
+Supplier 0575,7700000575,Kazakhstan,Almaty,contact575@supplier.example,+79000000575,4.36,True,2018-08-09
+Supplier 0576,7700000576,Armenia,Yerevan,contact576@supplier.example,+79000000576,3.47,True,2022-08-27
+Supplier 0577,7700000577,Russia,Moscow,contact577@supplier.example,+79000000577,2.27,True,2024-08-18
+Supplier 0578,7700000578,Belarus,Minsk,contact578@supplier.example,+79000000578,1.01,True,2024-05-24
+Supplier 0579,7700000579,Armenia,Yerevan,contact579@supplier.example,+79000000579,1.02,True,2021-03-18
+Supplier 0580,7700000580,Russia,Moscow,contact580@supplier.example,+79000000580,4.54,True,2020-07-23
+Supplier 0581,7700000581,Georgia,Tbilisi,contact581@supplier.example,+79000000581,2.64,True,2023-12-02
+Supplier 0582,7700000582,Kazakhstan,Almaty,contact582@supplier.example,+79000000582,4.38,True,2026-07-06
+Supplier 0583,7700000583,Kazakhstan,Almaty,contact583@supplier.example,+79000000583,4.33,True,2017-04-26
+Supplier 0584,7700000584,Armenia,Yerevan,contact584@supplier.example,+79000000584,1.45,True,2021-10-07
+Supplier 0585,7700000585,Russia,Moscow,contact585@supplier.example,+79000000585,1.68,True,2021-02-08
+Supplier 0586,7700000586,Armenia,Yerevan,contact586@supplier.example,+79000000586,1.41,True,2020-08-02
+Supplier 0587,7700000587,Russia,Saint Petersburg,contact587@supplier.example,+79000000587,2.34,True,2025-04-11
+Supplier 0588,7700000588,Belarus,Minsk,contact588@supplier.example,+79000000588,2.48,True,2024-07-31
+Supplier 0589,7700000589,Russia,Moscow,contact589@supplier.example,+79000000589,3.09,True,2024-04-16
+Supplier 0590,7700000590,Kazakhstan,Almaty,contact590@supplier.example,+79000000590,3.69,True,2024-07-28
+Supplier 0591,7700000591,Russia,Saint Petersburg,contact591@supplier.example,+79000000591,4.16,True,2019-02-23
+Supplier 0592,7700000592,Russia,Moscow,contact592@supplier.example,+79000000592,4.26,True,2017-11-30
+Supplier 0593,7700000593,Armenia,Yerevan,contact593@supplier.example,+79000000593,2.98,True,2025-05-20
+Supplier 0594,7700000594,Armenia,Yerevan,contact594@supplier.example,+79000000594,1.89,True,2021-05-11
+Supplier 0595,7700000595,Russia,Saint Petersburg,contact595@supplier.example,+79000000595,1.53,True,2018-12-16
+Supplier 0596,7700000596,Georgia,Tbilisi,contact596@supplier.example,+79000000596,2.70,True,2021-09-08
+Supplier 0597,7700000597,Russia,Moscow,contact597@supplier.example,+79000000597,3.14,True,2017-01-02
+Supplier 0598,7700000598,Belarus,Minsk,contact598@supplier.example,+79000000598,1.16,True,2023-01-01
+Supplier 0599,7700000599,Armenia,Yerevan,contact599@supplier.example,+79000000599,2.62,True,2020-08-07
+Supplier 0600,7700000600,Russia,Saint Petersburg,contact600@supplier.example,+79000000600,4.13,True,2019-07-20
+Supplier 0601,7700000601,Russia,Moscow,contact601@supplier.example,+79000000601,3.19,True,2023-04-28
+Supplier 0602,7700000602,Armenia,Yerevan,contact602@supplier.example,+79000000602,4.84,True,2023-06-24
+Supplier 0603,7700000603,Armenia,Yerevan,contact603@supplier.example,+79000000603,2.56,True,2022-03-16
+Supplier 0604,7700000604,Kazakhstan,Almaty,contact604@supplier.example,+79000000604,3.53,True,2021-05-22
+Supplier 0605,7700000605,Armenia,Yerevan,contact605@supplier.example,+79000000605,1.75,True,2025-04-09
+Supplier 0606,7700000606,Russia,Saint Petersburg,contact606@supplier.example,+79000000606,2.09,False,2019-02-01
+Supplier 0607,7700000607,Russia,Saint Petersburg,contact607@supplier.example,+79000000607,2.87,False,2023-06-06
+Supplier 0608,7700000608,Russia,Moscow,contact608@supplier.example,+79000000608,3.85,True,2025-01-10
+Supplier 0609,7700000609,Belarus,Minsk,contact609@supplier.example,+79000000609,1.65,True,2019-07-14
+Supplier 0610,7700000610,Armenia,Yerevan,contact610@supplier.example,+79000000610,2.20,True,2021-05-10
+Supplier 0611,7700000611,Belarus,Minsk,contact611@supplier.example,+79000000611,1.81,True,2026-07-13
+Supplier 0612,7700000612,Armenia,Yerevan,contact612@supplier.example,+79000000612,1.05,True,2019-10-24
+Supplier 0613,7700000613,Georgia,Tbilisi,contact613@supplier.example,+79000000613,4.78,True,2025-05-13
+Supplier 0614,7700000614,Georgia,Tbilisi,contact614@supplier.example,+79000000614,2.53,True,2018-03-04
+Supplier 0615,7700000615,Russia,Saint Petersburg,contact615@supplier.example,+79000000615,1.13,True,2019-02-07
+Supplier 0616,7700000616,Armenia,Yerevan,contact616@supplier.example,+79000000616,4.83,True,2021-01-10
+Supplier 0617,7700000617,Belarus,Minsk,contact617@supplier.example,+79000000617,1.15,True,2019-07-20
+Supplier 0618,7700000618,Russia,Saint Petersburg,contact618@supplier.example,+79000000618,2.20,True,2024-03-09
+Supplier 0619,7700000619,Georgia,Tbilisi,contact619@supplier.example,+79000000619,3.63,True,2019-04-08
+Supplier 0620,7700000620,Belarus,Minsk,contact620@supplier.example,+79000000620,2.38,True,2020-12-17
+Supplier 0621,7700000621,Russia,Moscow,contact621@supplier.example,+79000000621,3.86,True,2023-02-01
+Supplier 0622,7700000622,Kazakhstan,Almaty,contact622@supplier.example,+79000000622,1.77,False,2016-11-15
+Supplier 0623,7700000623,Armenia,Yerevan,contact623@supplier.example,+79000000623,3.29,True,2016-12-13
+Supplier 0624,7700000624,Armenia,Yerevan,contact624@supplier.example,+79000000624,1.72,True,2018-03-18
+Supplier 0625,7700000625,Russia,Moscow,contact625@supplier.example,+79000000625,1.16,True,2019-12-01
+Supplier 0626,7700000626,Russia,Saint Petersburg,contact626@supplier.example,+79000000626,3.36,True,2024-08-06
+Supplier 0627,7700000627,Kazakhstan,Almaty,contact627@supplier.example,+79000000627,4.20,True,2024-11-29
+Supplier 0628,7700000628,Armenia,Yerevan,contact628@supplier.example,+79000000628,4.34,True,2022-10-07
+Supplier 0629,7700000629,Russia,Moscow,contact629@supplier.example,+79000000629,4.88,True,2021-07-04
+Supplier 0630,7700000630,Kazakhstan,Almaty,contact630@supplier.example,+79000000630,2.85,True,2022-05-27
+Supplier 0631,7700000631,Russia,Saint Petersburg,contact631@supplier.example,+79000000631,2.16,True,2024-09-20
+Supplier 0632,7700000632,Russia,Moscow,contact632@supplier.example,+79000000632,4.74,True,2024-03-27
+Supplier 0633,7700000633,Georgia,Tbilisi,contact633@supplier.example,+79000000633,1.93,True,2020-05-26
+Supplier 0634,7700000634,Armenia,Yerevan,contact634@supplier.example,+79000000634,2.91,True,2020-04-29
+Supplier 0635,7700000635,Georgia,Tbilisi,contact635@supplier.example,+79000000635,4.34,True,2018-08-24
+Supplier 0636,7700000636,Armenia,Yerevan,contact636@supplier.example,+79000000636,1.38,True,2022-03-27
+Supplier 0637,7700000637,Georgia,Tbilisi,contact637@supplier.example,+79000000637,2.72,True,2021-06-21
+Supplier 0638,7700000638,Kazakhstan,Almaty,contact638@supplier.example,+79000000638,1.61,True,2025-05-18
+Supplier 0639,7700000639,Kazakhstan,Almaty,contact639@supplier.example,+79000000639,3.96,True,2020-11-12
+Supplier 0640,7700000640,Armenia,Yerevan,contact640@supplier.example,+79000000640,3.03,True,2022-01-16
+Supplier 0641,7700000641,Georgia,Tbilisi,contact641@supplier.example,+79000000641,3.11,True,2022-12-06
+Supplier 0642,7700000642,Armenia,Yerevan,contact642@supplier.example,+79000000642,4.24,True,2020-08-01
+Supplier 0643,7700000643,Georgia,Tbilisi,contact643@supplier.example,+79000000643,3.72,True,2017-10-12
+Supplier 0644,7700000644,Belarus,Minsk,contact644@supplier.example,+79000000644,1.30,True,2024-10-16
+Supplier 0645,7700000645,Russia,Saint Petersburg,contact645@supplier.example,+79000000645,2.24,True,2019-04-28
+Supplier 0646,7700000646,Georgia,Tbilisi,contact646@supplier.example,+79000000646,1.38,True,2020-08-22
+Supplier 0647,7700000647,Georgia,Tbilisi,contact647@supplier.example,+79000000647,3.20,True,2025-07-06
+Supplier 0648,7700000648,Armenia,Yerevan,contact648@supplier.example,+79000000648,4.59,True,2020-05-01
+Supplier 0649,7700000649,Russia,Saint Petersburg,contact649@supplier.example,+79000000649,2.25,True,2020-03-19
+Supplier 0650,7700000650,Armenia,Yerevan,contact650@supplier.example,+79000000650,1.75,True,2023-12-06
+Supplier 0651,7700000651,Georgia,Tbilisi,contact651@supplier.example,+79000000651,1.51,True,2021-07-30
+Supplier 0652,7700000652,Russia,Saint Petersburg,contact652@supplier.example,+79000000652,2.65,True,2019-08-20
+Supplier 0653,7700000653,Armenia,Yerevan,contact653@supplier.example,+79000000653,1.97,True,2024-03-25
+Supplier 0654,7700000654,Kazakhstan,Almaty,contact654@supplier.example,+79000000654,1.56,True,2017-10-20
+Supplier 0655,7700000655,Georgia,Tbilisi,contact655@supplier.example,+79000000655,4.06,False,2019-01-10
+Supplier 0656,7700000656,Armenia,Yerevan,contact656@supplier.example,+79000000656,1.60,True,2021-06-27
+Supplier 0657,7700000657,Kazakhstan,Almaty,contact657@supplier.example,+79000000657,1.08,True,2023-06-24
+Supplier 0658,7700000658,Kazakhstan,Almaty,contact658@supplier.example,+79000000658,3.78,True,2019-09-23
+Supplier 0659,7700000659,Kazakhstan,Almaty,contact659@supplier.example,+79000000659,4.69,True,2022-01-31
+Supplier 0660,7700000660,Georgia,Tbilisi,contact660@supplier.example,+79000000660,2.29,True,2020-04-25
+Supplier 0661,7700000661,Belarus,Minsk,contact661@supplier.example,+79000000661,2.49,True,2017-06-07
+Supplier 0662,7700000662,Russia,Moscow,contact662@supplier.example,+79000000662,1.92,False,2022-10-19
+Supplier 0663,7700000663,Armenia,Yerevan,contact663@supplier.example,+79000000663,3.24,True,2021-12-27
+Supplier 0664,7700000664,Belarus,Minsk,contact664@supplier.example,+79000000664,4.80,True,2025-11-17
+Supplier 0665,7700000665,Belarus,Minsk,contact665@supplier.example,+79000000665,3.37,True,2017-11-02
+Supplier 0666,7700000666,Russia,Saint Petersburg,contact666@supplier.example,+79000000666,2.40,True,2025-06-25
+Supplier 0667,7700000667,Kazakhstan,Almaty,contact667@supplier.example,+79000000667,3.06,True,2018-05-04
+Supplier 0668,7700000668,Georgia,Tbilisi,contact668@supplier.example,+79000000668,1.80,True,2017-11-02
+Supplier 0669,7700000669,Kazakhstan,Almaty,contact669@supplier.example,+79000000669,4.64,True,2018-06-08
+Supplier 0670,7700000670,Belarus,Minsk,contact670@supplier.example,+79000000670,1.57,True,2020-08-05
+Supplier 0671,7700000671,Georgia,Tbilisi,contact671@supplier.example,+79000000671,3.99,True,2017-07-14
+Supplier 0672,7700000672,Belarus,Minsk,contact672@supplier.example,+79000000672,1.10,True,2024-07-29
+Supplier 0673,7700000673,Kazakhstan,Almaty,contact673@supplier.example,+79000000673,2.56,True,2017-04-29
+Supplier 0674,7700000674,Georgia,Tbilisi,contact674@supplier.example,+79000000674,4.39,True,2019-04-07
+Supplier 0675,7700000675,Belarus,Minsk,contact675@supplier.example,+79000000675,2.51,True,2019-07-06
+Supplier 0676,7700000676,Georgia,Tbilisi,contact676@supplier.example,+79000000676,1.49,True,2019-04-07
+Supplier 0677,7700000677,Armenia,Yerevan,contact677@supplier.example,+79000000677,3.93,True,2025-07-25
+Supplier 0678,7700000678,Russia,Moscow,contact678@supplier.example,+79000000678,4.63,True,2022-03-15
+Supplier 0679,7700000679,Kazakhstan,Almaty,contact679@supplier.example,+79000000679,3.15,True,2017-05-23
+Supplier 0680,7700000680,Belarus,Minsk,contact680@supplier.example,+79000000680,2.84,True,2025-07-16
+Supplier 0681,7700000681,Russia,Saint Petersburg,contact681@supplier.example,+79000000681,3.92,True,2021-06-24
+Supplier 0682,7700000682,Georgia,Tbilisi,contact682@supplier.example,+79000000682,2.58,True,2025-06-30
+Supplier 0683,7700000683,Georgia,Tbilisi,contact683@supplier.example,+79000000683,1.51,True,2021-09-05
+Supplier 0684,7700000684,Armenia,Yerevan,contact684@supplier.example,+79000000684,2.34,True,2023-01-13
+Supplier 0685,7700000685,Russia,Saint Petersburg,contact685@supplier.example,+79000000685,1.13,True,2019-08-06
+Supplier 0686,7700000686,Russia,Moscow,contact686@supplier.example,+79000000686,4.09,True,2019-11-13
+Supplier 0687,7700000687,Russia,Moscow,contact687@supplier.example,+79000000687,2.31,True,2019-05-17
+Supplier 0688,7700000688,Kazakhstan,Almaty,contact688@supplier.example,+79000000688,3.68,True,2025-05-11
+Supplier 0689,7700000689,Kazakhstan,Almaty,contact689@supplier.example,+79000000689,2.13,True,2024-03-30
+Supplier 0690,7700000690,Russia,Saint Petersburg,contact690@supplier.example,+79000000690,2.18,True,2022-03-20
+Supplier 0691,7700000691,Georgia,Tbilisi,contact691@supplier.example,+79000000691,4.27,True,2023-09-18
+Supplier 0692,7700000692,Kazakhstan,Almaty,contact692@supplier.example,+79000000692,3.71,True,2023-09-01
+Supplier 0693,7700000693,Russia,Saint Petersburg,contact693@supplier.example,+79000000693,3.50,True,2020-06-13
+Supplier 0694,7700000694,Armenia,Yerevan,contact694@supplier.example,+79000000694,4.41,True,2021-10-06
+Supplier 0695,7700000695,Russia,Moscow,contact695@supplier.example,+79000000695,2.22,True,2023-01-19
+Supplier 0696,7700000696,Russia,Moscow,contact696@supplier.example,+79000000696,1.41,True,2024-06-06
+Supplier 0697,7700000697,Armenia,Yerevan,contact697@supplier.example,+79000000697,2.68,True,2021-08-10
+Supplier 0698,7700000698,Kazakhstan,Almaty,contact698@supplier.example,+79000000698,1.39,True,2025-12-24
+Supplier 0699,7700000699,Kazakhstan,Almaty,contact699@supplier.example,+79000000699,2.20,True,2020-01-09
+Supplier 0700,7700000700,Russia,Moscow,contact700@supplier.example,+79000000700,2.31,True,2016-10-31
+Supplier 0701,7700000701,Belarus,Minsk,contact701@supplier.example,+79000000701,1.96,True,2017-06-07
+Supplier 0702,7700000702,Kazakhstan,Almaty,contact702@supplier.example,+79000000702,3.84,True,2025-08-14
+Supplier 0703,7700000703,Georgia,Tbilisi,contact703@supplier.example,+79000000703,2.07,True,2020-01-07
+Supplier 0704,7700000704,Georgia,Tbilisi,contact704@supplier.example,+79000000704,4.83,True,2026-07-27
+Supplier 0705,7700000705,Kazakhstan,Almaty,contact705@supplier.example,+79000000705,4.52,True,2025-06-11
+Supplier 0706,7700000706,Belarus,Minsk,contact706@supplier.example,+79000000706,3.40,True,2025-10-01
+Supplier 0707,7700000707,Belarus,Minsk,contact707@supplier.example,+79000000707,4.15,True,2016-11-18
+Supplier 0708,7700000708,Belarus,Minsk,contact708@supplier.example,+79000000708,4.23,True,2017-06-09
+Supplier 0709,7700000709,Georgia,Tbilisi,contact709@supplier.example,+79000000709,2.54,True,2020-10-13
+Supplier 0710,7700000710,Russia,Saint Petersburg,contact710@supplier.example,+79000000710,3.70,True,2018-07-28
+Supplier 0711,7700000711,Georgia,Tbilisi,contact711@supplier.example,+79000000711,2.50,True,2023-01-28
+Supplier 0712,7700000712,Armenia,Yerevan,contact712@supplier.example,+79000000712,4.70,True,2022-08-13
+Supplier 0713,7700000713,Kazakhstan,Almaty,contact713@supplier.example,+79000000713,2.23,True,2019-09-15
+Supplier 0714,7700000714,Belarus,Minsk,contact714@supplier.example,+79000000714,3.55,True,2025-10-10
+Supplier 0715,7700000715,Russia,Moscow,contact715@supplier.example,+79000000715,4.77,True,2017-09-25
+Supplier 0716,7700000716,Armenia,Yerevan,contact716@supplier.example,+79000000716,2.01,True,2020-03-16
+Supplier 0717,7700000717,Armenia,Yerevan,contact717@supplier.example,+79000000717,2.84,True,2020-10-21
+Supplier 0718,7700000718,Russia,Moscow,contact718@supplier.example,+79000000718,1.16,True,2023-07-08
+Supplier 0719,7700000719,Russia,Moscow,contact719@supplier.example,+79000000719,4.90,True,2022-07-26
+Supplier 0720,7700000720,Kazakhstan,Almaty,contact720@supplier.example,+79000000720,4.54,True,2021-07-29
+Supplier 0721,7700000721,Russia,Saint Petersburg,contact721@supplier.example,+79000000721,2.52,False,2017-01-26
+Supplier 0722,7700000722,Armenia,Yerevan,contact722@supplier.example,+79000000722,2.96,True,2025-07-17
+Supplier 0723,7700000723,Russia,Saint Petersburg,contact723@supplier.example,+79000000723,4.01,True,2018-07-25
+Supplier 0724,7700000724,Georgia,Tbilisi,contact724@supplier.example,+79000000724,2.71,True,2022-01-09
+Supplier 0725,7700000725,Georgia,Tbilisi,contact725@supplier.example,+79000000725,2.93,True,2016-10-08
+Supplier 0726,7700000726,Belarus,Minsk,contact726@supplier.example,+79000000726,3.77,True,2020-07-22
+Supplier 0727,7700000727,Russia,Saint Petersburg,contact727@supplier.example,+79000000727,2.92,False,2026-06-14
+Supplier 0728,7700000728,Russia,Moscow,contact728@supplier.example,+79000000728,1.86,True,2017-01-07
+Supplier 0729,7700000729,Kazakhstan,Almaty,contact729@supplier.example,+79000000729,1.15,True,2019-10-17
+Supplier 0730,7700000730,Armenia,Yerevan,contact730@supplier.example,+79000000730,1.04,True,2020-12-05
+Supplier 0731,7700000731,Russia,Moscow,contact731@supplier.example,+79000000731,4.84,True,2021-06-24
+Supplier 0732,7700000732,Belarus,Minsk,contact732@supplier.example,+79000000732,4.32,False,2018-07-22
+Supplier 0733,7700000733,Kazakhstan,Almaty,contact733@supplier.example,+79000000733,3.97,True,2025-01-19
+Supplier 0734,7700000734,Kazakhstan,Almaty,contact734@supplier.example,+79000000734,3.64,True,2021-07-25
+Supplier 0735,7700000735,Armenia,Yerevan,contact735@supplier.example,+79000000735,2.30,True,2019-06-02
+Supplier 0736,7700000736,Kazakhstan,Almaty,contact736@supplier.example,+79000000736,2.94,True,2024-12-13
+Supplier 0737,7700000737,Armenia,Yerevan,contact737@supplier.example,+79000000737,2.59,True,2023-07-17
+Supplier 0738,7700000738,Kazakhstan,Almaty,contact738@supplier.example,+79000000738,4.36,True,2023-06-08
+Supplier 0739,7700000739,Georgia,Tbilisi,contact739@supplier.example,+79000000739,1.75,True,2022-03-30
+Supplier 0740,7700000740,Georgia,Tbilisi,contact740@supplier.example,+79000000740,4.36,True,2017-10-05
+Supplier 0741,7700000741,Georgia,Tbilisi,contact741@supplier.example,+79000000741,4.05,True,2024-12-16
+Supplier 0742,7700000742,Russia,Saint Petersburg,contact742@supplier.example,+79000000742,4.03,True,2017-01-04
+Supplier 0743,7700000743,Kazakhstan,Almaty,contact743@supplier.example,+79000000743,4.18,True,2021-06-11
+Supplier 0744,7700000744,Russia,Moscow,contact744@supplier.example,+79000000744,1.47,True,2020-05-01
+Supplier 0745,7700000745,Armenia,Yerevan,contact745@supplier.example,+79000000745,4.66,True,2018-10-07
+Supplier 0746,7700000746,Armenia,Yerevan,contact746@supplier.example,+79000000746,1.24,True,2017-11-11
+Supplier 0747,7700000747,Georgia,Tbilisi,contact747@supplier.example,+79000000747,2.41,True,2020-07-10
+Supplier 0748,7700000748,Kazakhstan,Almaty,contact748@supplier.example,+79000000748,2.79,True,2022-04-24
+Supplier 0749,7700000749,Russia,Saint Petersburg,contact749@supplier.example,+79000000749,1.54,True,2018-01-07
+Supplier 0750,7700000750,Russia,Saint Petersburg,contact750@supplier.example,+79000000750,2.30,True,2019-12-09
+Supplier 0751,7700000751,Belarus,Minsk,contact751@supplier.example,+79000000751,2.93,True,2025-10-12
+Supplier 0752,7700000752,Armenia,Yerevan,contact752@supplier.example,+79000000752,1.81,True,2026-03-30
+Supplier 0753,7700000753,Russia,Saint Petersburg,contact753@supplier.example,+79000000753,4.86,True,2016-11-22
+Supplier 0754,7700000754,Kazakhstan,Almaty,contact754@supplier.example,+79000000754,3.01,True,2024-06-09
+Supplier 0755,7700000755,Armenia,Yerevan,contact755@supplier.example,+79000000755,3.80,True,2023-04-11
+Supplier 0756,7700000756,Georgia,Tbilisi,contact756@supplier.example,+79000000756,1.83,True,2021-08-28
+Supplier 0757,7700000757,Georgia,Tbilisi,contact757@supplier.example,+79000000757,3.12,True,2025-07-04
+Supplier 0758,7700000758,Georgia,Tbilisi,contact758@supplier.example,+79000000758,3.34,True,2026-06-30
+Supplier 0759,7700000759,Georgia,Tbilisi,contact759@supplier.example,+79000000759,2.12,True,2017-06-22
+Supplier 0760,7700000760,Belarus,Minsk,contact760@supplier.example,+79000000760,2.07,True,2026-01-20
+Supplier 0761,7700000761,Belarus,Minsk,contact761@supplier.example,+79000000761,3.20,True,2018-04-23
+Supplier 0762,7700000762,Kazakhstan,Almaty,contact762@supplier.example,+79000000762,3.25,True,2017-06-03
+Supplier 0763,7700000763,Kazakhstan,Almaty,contact763@supplier.example,+79000000763,2.54,True,2018-10-02
+Supplier 0764,7700000764,Kazakhstan,Almaty,contact764@supplier.example,+79000000764,2.84,True,2022-07-17
+Supplier 0765,7700000765,Georgia,Tbilisi,contact765@supplier.example,+79000000765,3.45,True,2017-03-10
+Supplier 0766,7700000766,Georgia,Tbilisi,contact766@supplier.example,+79000000766,3.63,True,2016-09-14
+Supplier 0767,7700000767,Russia,Moscow,contact767@supplier.example,+79000000767,4.29,True,2018-05-30
+Supplier 0768,7700000768,Armenia,Yerevan,contact768@supplier.example,+79000000768,2.40,True,2023-12-10
+Supplier 0769,7700000769,Belarus,Minsk,contact769@supplier.example,+79000000769,3.00,True,2025-05-08
+Supplier 0770,7700000770,Russia,Saint Petersburg,contact770@supplier.example,+79000000770,4.68,True,2022-05-16
+Supplier 0771,7700000771,Belarus,Minsk,contact771@supplier.example,+79000000771,4.86,True,2017-04-19
+Supplier 0772,7700000772,Russia,Saint Petersburg,contact772@supplier.example,+79000000772,2.86,True,2021-11-15
+Supplier 0773,7700000773,Russia,Saint Petersburg,contact773@supplier.example,+79000000773,3.95,True,2024-12-22
+Supplier 0774,7700000774,Georgia,Tbilisi,contact774@supplier.example,+79000000774,3.26,True,2019-03-25
+Supplier 0775,7700000775,Kazakhstan,Almaty,contact775@supplier.example,+79000000775,2.92,True,2023-09-12
+Supplier 0776,7700000776,Armenia,Yerevan,contact776@supplier.example,+79000000776,4.84,True,2025-08-06
+Supplier 0777,7700000777,Belarus,Minsk,contact777@supplier.example,+79000000777,3.95,True,2025-12-28
+Supplier 0778,7700000778,Russia,Moscow,contact778@supplier.example,+79000000778,1.21,False,2018-07-25
+Supplier 0779,7700000779,Belarus,Minsk,contact779@supplier.example,+79000000779,3.43,True,2017-03-30
+Supplier 0780,7700000780,Russia,Moscow,contact780@supplier.example,+79000000780,4.11,True,2017-11-19
+Supplier 0781,7700000781,Belarus,Minsk,contact781@supplier.example,+79000000781,4.12,True,2019-05-20
+Supplier 0782,7700000782,Armenia,Yerevan,contact782@supplier.example,+79000000782,3.23,True,2026-06-05
+Supplier 0783,7700000783,Russia,Moscow,contact783@supplier.example,+79000000783,4.94,True,2025-07-27
+Supplier 0784,7700000784,Kazakhstan,Almaty,contact784@supplier.example,+79000000784,3.92,True,2020-06-20
+Supplier 0785,7700000785,Georgia,Tbilisi,contact785@supplier.example,+79000000785,2.28,True,2025-08-23
+Supplier 0786,7700000786,Kazakhstan,Almaty,contact786@supplier.example,+79000000786,2.48,True,2017-09-16
+Supplier 0787,7700000787,Georgia,Tbilisi,contact787@supplier.example,+79000000787,4.01,True,2025-05-31
+Supplier 0788,7700000788,Russia,Saint Petersburg,contact788@supplier.example,+79000000788,4.26,True,2023-08-02
+Supplier 0789,7700000789,Russia,Saint Petersburg,contact789@supplier.example,+79000000789,4.08,True,2022-11-17
+Supplier 0790,7700000790,Kazakhstan,Almaty,contact790@supplier.example,+79000000790,3.61,True,2020-03-20
+Supplier 0791,7700000791,Russia,Saint Petersburg,contact791@supplier.example,+79000000791,3.14,True,2021-10-01
+Supplier 0792,7700000792,Russia,Saint Petersburg,contact792@supplier.example,+79000000792,4.57,True,2019-08-03
+Supplier 0793,7700000793,Kazakhstan,Almaty,contact793@supplier.example,+79000000793,1.41,True,2022-10-29
+Supplier 0794,7700000794,Kazakhstan,Almaty,contact794@supplier.example,+79000000794,2.39,True,2019-06-19
+Supplier 0795,7700000795,Belarus,Minsk,contact795@supplier.example,+79000000795,3.13,True,2022-07-14
+Supplier 0796,7700000796,Kazakhstan,Almaty,contact796@supplier.example,+79000000796,2.09,True,2018-11-17
+Supplier 0797,7700000797,Russia,Moscow,contact797@supplier.example,+79000000797,3.12,True,2025-03-31
+Supplier 0798,7700000798,Kazakhstan,Almaty,contact798@supplier.example,+79000000798,3.22,True,2022-02-07
+Supplier 0799,7700000799,Russia,Saint Petersburg,contact799@supplier.example,+79000000799,2.09,True,2019-11-18
+Supplier 0800,7700000800,Russia,Saint Petersburg,contact800@supplier.example,+79000000800,2.69,True,2017-11-21
+Supplier 0801,7700000801,Belarus,Minsk,contact801@supplier.example,+79000000801,3.03,True,2019-01-12
+Supplier 0802,7700000802,Armenia,Yerevan,contact802@supplier.example,+79000000802,2.35,True,2016-09-23
+Supplier 0803,7700000803,Armenia,Yerevan,contact803@supplier.example,+79000000803,4.55,True,2018-10-21
+Supplier 0804,7700000804,Georgia,Tbilisi,contact804@supplier.example,+79000000804,2.55,True,2018-11-30
+Supplier 0805,7700000805,Russia,Moscow,contact805@supplier.example,+79000000805,2.92,True,2019-08-02
+Supplier 0806,7700000806,Kazakhstan,Almaty,contact806@supplier.example,+79000000806,3.71,True,2019-04-09
+Supplier 0807,7700000807,Georgia,Tbilisi,contact807@supplier.example,+79000000807,1.57,True,2021-06-22
+Supplier 0808,7700000808,Russia,Moscow,contact808@supplier.example,+79000000808,3.84,True,2026-07-31
+Supplier 0809,7700000809,Kazakhstan,Almaty,contact809@supplier.example,+79000000809,3.57,True,2020-03-27
+Supplier 0810,7700000810,Armenia,Yerevan,contact810@supplier.example,+79000000810,3.15,True,2021-02-21
+Supplier 0811,7700000811,Russia,Moscow,contact811@supplier.example,+79000000811,3.91,True,2018-10-16
+Supplier 0812,7700000812,Russia,Saint Petersburg,contact812@supplier.example,+79000000812,2.65,True,2017-05-24
+Supplier 0813,7700000813,Belarus,Minsk,contact813@supplier.example,+79000000813,2.55,True,2025-02-04
+Supplier 0814,7700000814,Russia,Saint Petersburg,contact814@supplier.example,+79000000814,3.23,True,2021-04-02
+Supplier 0815,7700000815,Kazakhstan,Almaty,contact815@supplier.example,+79000000815,2.67,True,2018-01-23
+Supplier 0816,7700000816,Belarus,Minsk,contact816@supplier.example,+79000000816,4.71,True,2025-12-18
+Supplier 0817,7700000817,Belarus,Minsk,contact817@supplier.example,+79000000817,2.12,True,2018-12-02
+Supplier 0818,7700000818,Georgia,Tbilisi,contact818@supplier.example,+79000000818,1.55,True,2019-10-15
+Supplier 0819,7700000819,Belarus,Minsk,contact819@supplier.example,+79000000819,3.03,True,2024-12-23
+Supplier 0820,7700000820,Russia,Moscow,contact820@supplier.example,+79000000820,1.15,True,2020-10-28
+Supplier 0821,7700000821,Kazakhstan,Almaty,contact821@supplier.example,+79000000821,1.73,True,2017-09-03
+Supplier 0822,7700000822,Kazakhstan,Almaty,contact822@supplier.example,+79000000822,3.53,True,2020-01-16
+Supplier 0823,7700000823,Armenia,Yerevan,contact823@supplier.example,+79000000823,3.59,True,2025-03-20
+Supplier 0824,7700000824,Georgia,Tbilisi,contact824@supplier.example,+79000000824,5.00,True,2026-02-16
+Supplier 0825,7700000825,Belarus,Minsk,contact825@supplier.example,+79000000825,2.78,True,2023-12-01
+Supplier 0826,7700000826,Russia,Saint Petersburg,contact826@supplier.example,+79000000826,1.58,True,2016-09-19
+Supplier 0827,7700000827,Armenia,Yerevan,contact827@supplier.example,+79000000827,1.60,True,2024-03-26
+Supplier 0828,7700000828,Kazakhstan,Almaty,contact828@supplier.example,+79000000828,2.47,True,2016-10-15
+Supplier 0829,7700000829,Kazakhstan,Almaty,contact829@supplier.example,+79000000829,1.10,True,2017-06-19
+Supplier 0830,7700000830,Russia,Saint Petersburg,contact830@supplier.example,+79000000830,2.38,True,2019-09-02
+Supplier 0831,7700000831,Kazakhstan,Almaty,contact831@supplier.example,+79000000831,2.30,True,2020-06-26
+Supplier 0832,7700000832,Armenia,Yerevan,contact832@supplier.example,+79000000832,3.81,True,2022-11-16
+Supplier 0833,7700000833,Russia,Moscow,contact833@supplier.example,+79000000833,1.17,True,2020-08-20
+Supplier 0834,7700000834,Russia,Moscow,contact834@supplier.example,+79000000834,2.63,True,2021-09-27
+Supplier 0835,7700000835,Belarus,Minsk,contact835@supplier.example,+79000000835,2.41,True,2018-12-08
+Supplier 0836,7700000836,Armenia,Yerevan,contact836@supplier.example,+79000000836,4.62,True,2025-12-31
+Supplier 0837,7700000837,Armenia,Yerevan,contact837@supplier.example,+79000000837,1.44,True,2024-12-29
+Supplier 0838,7700000838,Kazakhstan,Almaty,contact838@supplier.example,+79000000838,3.09,True,2018-08-27
+Supplier 0839,7700000839,Georgia,Tbilisi,contact839@supplier.example,+79000000839,4.73,True,2017-11-13
+Supplier 0840,7700000840,Armenia,Yerevan,contact840@supplier.example,+79000000840,3.83,True,2024-07-14
+Supplier 0841,7700000841,Belarus,Minsk,contact841@supplier.example,+79000000841,1.24,True,2022-04-24
+Supplier 0842,7700000842,Kazakhstan,Almaty,contact842@supplier.example,+79000000842,2.99,True,2026-01-05
+Supplier 0843,7700000843,Georgia,Tbilisi,contact843@supplier.example,+79000000843,4.07,True,2025-12-18
+Supplier 0844,7700000844,Belarus,Minsk,contact844@supplier.example,+79000000844,2.55,True,2024-07-01
+Supplier 0845,7700000845,Georgia,Tbilisi,contact845@supplier.example,+79000000845,4.20,True,2018-08-01
+Supplier 0846,7700000846,Russia,Saint Petersburg,contact846@supplier.example,+79000000846,3.27,True,2019-02-07
+Supplier 0847,7700000847,Georgia,Tbilisi,contact847@supplier.example,+79000000847,2.88,True,2019-01-14
+Supplier 0848,7700000848,Armenia,Yerevan,contact848@supplier.example,+79000000848,2.13,True,2024-07-19
+Supplier 0849,7700000849,Georgia,Tbilisi,contact849@supplier.example,+79000000849,2.16,True,2018-03-04
+Supplier 0850,7700000850,Russia,Saint Petersburg,contact850@supplier.example,+79000000850,3.01,True,2019-03-26
+Supplier 0851,7700000851,Belarus,Minsk,contact851@supplier.example,+79000000851,4.76,True,2023-11-03
+Supplier 0852,7700000852,Kazakhstan,Almaty,contact852@supplier.example,+79000000852,4.42,True,2025-09-08
+Supplier 0853,7700000853,Russia,Saint Petersburg,contact853@supplier.example,+79000000853,2.08,True,2021-10-18
+Supplier 0854,7700000854,Russia,Saint Petersburg,contact854@supplier.example,+79000000854,2.72,True,2018-07-03
+Supplier 0855,7700000855,Armenia,Yerevan,contact855@supplier.example,+79000000855,1.65,True,2018-07-07
+Supplier 0856,7700000856,Belarus,Minsk,contact856@supplier.example,+79000000856,4.89,True,2021-09-09
+Supplier 0857,7700000857,Russia,Moscow,contact857@supplier.example,+79000000857,2.66,True,2024-12-28
+Supplier 0858,7700000858,Russia,Moscow,contact858@supplier.example,+79000000858,3.04,True,2025-10-17
+Supplier 0859,7700000859,Russia,Saint Petersburg,contact859@supplier.example,+79000000859,4.08,True,2022-03-29
+Supplier 0860,7700000860,Georgia,Tbilisi,contact860@supplier.example,+79000000860,3.73,False,2023-05-04
+Supplier 0861,7700000861,Armenia,Yerevan,contact861@supplier.example,+79000000861,3.89,True,2021-10-13
+Supplier 0862,7700000862,Armenia,Yerevan,contact862@supplier.example,+79000000862,4.43,True,2024-04-28
+Supplier 0863,7700000863,Russia,Saint Petersburg,contact863@supplier.example,+79000000863,4.09,True,2026-06-14
+Supplier 0864,7700000864,Russia,Saint Petersburg,contact864@supplier.example,+79000000864,4.83,True,2025-03-30
+Supplier 0865,7700000865,Armenia,Yerevan,contact865@supplier.example,+79000000865,3.90,True,2019-05-28
+Supplier 0866,7700000866,Armenia,Yerevan,contact866@supplier.example,+79000000866,3.82,True,2025-08-09
+Supplier 0867,7700000867,Kazakhstan,Almaty,contact867@supplier.example,+79000000867,4.82,False,2023-02-20
+Supplier 0868,7700000868,Kazakhstan,Almaty,contact868@supplier.example,+79000000868,3.49,True,2017-06-02
+Supplier 0869,7700000869,Russia,Saint Petersburg,contact869@supplier.example,+79000000869,1.09,True,2026-05-02
+Supplier 0870,7700000870,Armenia,Yerevan,contact870@supplier.example,+79000000870,2.47,True,2022-05-10
+Supplier 0871,7700000871,Armenia,Yerevan,contact871@supplier.example,+79000000871,2.03,True,2022-04-29
+Supplier 0872,7700000872,Russia,Saint Petersburg,contact872@supplier.example,+79000000872,1.55,True,2019-11-07
+Supplier 0873,7700000873,Belarus,Minsk,contact873@supplier.example,+79000000873,1.05,True,2024-05-07
+Supplier 0874,7700000874,Armenia,Yerevan,contact874@supplier.example,+79000000874,1.47,True,2022-05-26
+Supplier 0875,7700000875,Georgia,Tbilisi,contact875@supplier.example,+79000000875,3.18,True,2025-01-11
+Supplier 0876,7700000876,Russia,Saint Petersburg,contact876@supplier.example,+79000000876,4.62,True,2023-04-07
+Supplier 0877,7700000877,Russia,Saint Petersburg,contact877@supplier.example,+79000000877,4.72,True,2022-08-10
+Supplier 0878,7700000878,Belarus,Minsk,contact878@supplier.example,+79000000878,2.18,True,2018-08-07
+Supplier 0879,7700000879,Russia,Moscow,contact879@supplier.example,+79000000879,1.92,True,2021-07-24
+Supplier 0880,7700000880,Armenia,Yerevan,contact880@supplier.example,+79000000880,4.94,True,2021-02-27
+Supplier 0881,7700000881,Russia,Saint Petersburg,contact881@supplier.example,+79000000881,4.63,True,2024-05-14
+Supplier 0882,7700000882,Armenia,Yerevan,contact882@supplier.example,+79000000882,3.21,True,2022-11-16
+Supplier 0883,7700000883,Belarus,Minsk,contact883@supplier.example,+79000000883,4.30,True,2023-09-13
+Supplier 0884,7700000884,Kazakhstan,Almaty,contact884@supplier.example,+79000000884,3.04,True,2020-10-06
+Supplier 0885,7700000885,Russia,Moscow,contact885@supplier.example,+79000000885,4.72,True,2017-09-29
+Supplier 0886,7700000886,Belarus,Minsk,contact886@supplier.example,+79000000886,1.47,True,2025-02-20
+Supplier 0887,7700000887,Georgia,Tbilisi,contact887@supplier.example,+79000000887,4.50,False,2018-11-26
+Supplier 0888,7700000888,Russia,Moscow,contact888@supplier.example,+79000000888,4.90,True,2024-11-15
+Supplier 0889,7700000889,Belarus,Minsk,contact889@supplier.example,+79000000889,3.25,True,2017-08-13
+Supplier 0890,7700000890,Armenia,Yerevan,contact890@supplier.example,+79000000890,2.33,True,2025-04-30
+Supplier 0891,7700000891,Belarus,Minsk,contact891@supplier.example,+79000000891,4.24,True,2018-08-16
+Supplier 0892,7700000892,Russia,Saint Petersburg,contact892@supplier.example,+79000000892,2.53,False,2018-07-19
+Supplier 0893,7700000893,Belarus,Minsk,contact893@supplier.example,+79000000893,1.31,True,2019-10-05
+Supplier 0894,7700000894,Belarus,Minsk,contact894@supplier.example,+79000000894,1.17,True,2017-03-12
+Supplier 0895,7700000895,Russia,Moscow,contact895@supplier.example,+79000000895,3.42,True,2023-01-28
+Supplier 0896,7700000896,Russia,Moscow,contact896@supplier.example,+79000000896,1.84,True,2020-09-18
+Supplier 0897,7700000897,Russia,Moscow,contact897@supplier.example,+79000000897,2.68,True,2026-07-04
+Supplier 0898,7700000898,Russia,Saint Petersburg,contact898@supplier.example,+79000000898,2.55,True,2017-12-20
+Supplier 0899,7700000899,Georgia,Tbilisi,contact899@supplier.example,+79000000899,4.67,True,2018-08-02
+Supplier 0900,7700000900,Armenia,Yerevan,contact900@supplier.example,+79000000900,4.97,True,2018-05-29
+Supplier 0901,7700000901,Armenia,Yerevan,contact901@supplier.example,+79000000901,1.01,True,2024-04-03
+Supplier 0902,7700000902,Russia,Moscow,contact902@supplier.example,+79000000902,2.90,True,2019-04-07
+Supplier 0903,7700000903,Georgia,Tbilisi,contact903@supplier.example,+79000000903,2.29,True,2023-04-11
+Supplier 0904,7700000904,Russia,Saint Petersburg,contact904@supplier.example,+79000000904,4.53,True,2022-06-22
+Supplier 0905,7700000905,Armenia,Yerevan,contact905@supplier.example,+79000000905,4.47,True,2017-08-07
+Supplier 0906,7700000906,Armenia,Yerevan,contact906@supplier.example,+79000000906,4.62,True,2020-10-24
+Supplier 0907,7700000907,Russia,Moscow,contact907@supplier.example,+79000000907,2.31,True,2020-03-23
+Supplier 0908,7700000908,Belarus,Minsk,contact908@supplier.example,+79000000908,3.40,True,2022-11-14
+Supplier 0909,7700000909,Belarus,Minsk,contact909@supplier.example,+79000000909,1.22,True,2023-07-20
+Supplier 0910,7700000910,Kazakhstan,Almaty,contact910@supplier.example,+79000000910,4.86,True,2025-03-27
+Supplier 0911,7700000911,Russia,Moscow,contact911@supplier.example,+79000000911,3.68,True,2025-06-10
+Supplier 0912,7700000912,Georgia,Tbilisi,contact912@supplier.example,+79000000912,2.04,True,2022-01-27
+Supplier 0913,7700000913,Georgia,Tbilisi,contact913@supplier.example,+79000000913,1.70,True,2020-02-01
+Supplier 0914,7700000914,Georgia,Tbilisi,contact914@supplier.example,+79000000914,4.99,True,2019-06-18
+Supplier 0915,7700000915,Russia,Saint Petersburg,contact915@supplier.example,+79000000915,4.27,True,2018-10-17
+Supplier 0916,7700000916,Russia,Saint Petersburg,contact916@supplier.example,+79000000916,1.96,True,2020-01-05
+Supplier 0917,7700000917,Russia,Saint Petersburg,contact917@supplier.example,+79000000917,3.01,False,2021-07-11
+Supplier 0918,7700000918,Armenia,Yerevan,contact918@supplier.example,+79000000918,1.57,True,2023-09-08
+Supplier 0919,7700000919,Georgia,Tbilisi,contact919@supplier.example,+79000000919,3.32,True,2022-12-09
+Supplier 0920,7700000920,Georgia,Tbilisi,contact920@supplier.example,+79000000920,3.16,True,2018-04-26
+Supplier 0921,7700000921,Belarus,Minsk,contact921@supplier.example,+79000000921,1.03,True,2018-06-06
+Supplier 0922,7700000922,Armenia,Yerevan,contact922@supplier.example,+79000000922,2.03,True,2021-02-12
+Supplier 0923,7700000923,Russia,Moscow,contact923@supplier.example,+79000000923,1.17,True,2018-02-22
+Supplier 0924,7700000924,Russia,Saint Petersburg,contact924@supplier.example,+79000000924,1.16,True,2016-10-02
+Supplier 0925,7700000925,Russia,Moscow,contact925@supplier.example,+79000000925,2.80,True,2019-06-26
+Supplier 0926,7700000926,Russia,Moscow,contact926@supplier.example,+79000000926,3.80,True,2026-07-24
+Supplier 0927,7700000927,Russia,Moscow,contact927@supplier.example,+79000000927,2.78,True,2022-04-10
+Supplier 0928,7700000928,Belarus,Minsk,contact928@supplier.example,+79000000928,3.10,False,2020-01-20
+Supplier 0929,7700000929,Kazakhstan,Almaty,contact929@supplier.example,+79000000929,3.45,True,2018-04-13
+Supplier 0930,7700000930,Georgia,Tbilisi,contact930@supplier.example,+79000000930,4.31,True,2019-06-21
+Supplier 0931,7700000931,Georgia,Tbilisi,contact931@supplier.example,+79000000931,4.61,True,2018-02-20
+Supplier 0932,7700000932,Armenia,Yerevan,contact932@supplier.example,+79000000932,4.10,True,2019-06-07
+Supplier 0933,7700000933,Armenia,Yerevan,contact933@supplier.example,+79000000933,3.04,True,2020-04-21
+Supplier 0934,7700000934,Belarus,Minsk,contact934@supplier.example,+79000000934,3.80,True,2018-10-12
+Supplier 0935,7700000935,Belarus,Minsk,contact935@supplier.example,+79000000935,4.59,True,2018-07-01
+Supplier 0936,7700000936,Russia,Saint Petersburg,contact936@supplier.example,+79000000936,3.27,True,2020-04-15
+Supplier 0937,7700000937,Russia,Moscow,contact937@supplier.example,+79000000937,4.83,True,2017-04-18
+Supplier 0938,7700000938,Russia,Moscow,contact938@supplier.example,+79000000938,1.99,True,2023-01-27
+Supplier 0939,7700000939,Armenia,Yerevan,contact939@supplier.example,+79000000939,1.95,True,2023-11-23
+Supplier 0940,7700000940,Russia,Saint Petersburg,contact940@supplier.example,+79000000940,2.53,True,2022-07-12
+Supplier 0941,7700000941,Georgia,Tbilisi,contact941@supplier.example,+79000000941,3.88,True,2017-12-13
+Supplier 0942,7700000942,Russia,Moscow,contact942@supplier.example,+79000000942,4.78,True,2025-11-29
+Supplier 0943,7700000943,Belarus,Minsk,contact943@supplier.example,+79000000943,3.09,True,2019-07-03
+Supplier 0944,7700000944,Russia,Moscow,contact944@supplier.example,+79000000944,3.54,True,2019-04-05
+Supplier 0945,7700000945,Russia,Saint Petersburg,contact945@supplier.example,+79000000945,4.40,True,2017-05-11
+Supplier 0946,7700000946,Kazakhstan,Almaty,contact946@supplier.example,+79000000946,4.85,True,2025-01-01
+Supplier 0947,7700000947,Georgia,Tbilisi,contact947@supplier.example,+79000000947,4.53,True,2021-12-30
+Supplier 0948,7700000948,Georgia,Tbilisi,contact948@supplier.example,+79000000948,1.47,True,2019-04-15
+Supplier 0949,7700000949,Armenia,Yerevan,contact949@supplier.example,+79000000949,3.26,True,2024-06-25
+Supplier 0950,7700000950,Belarus,Minsk,contact950@supplier.example,+79000000950,2.10,True,2021-05-29
+Supplier 0951,7700000951,Georgia,Tbilisi,contact951@supplier.example,+79000000951,3.30,True,2022-08-29
+Supplier 0952,7700000952,Georgia,Tbilisi,contact952@supplier.example,+79000000952,3.33,True,2017-01-18
+Supplier 0953,7700000953,Belarus,Minsk,contact953@supplier.example,+79000000953,2.81,True,2024-07-10
+Supplier 0954,7700000954,Belarus,Minsk,contact954@supplier.example,+79000000954,3.33,True,2023-03-23
+Supplier 0955,7700000955,Armenia,Yerevan,contact955@supplier.example,+79000000955,2.15,True,2023-12-11
+Supplier 0956,7700000956,Russia,Moscow,contact956@supplier.example,+79000000956,4.97,True,2026-06-07
+Supplier 0957,7700000957,Armenia,Yerevan,contact957@supplier.example,+79000000957,1.10,True,2025-12-03
+Supplier 0958,7700000958,Belarus,Minsk,contact958@supplier.example,+79000000958,2.39,True,2022-04-29
+Supplier 0959,7700000959,Russia,Moscow,contact959@supplier.example,+79000000959,1.95,True,2017-10-20
+Supplier 0960,7700000960,Russia,Moscow,contact960@supplier.example,+79000000960,4.86,True,2020-07-07
+Supplier 0961,7700000961,Belarus,Minsk,contact961@supplier.example,+79000000961,1.67,True,2022-05-24
+Supplier 0962,7700000962,Armenia,Yerevan,contact962@supplier.example,+79000000962,1.51,True,2019-02-19
+Supplier 0963,7700000963,Russia,Moscow,contact963@supplier.example,+79000000963,1.72,True,2023-05-13
+Supplier 0964,7700000964,Belarus,Minsk,contact964@supplier.example,+79000000964,2.59,True,2021-04-05
+Supplier 0965,7700000965,Armenia,Yerevan,contact965@supplier.example,+79000000965,1.95,True,2022-10-10
+Supplier 0966,7700000966,Georgia,Tbilisi,contact966@supplier.example,+79000000966,3.00,True,2020-04-13
+Supplier 0967,7700000967,Russia,Saint Petersburg,contact967@supplier.example,+79000000967,1.89,True,2018-08-17
+Supplier 0968,7700000968,Kazakhstan,Almaty,contact968@supplier.example,+79000000968,3.69,True,2020-04-23
+Supplier 0969,7700000969,Georgia,Tbilisi,contact969@supplier.example,+79000000969,3.32,True,2023-05-02
+Supplier 0970,7700000970,Russia,Moscow,contact970@supplier.example,+79000000970,2.63,True,2023-11-05
+Supplier 0971,7700000971,Armenia,Yerevan,contact971@supplier.example,+79000000971,3.71,True,2023-08-06
+Supplier 0972,7700000972,Belarus,Minsk,contact972@supplier.example,+79000000972,4.78,True,2021-08-07
+Supplier 0973,7700000973,Armenia,Yerevan,contact973@supplier.example,+79000000973,4.48,True,2021-06-02
+Supplier 0974,7700000974,Belarus,Minsk,contact974@supplier.example,+79000000974,1.93,True,2019-08-24
+Supplier 0975,7700000975,Kazakhstan,Almaty,contact975@supplier.example,+79000000975,1.64,True,2017-02-04
+Supplier 0976,7700000976,Georgia,Tbilisi,contact976@supplier.example,+79000000976,2.18,True,2022-09-10
+Supplier 0977,7700000977,Kazakhstan,Almaty,contact977@supplier.example,+79000000977,2.28,True,2018-05-16
+Supplier 0978,7700000978,Armenia,Yerevan,contact978@supplier.example,+79000000978,4.98,True,2019-04-18
+Supplier 0979,7700000979,Belarus,Minsk,contact979@supplier.example,+79000000979,3.54,True,2018-03-02
+Supplier 0980,7700000980,Georgia,Tbilisi,contact980@supplier.example,+79000000980,2.87,True,2019-01-22
+Supplier 0981,7700000981,Belarus,Minsk,contact981@supplier.example,+79000000981,1.04,True,2019-05-29
+Supplier 0982,7700000982,Armenia,Yerevan,contact982@supplier.example,+79000000982,2.06,True,2024-11-20
+Supplier 0983,7700000983,Belarus,Minsk,contact983@supplier.example,+79000000983,1.83,True,2024-07-08
+Supplier 0984,7700000984,Georgia,Tbilisi,contact984@supplier.example,+79000000984,3.77,True,2026-07-04
+Supplier 0985,7700000985,Georgia,Tbilisi,contact985@supplier.example,+79000000985,2.56,True,2018-09-20
+Supplier 0986,7700000986,Russia,Moscow,contact986@supplier.example,+79000000986,2.82,True,2018-12-28
+Supplier 0987,7700000987,Belarus,Minsk,contact987@supplier.example,+79000000987,2.46,True,2017-10-27
+Supplier 0988,7700000988,Russia,Moscow,contact988@supplier.example,+79000000988,3.19,True,2019-05-13
+Supplier 0989,7700000989,Georgia,Tbilisi,contact989@supplier.example,+79000000989,1.73,True,2017-09-18
+Supplier 0990,7700000990,Russia,Saint Petersburg,contact990@supplier.example,+79000000990,4.73,True,2020-11-10
+Supplier 0991,7700000991,Armenia,Yerevan,contact991@supplier.example,+79000000991,1.47,True,2023-12-03
+Supplier 0992,7700000992,Kazakhstan,Almaty,contact992@supplier.example,+79000000992,4.77,True,2021-04-07
+Supplier 0993,7700000993,Georgia,Tbilisi,contact993@supplier.example,+79000000993,2.68,True,2020-09-14
+Supplier 0994,7700000994,Georgia,Tbilisi,contact994@supplier.example,+79000000994,3.30,True,2018-12-27
+Supplier 0995,7700000995,Belarus,Minsk,contact995@supplier.example,+79000000995,3.27,True,2025-05-09
+Supplier 0996,7700000996,Belarus,Minsk,contact996@supplier.example,+79000000996,1.24,True,2020-02-16
+Supplier 0997,7700000997,Kazakhstan,Almaty,contact997@supplier.example,+79000000997,4.87,True,2026-07-02
+Supplier 0998,7700000998,Belarus,Minsk,contact998@supplier.example,+79000000998,2.82,True,2021-08-01
+Supplier 0999,7700000999,Russia,Moscow,contact999@supplier.example,+79000000999,3.13,True,2026-05-06
+Supplier 1000,7700001000,Armenia,Yerevan,contact1000@supplier.example,+79000001000,3.33,True,2017-04-30

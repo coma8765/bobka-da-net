@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1400" viewBox="0 0 2100 1400" role="img" aria-labelledby="title description">
+  <title id="title">ER-диаграмма supply_lab в нотации Чена</title>
+  <desc id="description">Концептуальная схема первой лабораторной работы: сущности поставщик, товар, склад и складская секция, тернарная связь поставки, связь склада с секциями и рекурсивная иерархия секций.</desc>
+  <defs>
+    <filter id="shadow" x="-12%" y="-12%" width="124%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .page-title { font: 700 30px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #64748b; }
+      .entity-text { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+      .relation-text { font: 700 14px Arial, sans-serif; fill: #0f172a; }
+      .attribute-text { font: 13px 'Courier New', monospace; fill: #1e293b; }
+      .key-text { font: 700 13px 'Courier New', monospace; fill: #0f172a; text-decoration: underline; }
+      .edge { fill: none; stroke: #64748b; stroke-width: 2; }
+      .attribute-edge { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+      .attribute { fill: #fff; stroke: #64748b; stroke-width: 1.5; }
+      .cardinality { font: 700 14px Arial, sans-serif; fill: #334155; paint-order: stroke; stroke: #f8fafc; stroke-width: 6px; }
+      .role { font: 13px Arial, sans-serif; fill: #475569; paint-order: stroke; stroke: #f8fafc; stroke-width: 5px; }
+      .legend-title { font: 700 15px Arial, sans-serif; fill: #0f172a; }
+      .legend { font: 13px Arial, sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect width="2100" height="1400" fill="#f8fafc"/>
+  <text class="page-title" x="1050" y="45" text-anchor="middle">ER-диаграмма базы данных supply_lab</text>
+  <text class="subtitle" x="1050" y="72" text-anchor="middle">Нотация Чена · состояние схемы на момент реализации лабораторной работы № 1</text>
+
+  <!-- Связи между сущностями -->
+  <path class="edge" d="M540 305 C720 305 805 470 960 555"/>
+  <text class="cardinality" x="570" y="294">1</text>
+  <text class="cardinality" x="930" y="535">N</text>
+
+  <path class="edge" d="M540 1015 C735 1015 815 760 960 645"/>
+  <text class="cardinality" x="570" y="1004">1</text>
+  <text class="cardinality" x="930" y="675">N</text>
+
+  <path class="edge" d="M1580 305 C1395 305 1305 470 1140 555"/>
+  <text class="cardinality" x="1548" y="294">1</text>
+  <text class="cardinality" x="1155" y="535">N</text>
+
+  <path class="edge" d="M1700 340 V555"/>
+  <path class="edge" d="M1700 685 V980"/>
+  <text class="cardinality" x="1716" y="375">1</text>
+  <text class="cardinality" x="1716" y="955">N</text>
+
+  <path class="edge" d="M1820 997 C1855 940 1880 930 1930 950"/>
+  <path class="edge" d="M1820 1033 C1855 1090 1880 1100 1930 1080"/>
+  <text class="cardinality" x="1840" y="955">0..1</text>
+  <text class="role" x="1835" y="930">родитель</text>
+  <text class="cardinality" x="1845" y="1092">N</text>
+  <text class="role" x="1820" y="1120">дочерняя секция</text>
+
+  <!-- Связи атрибутов SUPPLIER -->
+  <g class="attribute-edge">
+    <line x1="420" y1="270" x2="170" y2="125"/><line x1="420" y1="270" x2="420" y2="115"/>
+    <line x1="420" y1="270" x2="670" y2="125"/><line x1="300" y1="305" x2="130" y2="240"/>
+    <line x1="300" y1="305" x2="130" y2="330"/><line x1="300" y1="320" x2="150" y2="425"/>
+    <line x1="540" y1="290" x2="710" y2="235"/><line x1="540" y1="310" x2="710" y2="330"/>
+    <line x1="540" y1="325" x2="690" y2="425"/><line x1="420" y1="340" x2="420" y2="480"/>
+  </g>
+
+  <!-- Связи атрибутов PRODUCT -->
+  <g class="attribute-edge">
+    <line x1="420" y1="980" x2="170" y2="855"/><line x1="420" y1="980" x2="420" y2="845"/>
+    <line x1="420" y1="980" x2="670" y2="855"/><line x1="300" y1="1000" x2="130" y2="950"/>
+    <line x1="300" y1="1015" x2="130" y2="1040"/><line x1="300" y1="1030" x2="145" y2="1140"/>
+    <line x1="540" y1="1000" x2="710" y2="950"/><line x1="540" y1="1018" x2="710" y2="1040"/>
+    <line x1="540" y1="1033" x2="690" y2="1140"/>
+  </g>
+
+  <!-- Связи атрибутов WAREHOUSE -->
+  <g class="attribute-edge">
+    <line x1="1700" y1="270" x2="1445" y2="125"/><line x1="1700" y1="270" x2="1700" y2="115"/>
+    <line x1="1700" y1="270" x2="1950" y2="125"/><line x1="1580" y1="295" x2="1425" y2="235"/>
+    <line x1="1580" y1="320" x2="1425" y2="405"/><line x1="1820" y1="295" x2="1970" y2="235"/>
+    <line x1="1820" y1="320" x2="1970" y2="405"/>
+  </g>
+
+  <!-- Связи атрибутов DELIVERY -->
+  <g class="attribute-edge">
+    <line x1="1050" y1="520" x2="820" y2="395"/><line x1="1050" y1="520" x2="1050" y2="360"/>
+    <line x1="1095" y1="545" x2="1280" y2="410"/><line x1="1140" y1="600" x2="1380" y2="540"/>
+    <line x1="1140" y1="615" x2="1390" y2="650"/><line x1="1090" y1="655" x2="1245" y2="790"/>
+    <line x1="1020" y1="675" x2="980" y2="830"/>
+  </g>
+
+  <!-- Связи атрибутов WAREHOUSE_SECTION -->
+  <g class="attribute-edge">
+    <line x1="1650" y1="980" x2="1435" y2="850"/><line x1="1700" y1="980" x2="1700" y2="835"/>
+    <line x1="1760" y1="980" x2="1940" y2="850"/><line x1="1580" y1="1010" x2="1395" y2="1105"/>
+    <line x1="1625" y1="1050" x2="1565" y2="1210"/><line x1="1725" y1="1050" x2="1785" y2="1210"/>
+    <line x1="1585" y1="1045" x2="1395" y2="1275"/>
+  </g>
+
+  <!-- SUPPLIER -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="270" width="240" height="70" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+    <text class="entity-text" x="420" y="312" text-anchor="middle">SUPPLIER</text>
+  </g>
+  <g>
+    <ellipse class="attribute" cx="170" cy="125" rx="98" ry="30"/><text class="key-text" x="170" y="130" text-anchor="middle">supplier_id</text>
+    <ellipse class="attribute" cx="420" cy="115" rx="78" ry="30"/><text class="attribute-text" x="420" y="120" text-anchor="middle">name</text>
+    <ellipse class="attribute" cx="670" cy="125" rx="96" ry="30"/><text class="attribute-text" x="670" y="130" text-anchor="middle">tax_id (UQ)</text>
+    <ellipse class="attribute" cx="130" cy="240" rx="76" ry="30"/><text class="attribute-text" x="130" y="245" text-anchor="middle">country</text>
+    <ellipse class="attribute" cx="130" cy="330" rx="70" ry="30"/><text class="attribute-text" x="130" y="335" text-anchor="middle">city</text>
+    <ellipse class="attribute" cx="150" cy="425" rx="78" ry="30"/><text class="attribute-text" x="150" y="430" text-anchor="middle">phone</text>
+    <ellipse class="attribute" cx="710" cy="235" rx="104" ry="30"/><text class="attribute-text" x="710" y="240" text-anchor="middle">email (UQ)</text>
+    <ellipse class="attribute" cx="710" cy="330" rx="76" ry="30"/><text class="attribute-text" x="710" y="335" text-anchor="middle">rating</text>
+    <ellipse class="attribute" cx="690" cy="425" rx="92" ry="30"/><text class="attribute-text" x="690" y="430" text-anchor="middle">is_active</text>
+    <ellipse class="attribute" cx="420" cy="480" rx="92" ry="30"/><text class="attribute-text" x="420" y="485" text-anchor="middle">created_at</text>
+  </g>
+
+  <!-- PRODUCT -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="980" width="240" height="70" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
+    <text class="entity-text" x="420" y="1022" text-anchor="middle">PRODUCT</text>
+  </g>
+  <g>
+    <ellipse class="attribute" cx="170" cy="855" rx="96" ry="30"/><text class="key-text" x="170" y="860" text-anchor="middle">product_id</text>
+    <ellipse class="attribute" cx="420" cy="845" rx="86" ry="30"/><text class="attribute-text" x="420" y="850" text-anchor="middle">sku (UQ)</text>
+    <ellipse class="attribute" cx="670" cy="855" rx="78" ry="30"/><text class="attribute-text" x="670" y="860" text-anchor="middle">name</text>
+    <ellipse class="attribute" cx="130" cy="950" rx="88" ry="30"/><text class="attribute-text" x="130" y="955" text-anchor="middle">category</text>
+    <ellipse class="attribute" cx="130" cy="1040" rx="70" ry="30"/><text class="attribute-text" x="130" y="1045" text-anchor="middle">unit</text>
+    <ellipse class="attribute" cx="145" cy="1140" rx="92" ry="30"/><text class="attribute-text" x="145" y="1145" text-anchor="middle">unit_price</text>
+    <ellipse class="attribute" cx="710" cy="950" rx="92" ry="30"/><text class="attribute-text" x="710" y="955" text-anchor="middle">weight_kg</text>
+    <ellipse class="attribute" cx="710" cy="1040" rx="112" ry="30"/><text class="attribute-text" x="710" y="1045" text-anchor="middle">is_perishable</text>
+    <ellipse class="attribute" cx="690" cy="1140" rx="92" ry="30"/><text class="attribute-text" x="690" y="1145" text-anchor="middle">created_at</text>
+  </g>
+
+  <!-- WAREHOUSE -->
+  <g filter="url(#shadow)">
+    <rect x="1580" y="270" width="240" height="70" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+    <text class="entity-text" x="1700" y="312" text-anchor="middle">WAREHOUSE</text>
+  </g>
+  <g>
+    <ellipse class="attribute" cx="1445" cy="125" rx="105" ry="30"/><text class="key-text" x="1445" y="130" text-anchor="middle">warehouse_id</text>
+    <ellipse class="attribute" cx="1700" cy="115" rx="86" ry="30"/><text class="attribute-text" x="1700" y="120" text-anchor="middle">code (UQ)</text>
+    <ellipse class="attribute" cx="1950" cy="125" rx="76" ry="30"/><text class="attribute-text" x="1950" y="130" text-anchor="middle">name</text>
+    <ellipse class="attribute" cx="1425" cy="235" rx="78" ry="30"/><text class="attribute-text" x="1425" y="240" text-anchor="middle">country</text>
+    <ellipse class="attribute" cx="1425" cy="405" rx="82" ry="30"/><text class="attribute-text" x="1425" y="410" text-anchor="middle">address</text>
+    <ellipse class="attribute" cx="1970" cy="235" rx="70" ry="30"/><text class="attribute-text" x="1970" y="240" text-anchor="middle">city</text>
+    <ellipse class="attribute" cx="1970" cy="405" rx="92" ry="30"/><text class="attribute-text" x="1970" y="410" text-anchor="middle">opened_on</text>
+  </g>
+
+  <!-- DELIVERY: тернарная связь -->
+  <g filter="url(#shadow)">
+    <polygon points="1050,520 1140,600 1050,680 960,600" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+    <text class="relation-text" x="1050" y="605" text-anchor="middle">DELIVERY</text>
+  </g>
+  <g>
+    <ellipse class="attribute" cx="820" cy="395" rx="96" ry="30"/><text class="key-text" x="820" y="400" text-anchor="middle">delivery_id</text>
+    <ellipse class="attribute" cx="1050" cy="360" rx="102" ry="30"/><text class="attribute-text" x="1050" y="365" text-anchor="middle">delivered_at</text>
+    <ellipse class="attribute" cx="1280" cy="410" rx="88" ry="30"/><text class="attribute-text" x="1280" y="415" text-anchor="middle">quantity</text>
+    <ellipse class="attribute" cx="1380" cy="540" rx="88" ry="30"/><text class="attribute-text" x="1380" y="545" text-anchor="middle">unit_cost</text>
+    <ellipse class="attribute" cx="1390" cy="650" rx="132" ry="30"/><text class="attribute-text" x="1390" y="655" text-anchor="middle">batch_number (UQ*)</text>
+    <ellipse class="attribute" cx="1245" cy="790" rx="112" ry="30"/><text class="attribute-text" x="1245" y="795" text-anchor="middle">quality_status</text>
+    <ellipse class="attribute" cx="980" cy="830" rx="120" ry="30"/><text class="attribute-text" x="980" y="835" text-anchor="middle">expires_on (NULL)</text>
+  </g>
+
+  <!-- CONTAINS -->
+  <g filter="url(#shadow)">
+    <polygon points="1700,555 1780,620 1700,685 1620,620" fill="#ecfdf5" stroke="#059669" stroke-width="2.5"/>
+    <text class="relation-text" x="1700" y="625" text-anchor="middle">CONTAINS</text>
+  </g>
+
+  <!-- WAREHOUSE_SECTION -->
+  <g filter="url(#shadow)">
+    <rect x="1580" y="980" width="240" height="70" rx="4" fill="#ffedd5" stroke="#d97706" stroke-width="2.5"/>
+    <text class="entity-text" x="1700" y="1022" text-anchor="middle">WAREHOUSE_SECTION</text>
+  </g>
+  <g>
+    <ellipse class="attribute" cx="1435" cy="850" rx="94" ry="30"/><text class="key-text" x="1435" y="855" text-anchor="middle">section_id</text>
+    <ellipse class="attribute" cx="1700" cy="835" rx="102" ry="30"/><text class="attribute-text" x="1700" y="840" text-anchor="middle">code (UQ*)</text>
+    <ellipse class="attribute" cx="1940" cy="850" rx="74" ry="30"/><text class="attribute-text" x="1940" y="855" text-anchor="middle">name</text>
+    <ellipse class="attribute" cx="1395" cy="1105" rx="106" ry="30"/><text class="attribute-text" x="1395" y="1110" text-anchor="middle">section_type</text>
+    <ellipse class="attribute" cx="1565" cy="1210" rx="104" ry="30"/><text class="attribute-text" x="1565" y="1215" text-anchor="middle">capacity_m3</text>
+    <ellipse class="attribute" cx="1785" cy="1210" rx="70" ry="30"/><text class="attribute-text" x="1785" y="1215" text-anchor="middle">floor</text>
+    <ellipse class="attribute" cx="1395" cy="1275" rx="90" ry="30"/><text class="attribute-text" x="1395" y="1280" text-anchor="middle">is_active</text>
+  </g>
+
+  <!-- PARENT_OF: рекурсивная связь -->
+  <g filter="url(#shadow)">
+    <polygon points="1930,950 2030,1015 1930,1080 1830,1015" fill="#fff7ed" stroke="#d97706" stroke-width="2.5"/>
+    <text class="relation-text" x="1930" y="1020" text-anchor="middle">PARENT_OF</text>
+  </g>
+
+  <!-- Легенда -->
+  <g>
+    <rect x="790" y="1010" width="520" height="220" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text class="legend-title" x="815" y="1042">Обозначения нотации Чена</text>
+    <rect x="815" y="1062" width="78" height="34" fill="#e2e8f0" stroke="#475569"/><text class="legend" x="910" y="1084">сущность</text>
+    <polygon points="854,1110 893,1129 854,1148 815,1129" fill="#e2e8f0" stroke="#475569"/><text class="legend" x="910" y="1134">связь</text>
+    <ellipse cx="854" cy="1175" rx="39" ry="18" fill="white" stroke="#475569"/><text class="legend" x="910" y="1180">атрибут; подчёркнутый — первичный ключ</text>
+    <text class="legend" x="815" y="1210">Внешние ключи показаны связями и не дублируются овалами.</text>
+  </g>
+
+  <text class="subtitle" x="1050" y="1360" text-anchor="middle">UQ* DELIVERY: supplier + product + warehouse + batch_number · UQ* WAREHOUSE_SECTION: warehouse + code</text>
+</svg>

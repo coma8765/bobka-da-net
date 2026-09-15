@@ -1,0 +1,86 @@
+graph supply_lab_chen {
+    graph [
+        layout=neato,
+        overlap=false,
+        splines=true,
+        bgcolor="#f8fafc",
+        pad=0.45,
+        outputorder=edgesfirst,
+        fontname="Arial",
+        label="ER-диаграмма supply_lab в нотации Чена — ЛР № 1",
+        labelloc=t,
+        fontsize=22
+    ];
+    node [fontname="Arial", fontsize=11, color="#334155", penwidth=1.5];
+    edge [fontname="Arial", fontsize=11, color="#64748b", penwidth=1.5];
+
+    supplier [shape=box, style="rounded,filled", fillcolor="#dbeafe", color="#2563eb", label="SUPPLIER"];
+    product [shape=box, style="rounded,filled", fillcolor="#ede9fe", color="#7c3aed", label="PRODUCT"];
+    warehouse [shape=box, style="rounded,filled", fillcolor="#d1fae5", color="#059669", label="WAREHOUSE"];
+    section [shape=box, style="rounded,filled", fillcolor="#ffedd5", color="#d97706", label="WAREHOUSE_SECTION"];
+
+    delivery [shape=diamond, style=filled, fillcolor="#fee2e2", color="#dc2626", label="DELIVERY"];
+    contains [shape=diamond, style=filled, fillcolor="#ecfdf5", color="#059669", label="CONTAINS"];
+    parent_of [shape=diamond, style=filled, fillcolor="#fff7ed", color="#d97706", label="PARENT_OF"];
+
+    supplier -- delivery [label="1", headlabel="N"];
+    product -- delivery [label="1", headlabel="N"];
+    warehouse -- delivery [label="1", headlabel="N"];
+    warehouse -- contains [label="1"];
+    contains -- section [label="N"];
+    section -- parent_of [label="0..1", taillabel="родитель"];
+    parent_of -- section [label="N", headlabel="дочерняя", constraint=false];
+
+    s_id [shape=ellipse, label=<<U>supplier_id</U>>];
+    s_name [shape=ellipse, label="name"];
+    s_tax [shape=ellipse, label="tax_id (UQ)"];
+    s_country [shape=ellipse, label="country"];
+    s_city [shape=ellipse, label="city"];
+    s_email [shape=ellipse, label="email (UQ)"];
+    s_phone [shape=ellipse, label="phone"];
+    s_rating [shape=ellipse, label="rating"];
+    s_active [shape=ellipse, label="is_active"];
+    s_created [shape=ellipse, label="created_at"];
+    supplier -- {s_id s_name s_tax s_country s_city s_email s_phone s_rating s_active s_created};
+
+    p_id [shape=ellipse, label=<<U>product_id</U>>];
+    p_sku [shape=ellipse, label="sku (UQ)"];
+    p_name [shape=ellipse, label="name"];
+    p_category [shape=ellipse, label="category"];
+    p_unit [shape=ellipse, label="unit"];
+    p_price [shape=ellipse, label="unit_price"];
+    p_weight [shape=ellipse, label="weight_kg"];
+    p_perishable [shape=ellipse, label="is_perishable"];
+    p_created [shape=ellipse, label="created_at"];
+    product -- {p_id p_sku p_name p_category p_unit p_price p_weight p_perishable p_created};
+
+    w_id [shape=ellipse, label=<<U>warehouse_id</U>>];
+    w_code [shape=ellipse, label="code (UQ)"];
+    w_name [shape=ellipse, label="name"];
+    w_country [shape=ellipse, label="country"];
+    w_city [shape=ellipse, label="city"];
+    w_address [shape=ellipse, label="address"];
+    w_opened [shape=ellipse, label="opened_on"];
+    warehouse -- {w_id w_code w_name w_country w_city w_address w_opened};
+
+    sec_id [shape=ellipse, label=<<U>section_id</U>>];
+    sec_code [shape=ellipse, label="code (UQ*)"];
+    sec_name [shape=ellipse, label="name"];
+    sec_type [shape=ellipse, label="section_type"];
+    sec_capacity [shape=ellipse, label="capacity_m3"];
+    sec_floor [shape=ellipse, label="floor"];
+    sec_active [shape=ellipse, label="is_active"];
+    section -- {sec_id sec_code sec_name sec_type sec_capacity sec_floor sec_active};
+
+    d_id [shape=ellipse, label=<<U>delivery_id</U>>];
+    d_time [shape=ellipse, label="delivered_at"];
+    d_quantity [shape=ellipse, label="quantity"];
+    d_cost [shape=ellipse, label="unit_cost"];
+    d_batch [shape=ellipse, label="batch_number (UQ*)"];
+    d_quality [shape=ellipse, label="quality_status"];
+    d_expires [shape=ellipse, label="expires_on (NULL)"];
+    delivery -- {d_id d_time d_quantity d_cost d_batch d_quality d_expires};
+
+    note [shape=note, color="#94a3b8", fontcolor="#475569", fontsize=10,
+        label="Подчёркнутый атрибут — первичный ключ\lUQ* DELIVERY: supplier + product + warehouse + batch_number\lUQ* WAREHOUSE_SECTION: warehouse + code\lВнешние ключи показаны связями и не дублируются овалами\l"];
+}
