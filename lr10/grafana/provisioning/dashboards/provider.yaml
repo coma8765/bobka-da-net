@@ -1,0 +1,13 @@
+apiVersion: 1
+
+providers:
+  - name: supply-lab
+    orgId: 1
+    folder: Лабораторная работа 10
+    folderUid: lr10
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 10
+    allowUiUpdates: false
+    options:
+      path: /var/lib/grafana/dashboards

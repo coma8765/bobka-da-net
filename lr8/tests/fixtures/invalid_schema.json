@@ -1,0 +1,27 @@
+[
+  {
+    "event_id": "79e86a1a-7824-4be0-b98b-2ee4762ae9a6",
+    "source_file_id": "550e8400-e29b-41d4-a716-446655440000",
+    "supplier_tax_id": "7700000915",
+    "product_sku": "SKU-000352",
+    "warehouse_code": "WH-00997",
+    "delivered_at": "2026-09-28T11:42:21Z",
+    "quantity": 256,
+    "unit_cost": 20249.89,
+    "batch_number": "ETL-79e86a1a78244be0b98b2ee4762ae9a6",
+    "quality_status": "rejected",
+    "expires_on": null
+  },
+  {
+    "event_id": "c885429d-c6d4-40ac-b2e3-29402406b217",
+    "source_file_id": "550e8400-e29b-41d4-a716-446655440000",
+    "supplier_tax_id": "7700000217",
+    "product_sku": "SKU-000733",
+    "warehouse_code": "WH-00610",
+    "delivered_at": "2026-09-28T11:42:21Z",
+    "unit_cost": 27880.34,
+    "batch_number": "ETL-c885429dc6d440acb2e329402406b217",
+    "quality_status": "accepted",
+    "expires_on": null
+  }
+]

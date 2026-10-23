@@ -1,0 +1,23 @@
+apiVersion: 1
+
+datasources:
+  - name: Supply Lab
+    uid: supply-lab-postgres
+    type: grafana-postgresql-datasource
+    access: proxy
+    url: lr1-postgres:5432
+    user: grafana_reader
+    isDefault: true
+    editable: false
+    version: 1
+    jsonData:
+      database: supply_lab
+      sslmode: disable
+      postgresVersion: 1700
+      timescaledb: false
+      maxOpenConns: 5
+      maxIdleConns: 2
+      connMaxLifetime: 14400
+      timeInterval: 1d
+    secureJsonData:
+      password: $GRAFANA_DB_PASSWORD

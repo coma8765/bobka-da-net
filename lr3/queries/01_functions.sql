@@ -197,11 +197,11 @@ BEGIN
 END;
 $$;
 
--- Дополнительная функция. Создать статистическую таблицу вчерашнего дня и
+-- Защита. Создать статистическую таблицу вчерашнего дня и
 -- сохранить в ней самые нагруженные склады за день.
 -- Нагрузка определяется числом поставок. При равном числе поставок выше
 -- располагается склад с большим суммарным количеством принятого товара.
-CREATE OR REPLACE FUNCTION public.fn_refresh_yesterday_warehouse_stats(
+CREATE OR REPLACE FUNCTION public.fn_refresh_yesterday_warehouse_stats1(
     p_limit integer DEFAULT 5
 )
 RETURNS TABLE (

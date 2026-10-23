@@ -1,0 +1,127 @@
+==> Выполняется sql/00_preflight.sql
+CREATE EXTENSION
+CREATE SCHEMA
+==> Выполняется sql/01_schema_and_type.sql
+CREATE FUNCTION
+==> Выполняется sql/02_scalar_function.sql
+CREATE FUNCTION
+==> Выполняется sql/03_aggregate.sql
+CREATE FUNCTION
+CREATE FUNCTION
+DROP AGGREGATE
+CREATE AGGREGATE
+==> Выполняется sql/04_table_function.sql
+CREATE FUNCTION
+==> Выполняется sql/05_procedure.sql
+CREATE PROCEDURE
+==> Выполняется sql/06_trigger.sql
+CREATE TABLE
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+==> Выполняется sql/07_numpy_gradient.sql
+CREATE FUNCTION
+==> Выполняется tests/test_lr4.sql
+BEGIN
+LR4 fixtures: procedure register_delivery and source rows
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+CALL
+CALL
+DO
+ batch_number |    delivered_at     | quantity | unit_cost | quality_status 
+--------------+---------------------+----------+-----------+----------------
+ LR4-TEST-001 | 2026-01-10 12:00:00 |        2 |     10.00 | accepted
+ LR4-TEST-002 | 2026-01-11 12:00:00 |        3 |     20.00 | inspection
+(2 rows)
+
+LR4 part 1/7: scalar function lr4.delivery_total
+ input_quantity | input_unit_cost | expected_total | actual_total 
+----------------+-----------------+----------------+--------------
+             12 |          125.50 |        1506.00 |      1506.00
+(1 row)
+
+DO
+LR4 part 2/7: aggregate lr4.weighted_avg_unit_cost
+ batch_number | quantity | unit_cost | weighted_component 
+--------------+----------+-----------+--------------------
+ LR4-TEST-001 |        2 |     10.00 |              20.00
+ LR4-TEST-002 |        3 |     20.00 |              60.00
+(2 rows)
+
+ weighted_sum | total_quantity | expected_weighted_average | actual_weighted_average 
+--------------+----------------+---------------------------+-------------------------
+        80.00 |              5 |                     16.00 |                   16.00
+(1 row)
+
+DO
+LR4 part 3/7: user-defined domain lr4.positive_quantity
+ input_value | domain_value | validation_result 
+-------------+--------------+-------------------
+           5 |            5 | t
+(1 row)
+
+DO
+LR4 part 4/7: table function lr4.supplier_delivery_summary
+CALL
+ supplier_id |   supplier_name   | deliveries_count | total_quantity | total_cost 
+-------------+-------------------+------------------+----------------+------------
+        1028 | LR4 Test Supplier |                2 |              5 |      80.00
+(1 row)
+
+DO
+LR4 part 5/7: procedure lr4.register_delivery error handling
+DO
+              procedure_check              | valid_test_deliveries 
+-------------------------------------------+-----------------------
+ all invalid procedure calls were rejected |                     3
+(1 row)
+
+LR4 part 6/7: PL/Python audit trigger
+UPDATE 1
+DELETE 1
+ operation | delivery_id | old_quantity | new_quantity | changed_by 
+-----------+-------------+--------------+--------------+------------
+ INSERT    |        5229 |              | 2            | postgres
+ UPDATE    |        5229 | 2            | 4            | postgres
+ DELETE    |        5229 | 4            |              | postgres
+(3 rows)
+
+DO
+LR4 trigger transaction consistency: SAVEPOINT rollback
+SAVEPOINT
+CALL
+ROLLBACK
+RELEASE
+DO
+LR4 part 7/7: NumPy gradient function lr4.numpy_gradient
+ input_values | spacing | expected_gradient | actual_gradient 
+--------------+---------+-------------------+-----------------
+ {1,4,9,16}   |       1 | {3,4,6,7}         | {3,4,6,7}
+(1 row)
+
+ input_values | spacing | expected_gradient | actual_gradient 
+--------------+---------+-------------------+-----------------
+ {1,4,9,16}   |       2 | {1.5,2,3,3.5}     | {1.5,2,3,3.5}
+(1 row)
+
+DO
+LR4 catalog verification: all required objects and PL/Python language
+         object_name          | object_kind |  language  
+------------------------------+-------------+------------
+ weighted_avg_unit_cost       | aggregate   | internal
+ audit_delivery               | function    | plpython3u
+ delivery_total               | function    | plpython3u
+ is_positive_quantity         | function    | plpython3u
+ numpy_gradient               | function    | plpython3u
+ supplier_delivery_summary    | function    | plpython3u
+ weighted_avg_unit_cost_final | function    | plpython3u
+ weighted_avg_unit_cost_sfunc | function    | plpython3u
+ register_delivery            | procedure   | plpython3u
+(9 rows)
+
+DO
+ROLLBACK
+All LR4 tests passed
+==> Все объекты ЛР 4 установлены, тесты успешно пройдены

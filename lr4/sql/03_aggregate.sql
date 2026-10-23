@@ -47,4 +47,3 @@ CREATE AGGREGATE lr4.weighted_avg_unit_cost(numeric, integer) (
     INITCOND = '{0,0}',
     PARALLEL = UNSAFE
 );
-

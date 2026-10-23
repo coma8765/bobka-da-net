@@ -2,6 +2,8 @@
 
 BEGIN;
 
+\echo 'LR4 fixtures: procedure register_delivery and source rows'
+
 INSERT INTO public.suppliers (
     name,
     tax_id,
@@ -98,6 +100,42 @@ CALL lr4.register_delivery(
 );
 
 DO LANGUAGE plpython3u $python$
+rows = plpy.execute(
+    """
+    SELECT quantity, unit_cost, quality_status
+    FROM public.deliveries
+    WHERE batch_number IN ('LR4-TEST-001', 'LR4-TEST-002')
+    ORDER BY batch_number
+    """
+)
+
+if len(rows) != 2:
+    plpy.error("register_delivery did not create both fixture deliveries")
+if rows[0]["quantity"] != 2 or rows[0]["quality_status"] != "accepted":
+    plpy.error("register_delivery stored invalid values for the first delivery")
+if rows[1]["quantity"] != 3 or rows[1]["quality_status"] != "inspection":
+    plpy.error("register_delivery stored invalid values for the second delivery")
+$python$;
+
+SELECT
+    batch_number,
+    delivered_at,
+    quantity,
+    unit_cost,
+    quality_status
+FROM public.deliveries
+WHERE batch_number IN ('LR4-TEST-001', 'LR4-TEST-002')
+ORDER BY batch_number;
+
+\echo 'LR4 part 1/7: scalar function lr4.delivery_total'
+
+SELECT
+    12 AS input_quantity,
+    125.50::numeric AS input_unit_cost,
+    (12 * 125.50)::numeric(20, 2) AS expected_total,
+    lr4.delivery_total(12, 125.50) AS actual_total;
+
+DO LANGUAGE plpython3u $python$
 from decimal import Decimal
 
 result = plpy.execute(
@@ -119,7 +157,36 @@ except plpy.SPIError:
     pass
 else:
     plpy.error("scalar function accepted zero quantity")
+
+try:
+    plpy.execute("SELECT lr4.delivery_total(1, -10.00)")
+except plpy.SPIError:
+    pass
+else:
+    plpy.error("scalar function accepted a negative unit cost")
 $python$;
+
+\echo 'LR4 part 2/7: aggregate lr4.weighted_avg_unit_cost'
+
+SELECT
+    batch_number,
+    quantity,
+    unit_cost,
+    (quantity * unit_cost)::numeric(20, 2) AS weighted_component
+FROM public.deliveries
+WHERE batch_number IN ('LR4-TEST-001', 'LR4-TEST-002')
+ORDER BY batch_number;
+
+SELECT
+    sum(unit_cost * quantity)::numeric(20, 2) AS weighted_sum,
+    sum(quantity)::bigint AS total_quantity,
+    (
+        sum(unit_cost * quantity) / sum(quantity)
+    )::numeric(20, 2) AS expected_weighted_average,
+    lr4.weighted_avg_unit_cost(unit_cost, quantity)::numeric(20, 2)
+        AS actual_weighted_average
+FROM public.deliveries
+WHERE batch_number IN ('LR4-TEST-001', 'LR4-TEST-002');
 
 DO LANGUAGE plpython3u $python$
 from decimal import Decimal
@@ -161,12 +228,25 @@ else:
     plpy.error("aggregate accepted a negative quantity")
 $python$;
 
+\echo 'LR4 part 3/7: user-defined domain lr4.positive_quantity'
+
+SELECT
+    5 AS input_value,
+    (5::lr4.positive_quantity)::integer AS domain_value,
+    lr4.is_positive_quantity(5) AS validation_result;
+
 DO LANGUAGE plpython3u $python$
 valid = plpy.execute(
-    "SELECT (5::lr4.positive_quantity)::integer AS actual"
+    """
+    SELECT
+        (5::lr4.positive_quantity)::integer AS actual,
+        NULL::lr4.positive_quantity AS null_value
+    """
 )[0]
 if valid["actual"] != 5:
     plpy.error("positive quantity domain changed a valid value")
+if valid["null_value"] is not None:
+    plpy.error("positive quantity domain changed NULL")
 
 for invalid_value in (0, -1):
     try:
@@ -181,6 +261,8 @@ for invalid_value in (0, -1):
         plpy.error("positive quantity domain accepted %s" % invalid_value)
 $python$;
 
+\echo 'LR4 part 4/7: table function lr4.supplier_delivery_summary'
+
 CALL lr4.register_delivery(
     :test_supplier_id,
     :test_product_id,
@@ -192,6 +274,19 @@ CALL lr4.register_delivery(
     'accepted',
     NULL
 );
+
+SELECT
+    summary.supplier_id,
+    summary.supplier_name,
+    summary.deliveries_count,
+    summary.total_quantity,
+    summary.total_cost
+FROM lr4.supplier_delivery_summary(
+    timestamp '2026-01-01 00:00:00',
+    timestamp '2026-02-01 00:00:00'
+) AS summary
+JOIN public.suppliers AS supplier USING (supplier_id)
+WHERE supplier.tax_id = 'LR4T00000001';
 
 DO LANGUAGE plpython3u $python$
 from decimal import Decimal
@@ -222,6 +317,8 @@ if summary["total_cost"] != Decimal("80.00"):
 for start_value, end_value in (
     ("2026-01-01 00:00:00", "2026-01-01 00:00:00"),
     ("2026-02-01 00:00:00", "2026-01-01 00:00:00"),
+    (None, "2026-02-01 00:00:00"),
+    ("2026-01-01 00:00:00", None),
 ):
     plan = plpy.prepare(
         "SELECT * FROM lr4.supplier_delivery_summary($1, $2)",
@@ -234,6 +331,8 @@ for start_value, end_value in (
     else:
         plpy.error("table function accepted an invalid interval")
 $python$;
+
+\echo 'LR4 part 5/7: procedure lr4.register_delivery error handling'
 
 DO LANGUAGE plpython3u $python$
 ids = plpy.execute(
@@ -302,6 +401,39 @@ cases = [
         "unknown",
         None,
     ],
+    [
+        ids["supplier_id"],
+        ids["product_id"],
+        ids["warehouse_id"],
+        "2026-01-12 12:00:00",
+        None,
+        10,
+        "LR4-TEST-NULL-QTY",
+        "accepted",
+        None,
+    ],
+    [
+        ids["supplier_id"],
+        ids["product_id"],
+        ids["warehouse_id"],
+        "2026-01-12 12:00:00",
+        1,
+        0,
+        "LR4-TEST-BAD-COST",
+        "accepted",
+        None,
+    ],
+    [
+        ids["supplier_id"],
+        ids["product_id"],
+        ids["warehouse_id"],
+        "2026-01-12 12:00:00",
+        1,
+        10,
+        " ",
+        "accepted",
+        None,
+    ],
 ]
 
 for case in cases:
@@ -313,12 +445,34 @@ for case in cases:
         plpy.error("register_delivery accepted an invalid call")
 $python$;
 
+SELECT
+    'all invalid procedure calls were rejected' AS procedure_check,
+    count(*) AS valid_test_deliveries
+FROM public.deliveries
+WHERE supplier_id = :test_supplier_id
+  AND batch_number LIKE 'LR4-TEST-%';
+
+\echo 'LR4 part 6/7: PL/Python audit trigger'
+
 UPDATE public.deliveries
 SET quantity = 4
 WHERE delivery_id = :first_delivery_id;
 
 DELETE FROM public.deliveries
 WHERE delivery_id = :first_delivery_id;
+
+SELECT
+    operation,
+    delivery_id,
+    old_row ->> 'quantity' AS old_quantity,
+    new_row ->> 'quantity' AS new_quantity,
+    changed_by
+FROM lr4.delivery_audit
+WHERE coalesce(
+    new_row ->> 'batch_number',
+    old_row ->> 'batch_number'
+) = 'LR4-TEST-001'
+ORDER BY audit_id;
 
 DO LANGUAGE plpython3u $python$
 rows = plpy.execute(
@@ -353,6 +507,8 @@ if rows[1]["old_quantity"] != 2 or rows[1]["new_quantity"] != 4:
 if rows[2]["old_quantity"] != 4 or not rows[2]["new_is_null"]:
     plpy.error("DELETE audit snapshot is invalid")
 $python$;
+
+\echo 'LR4 trigger transaction consistency: SAVEPOINT rollback'
 
 SAVEPOINT audit_rollback_test;
 
@@ -392,6 +548,89 @@ if delivery_count != 0 or audit_count != 0:
     plpy.error("savepoint rollback left a delivery or its audit record")
 $python$;
 
+\echo 'LR4 part 7/7: NumPy gradient function lr4.numpy_gradient'
+
+SELECT
+    ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[] AS input_values,
+    1.0::double precision AS spacing,
+    ARRAY[3.0, 4.0, 6.0, 7.0]::double precision[] AS expected_gradient,
+    lr4.numpy_gradient(
+        ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[]
+    ) AS actual_gradient;
+
+SELECT
+    ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[] AS input_values,
+    2.0::double precision AS spacing,
+    ARRAY[1.5, 2.0, 3.0, 3.5]::double precision[] AS expected_gradient,
+    lr4.numpy_gradient(
+        ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[],
+        2.0
+    ) AS actual_gradient;
+
+DO LANGUAGE plpython3u $python$
+def arrays_are_close(actual, expected, tolerance=1e-12):
+    return (
+        len(actual) == len(expected)
+        and all(
+            abs(left - right) <= tolerance
+            for left, right in zip(actual, expected)
+        )
+    )
+
+results = plpy.execute(
+    """
+    SELECT
+        lr4.numpy_gradient(
+            ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[]
+        ) AS unit_spacing,
+        lr4.numpy_gradient(
+            ARRAY[1.0, 4.0, 9.0, 16.0]::double precision[],
+            2.0
+        ) AS double_spacing,
+        lr4.numpy_gradient(NULL::double precision[]) AS null_input
+    """
+)[0]
+
+if not arrays_are_close(results["unit_spacing"], [3.0, 4.0, 6.0, 7.0]):
+    plpy.error("numpy_gradient returned an invalid result for unit spacing")
+if not arrays_are_close(results["double_spacing"], [1.5, 2.0, 3.0, 3.5]):
+    plpy.error("numpy_gradient returned an invalid result for spacing 2")
+if results["null_input"] is not None:
+    plpy.error("strict numpy_gradient did not return NULL for a NULL array")
+
+invalid_queries = [
+    "SELECT lr4.numpy_gradient(ARRAY[1.0]::double precision[])",
+    "SELECT lr4.numpy_gradient(ARRAY[1.0, NULL]::double precision[])",
+    "SELECT lr4.numpy_gradient(ARRAY[1.0, 2.0]::double precision[], 0.0)",
+    "SELECT lr4.numpy_gradient(ARRAY[1.0, 'Infinity'::float8])",
+]
+
+for query in invalid_queries:
+    try:
+        plpy.execute(query)
+    except plpy.SPIError:
+        pass
+    else:
+        plpy.error("numpy_gradient accepted invalid input: %s" % query)
+$python$;
+
+\echo 'LR4 catalog verification: all required objects and PL/Python language'
+
+SELECT
+    p.proname AS object_name,
+    CASE p.prokind
+        WHEN 'a' THEN 'aggregate'
+        WHEN 'f' THEN 'function'
+        WHEN 'p' THEN 'procedure'
+        ELSE p.prokind::text
+    END AS object_kind,
+    l.lanname AS language
+FROM pg_proc AS p
+JOIN pg_namespace AS n ON n.oid = p.pronamespace
+JOIN pg_language AS l ON l.oid = p.prolang
+WHERE n.nspname = 'lr4'
+ORDER BY object_kind, object_name;
+
 DO LANGUAGE plpython3u $python$
 objects = plpy.execute(
     """
@@ -408,6 +647,9 @@ objects = plpy.execute(
         count(*) FILTER (
             WHERE p.proname = 'register_delivery' AND p.prokind = 'p'
         ) AS procedure_count,
+        count(*) FILTER (
+            WHERE p.proname = 'numpy_gradient' AND p.prokind = 'f'
+        ) AS numpy_gradient_count,
         bool_and(l.lanname = 'plpython3u') FILTER (
             WHERE p.prokind IN ('f', 'p')
         ) AS python_only
@@ -426,6 +668,8 @@ if objects["table_function_count"] != 1:
     plpy.error("table function is missing")
 if objects["procedure_count"] != 1:
     plpy.error("procedure is missing")
+if objects["numpy_gradient_count"] != 1:
+    plpy.error("NumPy gradient function is missing")
 if not objects["python_only"]:
     plpy.error("a procedural LR4 object uses a language other than PL/Python")
 

@@ -1,0 +1,271 @@
+Поставка: 5136; поставщик: 1
+Период рейтинга: [2026-09-17, 2026-09-18); статус: accepted; лимит: 5
+
+==================== Пункт 1. Скалярный запрос ====================
+3025
+
+==================== Пункт 2. Запрос с несколькими JOIN ====================
+delivery_id | supplier_id | supplier_name | product_id | product_name           | warehouse_id | warehouse_name           | delivered_at        | quantity | total_cost
+------------+-------------+---------------+------------+------------------------+--------------+--------------------------+---------------------+----------+-----------
+5136        | 1           | Supplier 0001 | 3          | Household product 0003 | 3            | Distribution center 0003 | 2026-09-17 12:05:01 | 25       | 2575.00   
+5135        | 1           | Supplier 0001 | 3          | Household product 0003 | 2            | Distribution center 0002 | 2026-09-17 12:03:22 | 15       | 1530.00   
+5134        | 1           | Supplier 0001 | 3          | Household product 0003 | 2            | Distribution center 0002 | 2026-09-17 12:03:21 | 20       | 2040.00   
+5133        | 1           | Supplier 0001 | 3          | Household product 0003 | 1            | Distribution center 0001 | 2026-09-17 12:01:43 | 10       | 1010.00   
+5132        | 1           | Supplier 0001 | 3          | Household product 0003 | 1            | Distribution center 0001 | 2026-09-17 12:01:42 | 8        | 808.00    
+
+==================== Пункт 3. CTE и оконные функции ====================
+supplier_id | supplier_name | total_cost | cost_rank | share_percent        | cumulative_cost
+------------+---------------+------------+-----------+----------------------+----------------
+1           | Supplier 0001 | 9175.00    | 1         | 100.0000000000000000 | 9175.00        
+
+==================== Пункт 4. Запрос к метаданным ====================
+ordinal_position | column_name    | data_type                   | is_nullable | column_default
+-----------------+----------------+-----------------------------+-------------+---------------
+1                | delivery_id    | bigint                      | NO          | NULL          
+2                | supplier_id    | bigint                      | NO          | NULL          
+3                | product_id     | bigint                      | NO          | NULL          
+4                | warehouse_id   | bigint                      | NO          | NULL          
+5                | delivered_at   | timestamp without time zone | NO          | NULL          
+6                | quantity       | integer                     | NO          | NULL          
+7                | unit_cost      | numeric                     | NO          | NULL          
+8                | batch_number   | character varying           | NO          | NULL          
+9                | quality_status | character varying           | NO          | NULL          
+10               | expires_on     | date                        | YES         | NULL          
+
+==================== Пункт 5. Вызов скалярной функции ====================
+2575.00
+
+==================== Пункт 6. Вызов табличной функции ====================
+delivery_id | product_id | product_sku | product_name                 | warehouse_id | warehouse_code | delivered_at        | quantity | unit_cost | total_cost   | quality_status | expires_on
+------------+------------+-------------+------------------------------+--------------+----------------+---------------------+----------+-----------+--------------+----------------+-----------
+5136        | 3          | SKU-000003  | Household product 0003       | 3            | WH-00003       | 2026-09-17 12:05:01 | 25       | 103.00    | 2575.00      | accepted       | NULL      
+5135        | 3          | SKU-000003  | Household product 0003       | 2            | WH-00002       | 2026-09-17 12:03:22 | 15       | 102.00    | 1530.00      | accepted       | NULL      
+5134        | 3          | SKU-000003  | Household product 0003       | 2            | WH-00002       | 2026-09-17 12:03:21 | 20       | 102.00    | 2040.00      | accepted       | NULL      
+5133        | 3          | SKU-000003  | Household product 0003       | 1            | WH-00001       | 2026-09-17 12:01:43 | 10       | 101.00    | 1010.00      | accepted       | NULL      
+5132        | 3          | SKU-000003  | Household product 0003       | 1            | WH-00001       | 2026-09-17 12:01:42 | 8        | 101.00    | 808.00       | accepted       | NULL      
+5131        | 3          | SKU-000003  | Household product 0003       | 1            | WH-00001       | 2026-09-17 12:01:41 | 12       | 101.00    | 1212.00      | accepted       | NULL      
+2650        | 690        | SKU-000690  | Pharmaceuticals product 0690 | 297          | WH-00297       | 2026-06-01 00:32:00 | 4342     | 41.78     | 181408.76    | accepted       | 2027-12-10
+2429        | 675        | SKU-000675  | Construction product 0675    | 325          | WH-00325       | 2026-04-26 16:45:00 | 1508     | 13560.90  | 20449837.20  | rejected       | NULL      
+3698        | 389        | SKU-000389  | Construction product 0389    | 784          | WH-00784       | 2026-03-31 00:58:00 | 4730     | 35319.33  | 167060430.90 | rejected       | NULL      
+1352        | 435        | SKU-000435  | Food product 0435            | 388          | WH-00388       | 2025-08-27 23:38:00 | 246      | 24536.58  | 6035998.68   | rejected       | 2025-11-17
+4190        | 213        | SKU-000213  | Electronics product 0213     | 427          | WH-00427       | 2025-03-15 14:04:00 | 4314     | 41353.24  | 178397877.36 | accepted       | NULL      
+
+==================== Пункт 7. Вызов хранимой процедуры ====================
+{
+  "name": "deliveries",
+  "schema": "public",
+  "columns": [
+    {
+      "name": "delivery_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "supplier_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "product_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "warehouse_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "delivered_at",
+      "default": null,
+      "data_type": "timestamp without time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "quantity",
+      "default": null,
+      "data_type": "integer",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "unit_cost",
+      "default": null,
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "batch_number",
+      "default": null,
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "quality_status",
+      "default": null,
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "expires_on",
+      "default": null,
+      "data_type": "date",
+      "is_nullable": "YES"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "2200_17452_1_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_2_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_3_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_4_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_5_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_6_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_7_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_8_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_9_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "deliveries_business_key_uq",
+      "type": "UNIQUE",
+      "columns": [
+        "supplier_id",
+        "product_id",
+        "warehouse_id",
+        "batch_number"
+      ],
+      "referenced_columns": [
+        "batch_number",
+        "product_id",
+        "supplier_id",
+        "warehouse_id"
+      ]
+    },
+    {
+      "name": "deliveries_pk",
+      "type": "PRIMARY KEY",
+      "columns": [
+        "delivery_id"
+      ],
+      "referenced_columns": [
+        "delivery_id"
+      ]
+    },
+    {
+      "name": "deliveries_product_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "product_id"
+      ],
+      "referenced_columns": [
+        "product_id"
+      ]
+    },
+    {
+      "name": "deliveries_quality_status_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "quality_status"
+      ]
+    },
+    {
+      "name": "deliveries_quantity_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "quantity"
+      ]
+    },
+    {
+      "name": "deliveries_supplier_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "supplier_id"
+      ],
+      "referenced_columns": [
+        "supplier_id"
+      ]
+    },
+    {
+      "name": "deliveries_unit_cost_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "unit_cost"
+      ]
+    },
+    {
+      "name": "deliveries_warehouse_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "warehouse_id"
+      ],
+      "referenced_columns": [
+        "warehouse_id"
+      ]
+    }
+  ],
+  "object_type": "BASE TABLE"
+}
+
+==================== Пункт 8. Вызов системной функции ====================
+current_database | session_user | current_schema | version                                                                                       
+-----------------+--------------+----------------+-----------------------------------------------------------------------------------------------
+supply_lab       | postgres     | public         | PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+
+==================== Пункт 9. Создание таблицы ====================
+Таблица lr6.delivery_notes готова.
+
+==================== Пункт 10. Вставка данных ====================
+note_id | delivery_id | note_text                    | created_at                       | created_by
+--------+-------------+------------------------------+----------------------------------+-----------
+1       | 5136        | Демонстрационная заметка ЛР6 | 2026-09-25 13:41:33.739244+00:00 | postgres  
+
+Изменения демонстрации отменены (ROLLBACK).

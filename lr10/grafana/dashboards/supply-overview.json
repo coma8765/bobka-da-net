@@ -1,0 +1,780 @@
+{
+  "id": null,
+  "uid": "supply-overview",
+  "title": "Поставки: стоимость и качество",
+  "description": "ЛР10 · supply_lab. Стоимость зарегистрированных партий включает все статусы и выражена в условных денежных единицах. Исходные даты условно интерпретируются как UTC.",
+  "tags": [
+    "lr10",
+    "supply-lab"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 41,
+  "version": 1,
+  "editable": false,
+  "graphTooltip": 1,
+  "refresh": "",
+  "time": {
+    "from": "2025-01-01T00:00:00.000Z",
+    "to": "2026-09-05T00:00:00.000Z"
+  },
+  "timepicker": {
+    "refresh_intervals": []
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "warehouse",
+        "label": "Склад",
+        "type": "query",
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "supply-lab-postgres"
+        },
+        "definition": "SELECT label AS __text, value AS __value\nFROM (\n    SELECT 'Все склады'::text AS label, '-1'::text AS value, 0 AS ordering\n    UNION ALL\n    SELECT code || ' — ' || name, warehouse_id::text, 1\n    FROM public.warehouses\n) AS options\nORDER BY ordering, label;",
+        "query": "SELECT label AS __text, value AS __value\nFROM (\n    SELECT 'Все склады'::text AS label, '-1'::text AS value, 0 AS ordering\n    UNION ALL\n    SELECT code || ' — ' || name, warehouse_id::text, 1\n    FROM public.warehouses\n) AS options\nORDER BY ordering, label;",
+        "refresh": 1,
+        "sort": 0,
+        "multi": false,
+        "includeAll": false,
+        "current": {
+          "text": "Все склады",
+          "value": "-1"
+        },
+        "options": [],
+        "hide": 0,
+        "skipUrlSync": false
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Количество поставок",
+      "type": "stat",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT COUNT(*) AS delivery_count\nFROM public.deliveries d\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint));",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 0,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "value",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center"
+      },
+      "description": "Все статусы приёмки. Учитываются выбранный период и склад."
+    },
+    {
+      "id": 2,
+      "title": "Стоимость партий, усл. ден. ед.",
+      "type": "stat",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT COALESCE(SUM(d.quantity * d.unit_cost), 0) AS total_cost\nFROM public.deliveries d\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint));",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 2,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "value",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center"
+      },
+      "description": "Все статусы приёмки. Учитываются выбранный период и склад. Стоимость зарегистрированных партий, не выручка и не оплаченные закупки."
+    },
+    {
+      "id": 3,
+      "title": "Доля отклонённых поставок",
+      "type": "stat",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT 100.0 * COUNT(*) FILTER (WHERE d.quality_status = 'rejected') / NULLIF(COUNT(*), 0) AS rejected_percent\nFROM public.deliveries d\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint));",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 2,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "noValue": "Нет поставок",
+          "min": 0,
+          "max": 100
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "value",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center"
+      },
+      "description": "Все статусы приёмки. Учитываются выбранный период и склад."
+    },
+    {
+      "id": 4,
+      "title": "Поставки по дням и статусам",
+      "type": "timeseries",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 4,
+        "w": 12,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT date_trunc('day', d.delivered_at) AT TIME ZONE 'UTC' AS time,\n       COUNT(*) FILTER (WHERE d.quality_status = 'accepted') AS accepted,\n       COUNT(*) FILTER (WHERE d.quality_status = 'inspection') AS inspection,\n       COUNT(*) FILTER (WHERE d.quality_status = 'rejected') AS rejected\nFROM public.deliveries d\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint))\nGROUP BY 1\nORDER BY 1;",
+          "format": "time_series"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 0,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "insertNulls": 86400000,
+            "axisLabel": "Поставки",
+            "axisCenteredZero": false,
+            "stacking": {
+              "mode": "none",
+              "group": "A"
+            },
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "min": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "accepted"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Принято"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "green"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "inspection"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "На проверке"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "yellow"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rejected"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Отклонено"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "red"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "UTC. Дни без поставок — пропуски; крайние дни периода могут быть неполными."
+    },
+    {
+      "id": 5,
+      "title": "Топ-10 складов по стоимости партий",
+      "type": "barchart",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 4,
+        "w": 12,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT w.code || ' — ' || w.name AS warehouse,\n       SUM(d.quantity * d.unit_cost) AS total_cost\nFROM public.deliveries d\nJOIN public.warehouses w ON w.warehouse_id = d.warehouse_id\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint))\nGROUP BY w.warehouse_id, w.code, w.name\nORDER BY total_cost DESC, w.warehouse_id\nLIMIT 10;",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 2,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "total_cost"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Стоимость, усл. ден. ед."
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "orientation": "horizontal",
+        "xField": "warehouse",
+        "showValue": "auto",
+        "groupWidth": 0.7,
+        "barWidth": 0.97,
+        "stacking": "none",
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelMaxLength": 24
+      },
+      "description": "Условные денежные единицы, все статусы. Склады вне топ-10 не показаны."
+    },
+    {
+      "id": 6,
+      "title": "Последние поставки за период — до 100 строк",
+      "type": "table",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "supply-lab-postgres"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 14,
+        "w": 24,
+        "h": 12
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "supply-lab-postgres"
+          },
+          "editorMode": "code",
+          "rawQuery": true,
+          "rawSql": "SELECT d.delivery_id, d.delivered_at, d.batch_number,\n       s.name AS supplier, p.sku, p.name AS product,\n       w.code AS warehouse_code, w.name AS warehouse,\n       d.quantity, p.unit, d.unit_cost,\n       d.quantity * d.unit_cost AS total_cost,\n       d.quality_status, d.expires_on\nFROM public.deliveries d\nJOIN public.suppliers s ON s.supplier_id = d.supplier_id\nJOIN public.products p ON p.product_id = d.product_id\nJOIN public.warehouses w ON w.warehouse_id = d.warehouse_id\nWHERE $__timeFilter(d.delivered_at)\n  AND (${warehouse:sqlstring} = '-1'\n       OR d.warehouse_id = CAST(${warehouse:sqlstring} AS bigint))\nORDER BY d.delivered_at DESC, d.delivery_id DESC\nLIMIT 100;",
+          "format": "table"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "decimals": 0,
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "delivery_id"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "ID"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "delivered_at"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Дата поставки (UTC)"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "batch_number"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Партия"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "supplier"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Поставщик"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sku"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "SKU"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "product"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Товар"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "warehouse_code"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Код склада"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "warehouse"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Склад"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "quantity"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Количество"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "unit"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Ед. изм."
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "unit_cost"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Цена, усл. ден. ед."
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "total_cost"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Стоимость, усл. ден. ед."
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "quality_status"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Приёмка"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "expires_on"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Срок годности"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "unit_cost"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "total_cost"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "delivered_at"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time:YYYY-MM-DD HH:mm:ss"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "expires_on"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time:YYYY-MM-DD"
+              },
+              {
+                "id": "noValue",
+                "value": "Не указан"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "quality_status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "type": "value",
+                    "options": {
+                      "accepted": {
+                        "text": "Принято",
+                        "color": "green",
+                        "index": 0
+                      },
+                      "inspection": {
+                        "text": "На проверке",
+                        "color": "yellow",
+                        "index": 1
+                      },
+                      "rejected": {
+                        "text": "Отклонено",
+                        "color": "red",
+                        "index": 2
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "footer": {
+          "show": false
+        },
+        "enablePagination": true
+      },
+      "description": "Фильтры применяются до ограничения в 100 строк. Количество приводится вместе с единицей товара."
+    }
+  ]
+}

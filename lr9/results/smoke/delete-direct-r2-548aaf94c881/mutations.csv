@@ -1,0 +1,3 @@
+step,scenario,scheduled_s,actual_s,delivery_id,affected_rows,transaction_ms,invalidation_ms,invalidation_status,error
+1,delete,10,10.002332207999643,1747,1,21.770959,0.001125,bypass,
+2,delete,20,20.001828333000958,1147,1,7.218125,0.00075,bypass,

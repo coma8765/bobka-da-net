@@ -1,0 +1,6 @@
+\set ON_ERROR_STOP on
+
+BEGIN;
+DROP TABLE IF EXISTS lr7.delivery_tags;
+DROP SCHEMA IF EXISTS lr7;
+COMMIT;

@@ -1,0 +1,118 @@
+{
+  "mode": "cached",
+  "scenario": "delete",
+  "duration": 20,
+  "read_interval": 5,
+  "mutation_interval": 10,
+  "repeat": 1,
+  "ttl": 3600,
+  "seed": 42,
+  "run_id": "delete-cached-r1-3ff7d1f34b2f",
+  "snapshot": {
+    "sha256": "e228b6b7876528637c6dc2a19c96ac4c007c6c025b441d1d004a3a38be1ce274",
+    "source_database": "supply_lab",
+    "created_at": "2026-09-25T13:14:51.508957+00:00",
+    "target_preparation": "After restoring the complete dump, empty lr5.delivery_documents if present; preserve its FK, all LR1 rows/sequences and other schemas. ANALYZE."
+  },
+  "images": {
+    "lr1-postgres": {
+      "id": "ff80089083d7365046af7f03d949a2defa14e0b09e14bd5b8f08a242291be8b2",
+      "digest": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+      "names": [
+        "docker.io/library/postgres:17-alpine"
+      ]
+    },
+    "lr9-redis": {
+      "id": "ec4f171e9ff071bb2a1c936057d3be00206069b028b6c0d61df2477e1dd02c42",
+      "digest": "sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+      "names": [
+        "docker.io/library/redis:7.4-alpine"
+      ]
+    }
+  },
+  "started_at": "2026-09-25T13:19:31.861959+00:00",
+  "sql_version": "cd451a332561306ed255a50066fb339766e0ed8527331ad45d8855dd82615df9",
+  "machine": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "python": "3.13.15",
+  "packages": {
+    "psycopg": "3.3.6",
+    "redis": "8.1.0",
+    "matplotlib": "3.11.2"
+  },
+  "valid": true,
+  "status": "completed",
+  "selection": "deterministic leader/minimum delivery_id; seed reserved, no randomness",
+  "row_counts": {
+    "suppliers": 1000,
+    "products": 1000,
+    "warehouses": 1000,
+    "warehouse_sections": 3000,
+    "deliveries": 5006
+  },
+  "constraints": [
+    {
+      "conname": "deliveries_business_key_uq",
+      "definition": "UNIQUE (supplier_id, product_id, warehouse_id, batch_number)"
+    },
+    {
+      "conname": "deliveries_pk",
+      "definition": "PRIMARY KEY (delivery_id)"
+    },
+    {
+      "conname": "deliveries_product_fk",
+      "definition": "FOREIGN KEY (product_id) REFERENCES products(product_id)"
+    },
+    {
+      "conname": "deliveries_quality_status_ck",
+      "definition": "CHECK (((quality_status)::text = ANY (ARRAY[('accepted'::character varying)::text, ('inspection'::character varying)::text, ('rejected'::character varying)::text])))"
+    },
+    {
+      "conname": "deliveries_quantity_ck",
+      "definition": "CHECK ((quantity > 0))"
+    },
+    {
+      "conname": "deliveries_supplier_fk",
+      "definition": "FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)"
+    },
+    {
+      "conname": "deliveries_unit_cost_ck",
+      "definition": "CHECK ((unit_cost > (0)::numeric))"
+    },
+    {
+      "conname": "deliveries_warehouse_fk",
+      "definition": "FOREIGN KEY (warehouse_id) REFERENCES warehouses(warehouse_id)"
+    },
+    {
+      "conname": "products_pk",
+      "definition": "PRIMARY KEY (product_id)"
+    },
+    {
+      "conname": "products_sku_uq",
+      "definition": "UNIQUE (sku)"
+    },
+    {
+      "conname": "products_unit_price_ck",
+      "definition": "CHECK ((unit_price > (0)::numeric))"
+    },
+    {
+      "conname": "products_weight_ck",
+      "definition": "CHECK ((weight_kg > (0)::numeric))"
+    }
+  ],
+  "triggers": [
+    {
+      "tgname": "deliveries_audit_trg",
+      "definition": "CREATE TRIGGER deliveries_audit_trg AFTER INSERT OR DELETE OR UPDATE ON public.deliveries FOR EACH ROW EXECUTE FUNCTION lr4.audit_delivery()"
+    }
+  ],
+  "postgres_version": "PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "redis_version": "7.4.11",
+  "reads": 5,
+  "mutations": 2,
+  "sql_calls": 3,
+  "control_sql_calls": 5,
+  "schedule_violations": 0,
+  "errors": [],
+  "finished_at": "2026-09-25T13:19:51.913341+00:00"
+}

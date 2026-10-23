@@ -7,6 +7,7 @@
 \ir 04_table_function.sql
 \ir 05_procedure.sql
 \ir 06_trigger.sql
+\ir 07_numpy_gradient.sql
 
 SELECT
     EXISTS (
@@ -51,6 +52,14 @@ SELECT
     )
     AND EXISTS (
         SELECT 1
+        FROM pg_proc AS p
+        JOIN pg_namespace AS n ON n.oid = p.pronamespace
+        WHERE n.nspname = 'lr4'
+          AND p.proname = 'numpy_gradient'
+          AND p.prokind = 'f'
+    )
+    AND EXISTS (
+        SELECT 1
         FROM pg_trigger
         WHERE tgrelid = 'public.deliveries'::regclass
           AND tgname = 'deliveries_audit_trg'
@@ -63,4 +72,3 @@ SELECT
     \echo 'LR4 object verification failed'
     \quit 4
 \endif
-

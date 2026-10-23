@@ -646,9 +646,12 @@ DECLARE
     v_supplier_id bigint;
     v_product_id bigint;
     v_warehouse_ids bigint[];
-    v_expected_warehouses bigint[];
     v_actual_warehouses bigint[];
+    v_expected_stats jsonb;
+    v_actual_stats jsonb;
+    v_stored_stats jsonb;
     v_stats_count bigint;
+    v_top_warehouse_id bigint;
     v_table_name text := format(
         'warehouse_daily_stats_%s',
         to_char(current_date - 1, 'YYYY_MM_DD')
@@ -679,6 +682,24 @@ BEGIN
         RAISE EXCEPTION 'Test data must contain at least three warehouses';
     END IF;
 
+    -- Изолируем расчёт от существующих поставок за вчера. Весь тест выполняется
+    -- во внешней транзакции и завершается ROLLBACK.
+    DELETE FROM public.deliveries AS d
+    WHERE d.delivered_at >= (current_date - 1)::timestamp
+      AND d.delivered_at < current_date::timestamp;
+
+    -- Таблица могла остаться после установочного вызова функции. Удаляем её в
+    -- тестовой транзакции, чтобы проверить именно создание нового снимка.
+    EXECUTE format('DROP TABLE IF EXISTS public.%I', v_table_name);
+
+    IF to_regclass(format('public.%I', v_table_name)) IS NOT NULL THEN
+        RAISE EXCEPTION 'Failed to remove test statistics table %',
+            v_table_name;
+    END IF;
+
+    -- Первый склад получает три поставки. У второго и третьего по две
+    -- поставки, поэтому их взаимный порядок должен определяться суммарным
+    -- количеством: 30 у второго против 20 у третьего.
     INSERT INTO public.deliveries (
         supplier_id,
         product_id,
@@ -693,61 +714,81 @@ BEGIN
     SELECT
         v_supplier_id,
         v_product_id,
-        v_warehouse_ids[load.warehouse_position],
+        v_warehouse_ids[fixture.warehouse_position],
         (current_date - 1)::timestamp
             + time '12:00:00'
-            + make_interval(secs => generated.sequence_number),
-        load.delivery_count * 10 + generated.sequence_number,
+            + make_interval(secs => fixture.sequence_number),
+        fixture.quantity,
         10.00,
         format(
             'LR3-STAT-%s-%s',
-            load.warehouse_position,
-            generated.sequence_number
+            fixture.warehouse_position,
+            fixture.sequence_number
         ),
         'accepted',
         NULL
     FROM (
         VALUES
-            (1, 1),
-            (2, 2),
-            (3, 3)
-    ) AS load(warehouse_position, delivery_count)
-    CROSS JOIN LATERAL generate_series(
-        1,
-        load.delivery_count
-    ) AS generated(sequence_number);
+            (1, 1, 5),
+            (1, 2, 5),
+            (1, 3, 5),
+            (2, 1, 20),
+            (2, 2, 10),
+            (3, 1, 10),
+            (3, 2, 10)
+    ) AS fixture(warehouse_position, sequence_number, quantity);
 
-    SELECT array_agg(load.warehouse_id ORDER BY load.load_rank)
-    INTO v_expected_warehouses
-    FROM (
+    WITH warehouse_load AS (
         SELECT
+            (current_date - 1)::date AS stat_date,
             d.warehouse_id,
-            row_number() OVER (
-                ORDER BY
-                    count(*) DESC,
-                    sum(d.quantity) DESC,
-                    d.warehouse_id
-            ) AS load_rank
+            w.code AS warehouse_code,
+            w.name AS warehouse_name,
+            count(*)::bigint AS delivery_count,
+            sum(d.quantity)::bigint AS total_quantity,
+            sum(d.quantity::numeric * d.unit_cost)::numeric(20, 2)
+                AS total_cost
         FROM public.deliveries AS d
+        JOIN public.warehouses AS w ON w.warehouse_id = d.warehouse_id
         WHERE d.delivered_at >= (current_date - 1)::timestamp
           AND d.delivered_at < current_date::timestamp
-        GROUP BY d.warehouse_id
-        ORDER BY load_rank
-        LIMIT 2
-    ) AS load;
+        GROUP BY d.warehouse_id, w.code, w.name
+    ),
+    ranked_warehouses AS (
+        SELECT
+            load.*,
+            row_number() OVER (
+                ORDER BY
+                    load.delivery_count DESC,
+                    load.total_quantity DESC,
+                    load.warehouse_id
+            )::integer AS load_rank
+        FROM warehouse_load AS load
+    )
+    SELECT jsonb_agg(to_jsonb(ranked) ORDER BY ranked.load_rank)
+    INTO v_expected_stats
+    FROM ranked_warehouses AS ranked
+    WHERE ranked.load_rank <= 2;
 
-    SELECT array_agg(stats.warehouse_id ORDER BY stats.load_rank)
-    INTO v_actual_warehouses
+    SELECT
+        jsonb_agg(to_jsonb(stats) ORDER BY stats.load_rank),
+        array_agg(stats.warehouse_id ORDER BY stats.load_rank)
+    INTO v_actual_stats, v_actual_warehouses
     FROM public.fn_refresh_yesterday_warehouse_stats(2) AS stats;
 
-    IF v_actual_warehouses IS DISTINCT FROM v_expected_warehouses THEN
+    IF v_actual_stats IS DISTINCT FROM v_expected_stats THEN
         RAISE EXCEPTION
-            'fn_refresh_yesterday_warehouse_stats returned warehouses %, expected %',
-            v_actual_warehouses,
-            v_expected_warehouses;
+            'fn_refresh_yesterday_warehouse_stats returned %, expected %',
+            v_actual_stats,
+            v_expected_stats;
     END IF;
 
-    PERFORM * FROM public.fn_refresh_yesterday_warehouse_stats(2);
+    IF v_actual_warehouses IS DISTINCT FROM
+       ARRAY[v_warehouse_ids[1], v_warehouse_ids[2]] THEN
+        RAISE EXCEPTION
+            'fn_refresh_yesterday_warehouse_stats violated ranking rules: %',
+            v_actual_warehouses;
+    END IF;
 
     IF to_regclass(format('public.%I', v_table_name)) IS NULL THEN
         RAISE EXCEPTION
@@ -755,15 +796,45 @@ BEGIN
             v_table_name;
     END IF;
 
-    EXECUTE format('SELECT count(*) FROM public.%I', v_table_name)
-    INTO v_stats_count;
+    -- Повторный вызов должен заменить содержимое снимка теми же строками, а
+    -- не добавить дубликаты.
+    PERFORM * FROM public.fn_refresh_yesterday_warehouse_stats(2);
 
-    IF v_stats_count <> 2 THEN
+    EXECUTE format(
+        $query$
+        SELECT jsonb_agg(to_jsonb(stored) ORDER BY stored.load_rank)
+        FROM (
+            SELECT
+                stat_date,
+                warehouse_id,
+                warehouse_code,
+                warehouse_name,
+                delivery_count,
+                total_quantity,
+                total_cost,
+                load_rank
+            FROM public.%I
+        ) AS stored
+        $query$,
+        v_table_name
+    )
+    INTO v_stored_stats;
+
+    IF v_stored_stats IS DISTINCT FROM v_expected_stats THEN
         RAISE EXCEPTION
-            'fn_refresh_yesterday_warehouse_stats is not idempotent';
+            'fn_refresh_yesterday_warehouse_stats is not idempotent: %',
+            v_stored_stats;
     END IF;
 
-    PERFORM * FROM public.fn_refresh_yesterday_warehouse_stats(1);
+    SELECT count(*), min(stats.warehouse_id)
+    INTO v_stats_count, v_top_warehouse_id
+    FROM public.fn_refresh_yesterday_warehouse_stats(1) AS stats;
+
+    IF v_stats_count <> 1
+       OR v_top_warehouse_id IS DISTINCT FROM v_warehouse_ids[1] THEN
+        RAISE EXCEPTION
+            'fn_refresh_yesterday_warehouse_stats did not apply limit 1';
+    END IF;
 
     EXECUTE format('SELECT count(*) FROM public.%I', v_table_name)
     INTO v_stats_count;
@@ -781,6 +852,23 @@ BEGIN
         WHEN SQLSTATE '22023' THEN
             NULL;
     END;
+
+    BEGIN
+        PERFORM * FROM public.fn_refresh_yesterday_warehouse_stats(NULL);
+        RAISE EXCEPTION
+            'fn_refresh_yesterday_warehouse_stats accepted a NULL limit';
+    EXCEPTION
+        WHEN SQLSTATE '22023' THEN
+            NULL;
+    END;
+
+    EXECUTE format('SELECT count(*) FROM public.%I', v_table_name)
+    INTO v_stats_count;
+
+    IF v_stats_count <> 1 THEN
+        RAISE EXCEPTION
+            'invalid limits modified the existing statistics snapshot';
+    END IF;
 END;
 $$;
 

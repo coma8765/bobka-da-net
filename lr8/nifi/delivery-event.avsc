@@ -1,0 +1,61 @@
+{
+  "type": "record",
+  "name": "DeliveryEvent",
+  "namespace": "lr8",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string"
+    },
+    {
+      "name": "source_file_id",
+      "type": "string"
+    },
+    {
+      "name": "supplier_tax_id",
+      "type": "string"
+    },
+    {
+      "name": "product_sku",
+      "type": "string"
+    },
+    {
+      "name": "warehouse_code",
+      "type": "string"
+    },
+    {
+      "name": "delivered_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "unit_cost",
+      "type": "double"
+    },
+    {
+      "name": "batch_number",
+      "type": "string"
+    },
+    {
+      "name": "quality_status",
+      "type": "string"
+    },
+    {
+      "name": "expires_on",
+      "type": [
+        "null",
+        {
+          "type": "int",
+          "logicalType": "date"
+        }
+      ],
+      "default": null
+    }
+  ]
+}

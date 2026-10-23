@@ -18,6 +18,8 @@ SELECT * FROM public.fn_refresh_yesterday_warehouse_stats(5);
 
 ## Состав
 
+- `queries/00_demo_data.sql` — идемпотентные поставки за вчера для
+  демонстрации ежедневной статистики;
 - `queries/01_functions.sql` — скалярная, подставляемая табличная,
   многооператорная табличная и рекурсивная функции;
 - `queries/02_procedures.sql` — обычная и рекурсивная процедуры, процедура с
@@ -41,6 +43,7 @@ cd ..
 При установленном клиенте `psql` из корня проекта:
 
 ```bash
+psql -h 127.0.0.1 -p 55432 -U postgres -d postgres -f lr3/queries/00_demo_data.sql
 psql -h 127.0.0.1 -p 55432 -U postgres -d postgres -f lr3/queries/01_functions.sql
 psql -h 127.0.0.1 -p 55432 -U postgres -d postgres -f lr3/queries/02_procedures.sql
 psql -h 127.0.0.1 -p 55432 -U postgres -d postgres -f lr3/queries/03_triggers.sql
@@ -50,6 +53,7 @@ psql -h 127.0.0.1 -p 55432 -U postgres -d postgres -f lr3/queries/03_triggers.sq
 через стандартный ввод:
 
 ```bash
+podman exec -i lr1-postgres psql -U postgres -d postgres < lr3/queries/00_demo_data.sql
 podman exec -i lr1-postgres psql -U postgres -d postgres < lr3/queries/01_functions.sql
 podman exec -i lr1-postgres psql -U postgres -d postgres < lr3/queries/02_procedures.sql
 podman exec -i lr1-postgres psql -U postgres -d postgres < lr3/queries/03_triggers.sql

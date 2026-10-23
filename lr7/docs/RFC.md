@@ -2,7 +2,7 @@
 
 ## Статус
 
-Предлагается к реализации.
+Реализовано. Команды запуска и проверки приведены в [README](../README.md).
 
 Основание: [задание лабораторной работы](task.pdf).
 
@@ -213,7 +213,7 @@ lr7/
 psql -X -v ON_ERROR_STOP=1 -d supply_lab -f lr7/sql/install.sql
 python3 -m pip install -r lr7/requirements.txt
 python3 -m lr7.src.demo
-python3 -m unittest discover -s lr7/tests
+LR7_INTEGRATION=1 python3 -m unittest discover -s lr7/tests
 ```
 
 ## 8. Тестирование

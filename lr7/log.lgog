@@ -1,0 +1,473 @@
+
+1. Активные поставщики (первые 5)
+[
+  [
+    "7700000002",
+    "Supplier 0002"
+  ],
+  [
+    "7700000003",
+    "Supplier 0003"
+  ],
+  [
+    "7700000005",
+    "Supplier 0005"
+  ],
+  [
+    "7700000010",
+    "Supplier 0010"
+  ],
+  [
+    "7700000012",
+    "Supplier 0012"
+  ]
+]
+
+2. Дорогие товары
+[
+  {
+    "sku": "SKU-000438",
+    "unit_price": "49999.72"
+  },
+  {
+    "sku": "SKU-000215",
+    "unit_price": "49954.23"
+  },
+  {
+    "sku": "SKU-000956",
+    "unit_price": "49932.04"
+  },
+  {
+    "sku": "SKU-000922",
+    "unit_price": "49842.45"
+  },
+  {
+    "sku": "SKU-000069",
+    "unit_price": "49838.71"
+  }
+]
+
+3. Группировка поставок
+{
+  "accepted": {
+    "count": 3025,
+    "quantity": 7524523,
+    "total_cost": "168539556782.26"
+  },
+  "inspection": {
+    "count": 1008,
+    "quantity": 2534836,
+    "total_cost": "57753051865.05"
+  },
+  "rejected": {
+    "count": 973,
+    "quantity": 2389967,
+    "total_cost": "53999541194.54"
+  }
+}
+
+4. Соединение со складами (первые 5)
+[
+  [
+    1,
+    "WH-00477",
+    "Minsk"
+  ],
+  [
+    2,
+    "WH-00440",
+    "Tbilisi"
+  ],
+  [
+    3,
+    "WH-00604",
+    "Tbilisi"
+  ],
+  [
+    4,
+    "WH-00973",
+    "Minsk"
+  ],
+  [
+    5,
+    "WH-00437",
+    "Almaty"
+  ]
+]
+
+5. ANY / ALL (первые 5)
+[
+  {
+    "tax_id": "7700000001",
+    "has_rejected": true
+  },
+  {
+    "tax_id": "7700000002",
+    "has_rejected": true
+  },
+  {
+    "tax_id": "7700000003",
+    "has_rejected": true
+  },
+  {
+    "tax_id": "7700000004",
+    "has_rejected": true
+  },
+  {
+    "tax_id": "7700000005",
+    "has_rejected": false
+  }
+]
+
+JSON: принятые поставки (первые 5)
+[
+  {
+    "delivery_id": 1,
+    "supplier_name": "Supplier 0377",
+    "product_name": "Pharmaceuticals product 0866",
+    "warehouse_code": "WH-00477",
+    "quantity": 495,
+    "total_cost": "16058379.15"
+  },
+  {
+    "delivery_id": 2,
+    "supplier_name": "Supplier 0414",
+    "product_name": "Electronics product 0433",
+    "warehouse_code": "WH-00440",
+    "quantity": 2742,
+    "total_cost": "33302961.00"
+  },
+  {
+    "delivery_id": 3,
+    "supplier_name": "Supplier 0754",
+    "product_name": "Household product 0221",
+    "warehouse_code": "WH-00604",
+    "quantity": 3805,
+    "total_cost": "147011806.40"
+  },
+  {
+    "delivery_id": 5,
+    "supplier_name": "Supplier 0469",
+    "product_name": "Pharmaceuticals product 0091",
+    "warehouse_code": "WH-00437",
+    "quantity": 330,
+    "total_cost": "6650552.70"
+  },
+  {
+    "delivery_id": 6,
+    "supplier_name": "Supplier 0629",
+    "product_name": "Food product 0011",
+    "warehouse_code": "WH-00880",
+    "quantity": 4689,
+    "total_cost": "49574780.73"
+  }
+]
+JSON update/append: /Users/ananevn002/Documents/u/s5/db/lr7/data/deliveries.edited.json
+
+SQL: товары выбранной категории
+[
+  {
+    "sku": "SKU-000438",
+    "unit_price": "49999.72"
+  },
+  {
+    "sku": "SKU-000164",
+    "unit_price": "49218.18"
+  },
+  {
+    "sku": "SKU-000122",
+    "unit_price": "48896.22"
+  },
+  {
+    "sku": "SKU-000604",
+    "unit_price": "47516.26"
+  },
+  {
+    "sku": "SKU-000026",
+    "unit_price": "47036.93"
+  }
+]
+
+SQL: соединение за первые сутки (первые 5)
+[
+  {
+    "delivery_id": 199,
+    "delivered_at": "2025-01-01T22:02:00",
+    "quantity": 3184,
+    "unit_cost": "8997.86",
+    "quality_status": "accepted",
+    "tax_id": "7700000762",
+    "supplier_name": "Supplier 0762",
+    "sku": "SKU-000091",
+    "product_name": "Pharmaceuticals product 0091",
+    "warehouse_code": "WH-00107",
+    "warehouse_city": "Moscow",
+    "total_cost": "28649186.24"
+  },
+  {
+    "delivery_id": 1234,
+    "delivered_at": "2025-01-01T12:25:00",
+    "quantity": 2240,
+    "unit_cost": "30037.89",
+    "quality_status": "accepted",
+    "tax_id": "7700000780",
+    "supplier_name": "Supplier 0780",
+    "sku": "SKU-000620",
+    "product_name": "Pharmaceuticals product 0620",
+    "warehouse_code": "WH-00976",
+    "warehouse_city": "Yerevan",
+    "total_cost": "67284873.60"
+  },
+  {
+    "delivery_id": 1482,
+    "delivered_at": "2025-01-02T08:47:00",
+    "quantity": 1314,
+    "unit_cost": "19419.67",
+    "quality_status": "accepted",
+    "tax_id": "7700000867",
+    "supplier_name": "Supplier 0867",
+    "sku": "SKU-000150",
+    "product_name": "Beverages product 0150",
+    "warehouse_code": "WH-00718",
+    "warehouse_city": "Almaty",
+    "total_cost": "25517446.38"
+  },
+  {
+    "delivery_id": 1815,
+    "delivered_at": "2025-01-02T06:18:00",
+    "quantity": 2438,
+    "unit_cost": "42796.82",
+    "quality_status": "accepted",
+    "tax_id": "7700000548",
+    "supplier_name": "Supplier 0548",
+    "sku": "SKU-000984",
+    "product_name": "Electronics product 0984",
+    "warehouse_code": "WH-00452",
+    "warehouse_city": "Yerevan",
+    "total_cost": "104338647.16"
+  },
+  {
+    "delivery_id": 3366,
+    "delivered_at": "2025-01-02T03:55:00",
+    "quantity": 765,
+    "unit_cost": "32477.77",
+    "quality_status": "inspection",
+    "tax_id": "7700000981",
+    "supplier_name": "Supplier 0981",
+    "sku": "SKU-000580",
+    "product_name": "Pharmaceuticals product 0580",
+    "warehouse_code": "WH-00010",
+    "warehouse_city": "Moscow",
+    "total_cost": "24845494.05"
+  }
+]
+
+SQL: INSERT → UPDATE → DELETE
+{
+  "tag_id": 38
+}
+
+CALL sp_describe_table
+{
+  "name": "deliveries",
+  "schema": "public",
+  "columns": [
+    {
+      "name": "delivery_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "supplier_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "product_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "warehouse_id",
+      "default": null,
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "delivered_at",
+      "default": null,
+      "data_type": "timestamp without time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "quantity",
+      "default": null,
+      "data_type": "integer",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "unit_cost",
+      "default": null,
+      "data_type": "numeric",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "batch_number",
+      "default": null,
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "quality_status",
+      "default": null,
+      "data_type": "character varying",
+      "is_nullable": "NO"
+    },
+    {
+      "name": "expires_on",
+      "default": null,
+      "data_type": "date",
+      "is_nullable": "YES"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "2200_17452_1_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_2_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_3_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_4_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_5_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_6_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_7_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_8_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "2200_17452_9_not_null",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": []
+    },
+    {
+      "name": "deliveries_business_key_uq",
+      "type": "UNIQUE",
+      "columns": [
+        "supplier_id",
+        "product_id",
+        "warehouse_id",
+        "batch_number"
+      ],
+      "referenced_columns": [
+        "batch_number",
+        "product_id",
+        "supplier_id",
+        "warehouse_id"
+      ]
+    },
+    {
+      "name": "deliveries_pk",
+      "type": "PRIMARY KEY",
+      "columns": [
+        "delivery_id"
+      ],
+      "referenced_columns": [
+        "delivery_id"
+      ]
+    },
+    {
+      "name": "deliveries_product_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "product_id"
+      ],
+      "referenced_columns": [
+        "product_id"
+      ]
+    },
+    {
+      "name": "deliveries_quality_status_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "quality_status"
+      ]
+    },
+    {
+      "name": "deliveries_quantity_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "quantity"
+      ]
+    },
+    {
+      "name": "deliveries_supplier_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "supplier_id"
+      ],
+      "referenced_columns": [
+        "supplier_id"
+      ]
+    },
+    {
+      "name": "deliveries_unit_cost_ck",
+      "type": "CHECK",
+      "columns": [],
+      "referenced_columns": [
+        "unit_cost"
+      ]
+    },
+    {
+      "name": "deliveries_warehouse_fk",
+      "type": "FOREIGN KEY",
+      "columns": [
+        "warehouse_id"
+      ],
+      "referenced_columns": [
+        "warehouse_id"
+      ]
+    }
+  ],
+  "object_type": "BASE TABLE"
+}

@@ -26,6 +26,7 @@ if ! podman exec "${lr3_container_name}" true >/dev/null 2>&1; then
     exit 1
 fi
 
+run_sql_file "${lr3_script_dir}/queries/00_demo_data.sql"
 run_sql_file "${lr3_script_dir}/queries/01_functions.sql"
 run_sql_file "${lr3_script_dir}/queries/02_procedures.sql"
 run_sql_file "${lr3_script_dir}/queries/03_triggers.sql"
